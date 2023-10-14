@@ -13,12 +13,12 @@
     <style>
         <?php 
         include 'index2.css';
-        include 'header.css';
+        include 'header3.css';
         ?>
     </style>
 </head>
 <body>
-<?php include 'header.php'; ?>
+<?php include 'header3.php'; ?>
 
     <div class="header2">
         

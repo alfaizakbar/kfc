@@ -8,14 +8,14 @@
     <link rel="shortcut icon" href="img/logokfc.png" type="image/x-icon">
     <link rel="stylesheet" href="store.css">
     <style>
-        <?php include 'header.css'; ?>
-        <?php include 'header.php'; ?>
-
-
+        <?php include 'header3.css'; ?>
+        
+        
         </style>
 
 </head>
 <body>
+    <?php include 'header3.php'; ?>
     <div class="blog">
         </div>
     
