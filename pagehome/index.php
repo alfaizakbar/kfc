@@ -28,9 +28,6 @@
                 <div class="hero-title">
                     <h1>Kami Akan Memberikan Menu <br> Terbaik Untuk Anda...</h1>
                 </div>
-                <div class="hero-desk">
-                    <p>Dapatkan teknologi terbaru <br> berita yang kami liput </p>
-                </div>
                 <a href="menu.php"><button class="hero-button" type="submit">Klik Di Sini Untuk Melihat Menu</button></a>
             </div>
             <div class="contacttt">
