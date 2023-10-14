@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+
+}
+.inu{
+    padding-top: 180px;
+    margin: auto;
+    width: 1500px;
+}
+.inu h1{
+    /* font-family: 'comic sans ms'; */
+    font-size: 30px;
+}

@@ -1,0 +1,87 @@
+
+/* NEW!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* NEW!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+.search2 form{
+    display: flex;
+    margin-left: 20px;
+    border-radius: 3px;
+    padding: 2px;
+    width: 380px;
+    height: 35px;
+}
+
+.search2 form input {
+    padding-right: 40.5px;
+    padding-left: 30px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-left: 2px;
+}
+
+.btn {
+    padding: 5px 30px;
+    margin-left: 3px;
+    font-weight: bold;
+    background-color: orangered;
+    color: white;
+    font-size: 15px;
+    border-radius: 1px;
+    border: none;
+}
+
+.btn:hover {
+    font-weight: bold;
+    cursor: pointer;
+    transform: scale(0.95);
+    transition: 0.3s;
+}
+
+
+
+.category1 {
+margin-top: 50px;
+width: 370px;
+margin-left: 30px;
+}
+
+.category1 h2 {
+margin-bottom: 15px;
+font-size:30px;
+font-family: 'Calibri';
+cursor: default;
+}
+
+.category1 ul {
+margin-top: 25px;
+}
+
+.category1 ul li {
+list-style: none;
+margin-top: 10px;
+}
+
+.category1 ul li h4 {
+color: rgb(42, 26, 26);
+font-size: 20px;
+font-family: 'Calibri';
+cursor: pointer;
+margin-left: 10px; 
+}
+
+.b {
+background-color: black;
+color: black;
+padding-bottom:2px;
+opacity: 60%;
+}
+
+.g hr {
+background-color: black;
+padding-bottom: 2px;
+}

@@ -1,0 +1,392 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+.blog{
+    height: 200px;
+    background-color: #75001b;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    padding-top: 30px;
+    padding-bottom: 60px;
+    color: white;
+    font-family: 'calibri';
+}
+
+.beli{
+    margin-top: 150px;
+    font-size: 20px;
+    border: 1px solid #75001b;
+    height: 50px;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    padding: 5px 25px;
+    background-color: #75001b;
+    color: white;
+    border-radius: 8px;
+}
+.blog ul h1{
+    font-family: 'comic sans ms';
+    padding-top: 100px;
+    font-size: 39px;
+
+}
+.nama{
+    text-align: center;
+    width: 350px;
+    /* margin-left: 140px; */
+    /* background-color: aqua; */
+    margin-top: 10px;
+    /* text-align: center; */
+}
+.blog ul li {
+    list-style: none;
+    text-align: center;
+}
+
+.blog ul li h3 {
+    padding-right: 320px;
+}
+
+
+.bungkus{
+    width: 1200px;
+    padding-top: 60px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    
+}
+.content{
+    margin-left: 40px;
+    width: 60%;
+   
+}
+
+.fotoone {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+}
+
+.content h1{
+    padding-top:20px ;
+    padding-bottom:20px ;
+    font-size: 40px;
+    font-family: 'calibri';
+}
+
+.content p{
+    text-align: justify;
+    padding-right: 20px;
+    font-size: 20px;
+    font-family: 'calibri';
+    height: 450px;
+    width: 680px;
+    flex-wrap: wrap;
+    /* color: blue; */
+    
+}
+.tanggal {
+    font-family: 'calibri';
+    margin-top: 10px;
+    border-radius:5px;
+    cursor: default;
+    font-size: 15px;
+    font-weight: 2px;
+    margin-bottom: 55px;
+    margin-left: 138px;
+    opacity: 70%;
+    /* background-color: orangered; */
+}
+.kat {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+    /* background-color: aqua; */
+    width: 350px;
+}
+
+
+.box{
+   
+    text-align: justify;
+    padding-top: 20px;
+    margin-left: 5px;
+  
+    
+}
+.box p{
+    padding-top: 30px;
+    padding-left: 20px;
+    width:600px;
+    
+    
+}
+
+.sidebar{
+    width: 40%;
+   
+}
+
+
+.pro ul {
+
+display: flex;
+}
+
+.pro ul li {
+
+font-weight: bold;
+list-style: none;
+}
+
+.pro ul li a {
+text-decoration: none;
+color: rgb(51, 51, 51);
+
+}
+
+
+.log {
+width: 20px;
+}
+
+.content p {
+    height: auto;
+    margin-bottom: 60px;
+}
+
+.search2{
+    margin-left: 50px;
+}
+
+.category1 h2{
+    margin-left: 50px;
+}
+
+.b {
+    width: 370px;
+    margin-left: 50px;
+    background-color: black;
+    color: black;
+    padding-bottom:2px;
+    opacity: 60%;
+    }
+    
+    .isi ul li {
+        margin-top: 40px;
+        list-style: none;
+    }
+    
+    
+    .search2 form{
+        display: flex;
+        margin-left: 20px;
+        border-radius: 3px;
+        padding: 2px;
+        width: 380px;
+        height: 35px;
+    }
+    
+    .search2 form input {
+        padding-right: 40.5px;
+        padding-left: 30px;
+        font-size: 15px;
+        cursor: pointer;
+        margin-left: 2px;
+    }
+    
+    .btn {
+        padding: 5px 30px;
+        margin-left: 3px;
+        font-weight: bold;
+        background-color: orangered;
+        color: white;
+        font-size: 15px;
+        border-radius: 1px;
+        border: none;
+    }
+    
+    .btn:hover {
+        font-weight: bold;
+        cursor: pointer;
+        transform: scale(0.95);
+        transition: 0.3s;
+    }
+    
+    
+    
+    .category1 {
+    margin-top: 50px;
+    width: 370px;
+    margin-left: 30px;
+}
+    
+.category1 h2 {
+    margin-bottom: 15px;
+    font-size:30px;
+    font-family: 'Calibri';
+    cursor: default;
+    }
+    
+    .category1 ul {
+    margin-top: 25px;
+}
+
+.category1 ul li {
+    list-style: none;
+    margin-top: 10px;
+    }
+    
+    .category1 ul li h4 {
+    color: rgb(42, 26, 26);
+    font-size: 20px;
+    font-family: 'Calibri';
+    cursor: pointer;
+    margin-left: 60px; 
+}
+    
+.category1 ul li h4:hover {
+        color: orangered;
+        transition: 0.2s;
+        cursor: pointer;
+    }
+    
+    .b {
+        background-color: black;
+        color: black;
+    padding-bottom:2px;
+    opacity: 60%;
+}
+
+.g{
+    margin-left: 50px;
+    width: 370px;
+}
+
+.komentar {
+    margin: auto;
+    /* margin-top: 50px; */
+    width: 690px;
+    padding-right: 430px;
+}
+
+.garis {
+    margin-bottom: 50px;
+    width: 690px;
+}
+
+.garis2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 690px;
+}
+
+.satu ul {
+    display: flex;
+}
+
+.satu ul li{
+    list-style: none;
+}
+
+.satu ul li img{
+    width: 30px;
+    border-radius: 100%;
+}
+
+.satu ul li h5{
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.warna {
+    color: red;
+}
+
+.link {
+    margin-top: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+
+.fototwo {
+    width: 170px;
+    height: 110px;
+}
+
+/* .isi-kom ul {
+    display: flex;
+} */
+
+.isi-kom ul li{
+    list-style: none;
+}
+
+.isi-kom ul li p{
+    margin-top: 10px;
+    color: rgb(80, 80, 80);
+    font-weight: 1;
+    width: 505px;
+    margin-right: 19px;
+    text-align: justify;
+    /* font-size: 15px; */
+}
+
+.photo ul li  {
+    list-style: none;
+}
+
+.har {
+    margin-top: 10px;
+    /* padding-left: 10px; */
+    width: 100px;
+    border-radius: 5px;
+    color: rgb(44, 44, 44);
+    /* background-color: rgba(128, 128, 128, 0.336); */
+    font-size: 2;
+    font-weight: 10;
+}
+
+.istal {
+    display: flex;
+}
+
+.kom-wrap {
+    margin-top: 40px;
+}
+.kom-wrap2 {
+    margin-top: 40px;
+    
+}
+.kom-wrap3 {
+    margin-top: 40px;
+}
+
+.rec{
+    font-size: 30px;
+}
+.qty{
+    padding: 10px 15px;
+    margin-left:125px;
+    border: 2px solid;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+html{
+    overflow-x: hidden;
+}
+html::-webkit-scrollbar{
+    width: 1rem;
+}
+html::-webkit-scrollbar-track{
+    background-color: #c1002d;
+}
+html::-webkit-scrollbar-thumb{
+    background-color: #75001b;
+}

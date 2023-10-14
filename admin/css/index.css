@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+
+}
+
+.card-content{
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 20px;
+    margin-top: 30px;
+    justify-content: space-between;
+}
+
+.card{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.content{
+    margin-right: 50px;
+    margin-left: 30px;
+    border: 1px solid rgba(76, 78, 100, 0.68);
+    width: 250px;
+    height: 120px;
+    background-color: white;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: -3px 4px 2px rgba(0,0,0,0.3);
+}
+
+.content h2{
+    font-size: 25px;
+    color: rgba(76, 76, 77, 0.989);
+    margin-left: 20px;
+    text-align: center;
+}
+
+.content h3{
+    text-align: center;
+    width: 300px;
+    padding-top: 10px;
+    font-size: 20px;
+    /* font-family: 'Inter'; */
+    font-weight: lighter;
+    text-align: center;
+    color: rgb(155, 155, 160);
+}
+
+.card img{
+    padding-top: 10px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    display: flex;
+    padding-left: 10px;
+}
+
+h4{
+    color: black;
+    font-size: 27px;
+    margin-bottom: 10px;
+    /* font-family: 'mostera'; */
+    margin-bottom: 15px;
+    margin-top: 50px;
+}
+
+.tabel{
+    display: flex;
+}
+
+.blog table{
+    border-color:#F5F5F7;
+    width: 855px;
+    margin-left: 30px;
+}
+.blog h4{
+    margin-left: 30px;
+}
+.user table{
+    width: 495px;
+    margin-left: 60px;
+}
+
+.user h4{
+    margin-top: 50px;
+    margin-left: 65px;
+}
+.user table tr th{
+    font-size: 13px;
+}
+table{
+    margin-bottom: 20px;
+    box-shadow: 5px 4px 5px rgba(0,0,0,0.3);
+}
+
+table th{
+    background-color: #75001b;
+    height: 50px;
+    border: none;
+    color: #F5F5F7;
+    font-size: 15px;
+}
+
+table thead th{
+    background-color: #75001b;
+    color: #fff;
+    text-transform: uppercase;
+}
+table tbody tr:nth-child(odd) td{
+    background-color: #f2f2f2;
+}
+table tr td{
+    border: none;
+}
+td{
+    border-width: 1,5px;
+    border-top-color: white;  
+    padding:10px;
+    background-color: white;
+    height: 40px;
+    font-size: 15px;
+    padding-left: 30px;
+}
+
+.isi{
+    padding-top: 130px;
+    width: 1510px;
+    margin: auto;
+}
+.isi h1{
+    /* font-family: 'mostera'; */
+    font-size: 34px;
+    margin-bottom: 25px;
+    margin-left: 45px;
+}
+.contentt{
+    margin-top: 20px;
+    /* font-family: 'comic sans ms'; */
+    font-size: 18px;
+    text-align: justify;
+}
+.tanggal{
+    font-size: 15px;
+    width: 100px;
+}

@@ -1,0 +1,264 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+font-family: 'calibri';
+}
+
+
+.blog{
+    width: 100%;
+    height: 200px;
+    background-color: #75001b;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    padding-top: 30px;
+    padding-bottom: 60px;
+    color: white;
+    font-family: 'calibri';
+}
+
+.blog ul {
+    
+    padding-right: 580px;
+}
+
+.blog ul li {
+    list-style: none;
+    text-align: center;
+}
+
+.blog ul li h1 {
+    width: 100%;
+    padding-top: 120px;
+    text-align: center;
+    padding-left: 300px;
+    /* padding-right: 355px; */
+    font-size: 39px;
+    font-family: 'comic sans ms';
+}
+
+.blog ul li h3 {
+    padding-right: 320px;
+}
+
+
+.wrap {
+/* position: absolute; */
+/* margin-right: 50px; */
+/* display: flex; */
+width: 100%;
+position: relative;
+display: flex;
+/* flex-wrap: nowrap; */
+/* flex-wrap: wrap; */
+/* margin-top: 30px; */
+/* background-color: aqua;  */
+/* justify-content: center; */
+}
+
+.isi {
+    display: flex;
+    /* background-color: red; */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+}
+
+
+
+.isi ul li {
+list-style: none;
+}
+
+.fotoone {
+margin-top: 30px;
+width: 300px;
+height: 250px;
+
+}
+
+.jud{
+position: absolute;
+font-size: 15px;
+left: 696px;
+top: 305px;
+padding: 3px 8.1px;
+background-color: rgba(255, 68, 0, 0.623);
+border-radius: 5px 5px 5px 5px;
+color: white;
+cursor: default;
+}
+
+.jud:hover{
+background: transparent;
+color: rgb(255, 255, 255);
+}
+
+.jan {
+position: absolute;
+left: 110px;
+top: 320px;
+padding: 5px 17.5px;
+background-color: orangered;
+border-radius: 0px 0px 5px 5px;
+color: white;
+cursor: default;
+font-weight: bold;
+
+}
+
+.jan:hover {
+background: transparent;
+color: orangered;
+}
+.hover:hover{
+    background: transparent;
+color: orangered;
+}
+/* content bawah */
+
+.judu{
+position: absolute;
+font-size: 15px;
+left: 693px;
+top: 743px;
+padding: 3px 8.1px;
+background-color: rgba(255, 68, 0, 0.623);
+border-radius: 5px 5px 5px 5px;
+color: rgb(255, 255, 255);
+cursor: default;
+
+}
+
+.judu:hover{
+background: transparent;
+color: rgb(0, 0, 0);
+}
+.janu {
+position: absolute;
+left: 110px;
+top: 885px;
+padding: 5px 18.6px;
+background-color: orangered;
+border-radius: 0px 0px 5px 5px;
+color: white;
+cursor: default;
+font-weight: bold;
+}
+
+.janu:hover {
+background: transparent;
+color: orangered;
+}
+
+
+.sidebar {
+    margin-left: 45px;
+    margin-top: 15px;
+    height: auto;
+    width: 40%;
+}
+
+
+.title ul li a h2{
+    margin-top: 40px;
+    padding-left: 100px;
+}
+
+.title ul li h2{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin-left: 100px;
+}
+
+.tanggal {
+    font-family: 'calibri';
+    border-radius:5px;
+    cursor: default;
+    font-size: 15px;
+    font-weight: 2px;
+    /* background-color: orangered; */
+}
+
+
+.title ul li p {
+padding-right: 20px;
+padding-left: 95.5px;
+padding-bottom: 40px;
+text-align: justify;
+color: rgb(51, 51, 51);
+width: 670px;
+overflow: hidden;
+/* opacity: 80%; */
+/* width: 60%; */
+}
+
+.title ul li {
+list-style: none;
+}
+
+.title ul li a {
+font-size: 20px;
+font-weight: bold;
+color: black;
+text-decoration: none;
+}
+
+
+.title a {
+    text-decoration: none;
+}
+
+.title ul li a h3 {
+    /* color: aqua; */
+    /* padding-left: 95.5px; */
+    padding-top: 10px;
+    padding-bottom: 55px;
+    font-size: 20px;
+    text-align: center;
+    /* background-color: aqua; */
+}
+
+.title ul li a h3:hover {
+    color: #75001b;
+    transform: scale(1.009);
+    transition: 0.3s;
+}
+
+.kat {
+    margin-left: 97.5px;
+    margin-bottom: 5px;
+}
+
+.log {
+margin-left: 10px;
+width: 20px;
+}
+
+.con-wrap {
+    display: flex;
+/* margin: auto; */
+/* background-color: aqua; */
+width: 100%;
+}
+.keranjang img{
+    width: 50px;
+    margin-top: 5px;
+}
+html{
+    overflow-x: hidden;
+}
+html::-webkit-scrollbar{
+    width: 1rem;
+}
+html::-webkit-scrollbar-track{
+    background-color: #c1002d;
+}
+html::-webkit-scrollbar-thumb{
+    background-color: #75001b;
+}

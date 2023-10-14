@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+
+}
+.docum{
+    padding-top: 120px;
+    margin: auto;
+    width: 1500px;
+}
+.tl{
+    background-color: white;
+    box-shadow: 5px 4px 5px rgba(0,0,0,0.3);
+    padding: 40px;
+}
+.docum p{
+    text-align: left;
+    font-size: 18px;
+}
+.kotak{
+    display: flex;
+    margin-bottom: 50px;
+}
+.kotak button{
+    margin-right: 30px;
+    width: 200px;
+    height: 40px;
+    margin-top: 20px;
+    border:1px solid #0e8ee4;
+    color: #0e8ee4;
+    background-color: white;
+    cursor: pointer;
+}
+.kotak button:hover{
+    background-color: rgb(1, 88, 146);
+    color: white;
+}
+.text p{
+    margin-bottom: 20px;
+    padding: 20px;
+    text-align: justify;
+}
+.kotak1{
+    margin-top: 30px;
+    background-color: white;
+    box-shadow: 5px 4px 5px rgba(0,0,0,0.3);
+    padding: 40px;
+}
+.kotakk{
+    display: flex;
+    margin: 10px;
+    flex-wrap: wrap;
+}
+.kotak2 h3{
+    margin-left: 70px;
+}
+.kotak2{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    margin-right: 90px;
+}
+.kotak2 h4{
+    color: #0e8ee4;
+    cursor: pointer;
+}
+.kotak3{
+    margin-right: 100px;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    padding-left: 35px;
+}
+.kecil{
+    background-color: white;
+    box-shadow: 5px 4px 5px rgba(0,0,0,0.3);
+    padding: 40px;
+    width: 250px;
+}
+.kotak3 h6{
+    font-size: 20px;
+}
+.kotak3 p{
+    font-size: 15px;
+}
+.pr{
+    font-size: 12px;
+    color: #0e8ee4;
+    cursor: pointer;
+}

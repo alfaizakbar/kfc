@@ -1,0 +1,115 @@
+
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+        }
+        .footer{
+            /* margin-top:20px ; */
+            height:350px;
+            background-color: #000;
+            /* background: url(img/backgroundkfc.jpg); */
+            
+
+        }
+        .footer ul li{
+            display: flex;  
+            /* margin: 20px 37px; */
+            
+            margin-bottom: 20PX;
+            opacity: 80%;
+        }
+        .footer{
+            color:white;
+            padding: 40px 70px;
+            display: flex;
+            justify-content: center;   
+            font-family: 'comic sans ms';
+        }
+        .footer ul li{
+            list-style: none;
+        }
+         .service ,.navigasi ,.contact2{
+            padding-top: 30px;
+            /* margin: 20px 37px;  */
+        }
+
+        .service ul {
+            margin-left: 70px;
+        }
+
+        .navigasi ul {
+            margin-left: 70px;
+        }
+
+        .contact2 ul {
+            margin-left: 70px;
+
+        }
+
+        .footer h2{
+
+            margin-bottom: 35px;
+            margin-left: 70px;
+            margin-right: 40px;
+
+        } 
+        .nomor{
+            color: orange;
+            font-size: 20px;
+        }
+        .vector{
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+        .deks{
+            line-height: 10px;
+        }
+        .vector img{
+            width: 150px;
+            height: 150px;
+        }
+        .vector li{
+            margin-right: 10px;
+        }
+
+        .sosmed ul {
+            display: flex;
+
+        }
+
+        .sosmed ul li img {
+            width: 28px;
+            /* margin-right: 10px; */
+        }
+
+        .bawah p{
+            color: black;
+        }
+        .bawah {
+            padding-bottom: 7px;
+            background-color: #3A4F7A;
+            text-align: center;
+        }
+        .judul-logo{
+            font-size: 30px;
+        }
+
+        .navigasi ul li a{
+            color: white;
+            text-decoration: none;
+
+        }
+
+        .navigasi ul li a:hover{
+            color: orangered;
+            cursor: pointer;
+            transform: scale(0.95);
+            transition: 0.3s;
+        }
+        .sosmed ul img{
+            width: 30px;
+            height: 30px;
+        }

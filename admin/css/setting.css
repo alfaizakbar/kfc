@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+
+}
+.set{
+    padding-top: 130px;
+    margin-left: 170px;
+}
+.set h1{
+    width: 1200px;
+    margin: auto;
+    font-family: sans-serif;
+    font-size: 30px;
+}
+.content{
+    font-family: sans-serif;
+
+    padding: 20px;
+    width: 1000px;
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    /* height: 870px; */
+    justify-content: space-between;
+    box-shadow: 1px 1px 7px rgb(177, 173, 173);
+}
+.title h1 {
+    font-family: sans-serif;
+    margin-right: 20px;
+    margin-bottom: 40px;
+}
+.title {
+    display: flex;
+}
+.title img{
+    border: 1px solid;
+    border-radius: 50px;
+    margin-top: 4spx;
+    width: 30px;
+    height: 30px;
+}
+form{
+    font-family: sans-serif;
+
+    padding-bottom: 40px;
+    width: 1250px;
+    margin: auto;
+}
+.un{
+    display: flex;
+}
+.un input{
+    border: 1px solid rgb(211, 209, 209);
+    background-color: rgb(244, 241, 241);
+
+    margin-left: 300px;
+    margin-bottom: 30px;
+    width: 600px;
+    border-radius: 5px;
+    padding: 5px;
+    height: 30px;
+}
+.em{
+    display: flex;
+}
+.em input{
+    border: 1px solid rgb(211, 209, 209);
+    background-color: rgb(244, 241, 241);
+    margin-left: 334px;
+    margin-bottom: 30px;
+    width: 600px;
+    border-radius: 5px;
+    padding: 5px;
+    height: 30px;
+}
+.pw{
+    display: flex;
+}
+.pw input{
+    border: 1px solid rgb(211, 209, 209);
+    background-color: rgb(244, 241, 241);
+    margin-left: 304px;
+    margin-bottom: 30px;
+    width: 600px;
+    border-radius: 5px;
+    padding: 5px;
+    height: 30px;
+}
+input:focus{
+    outline: none;
+    border: 1px solid #c1002d;
+}
+.btn{
+    background-color: #c1002d;
+    /* background-color: #3A4F7A ; */
+    font-family: sans-serif;
+    border: 1px solid white;
+    color: white;
+    /* color: white; */
+    margin-left: 900px;
+    border-radius: 5px;
+    padding: 10px 20px;
+    /* border: none; */
+
+}
+.btn:hover{
+    background-color: #ea053b;
+    color: #fff;
+    border: 1px solid #ea053b;
+}
+.tp input{
+    margin-left: 375px;
+    display: flex;
+}
+.tp p{
+    margin-left: 390px;
+    margin-top: -16px;
+    width: 140px;
+}

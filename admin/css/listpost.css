@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+h1{
+
+    margin: 20px;
+}
+td{
+    text-align: center;
+    width: 5px;
+}
+table{
+    border-collapse: collapse;
+    width: 92%;
+    justify-content: center;
+    margin-left:60px;
+    margin-right: 30px;
+}
+.tbl{
+    justify-content: center;
+    padding-top: 95px;
+}
+.pra{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 65px;
+    
+}
+.pra button{
+    width: 100px;
+    height: 40px;
+    margin-top: 20px;
+    background-color: #75001b;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.pra button:hover{
+    background-color: #580116;
+}
+.tbl h1{
+    margin-left: 60px;
+    font-family: sans-serif;
+}
+table th,table td{
+    padding: 7px 17px;
+    text-align: center;
+    font-size: 20px;
+}
+table thead th{
+    background-color: #75001b;
+    color: #fff;
+    text-transform: uppercase;
+}
+table tbody tr:nth-child(odd) td{
+    background-color: rgba(128, 128, 128, 0.194);
+}
+table tbody tr:hover td{
+    background-color: #ffffa2;
+    transition: all .2s;
+}
+.yakin a{
+    padding: 5px;
+    text-decoration: none;
+}
+.hd{
+    background-color: #c6012f;
+    border-radius: 5px;
+    border: 1px solid #c6012f;
+    color: #fff;
+}
+.hd:hover{
+    background-color: #47b5ff8f;
+    border: 1px solid #47b5ff8f;
+}
+.hp{
+    background-color: #FF597B;
+    border-radius: 5px;
+    border: 1px solid #FF597B;
+    color: #fff;
+}
+.hp:hover{
+    background-color: #ff597a94;
+    border: 1px solid #ff597a94;
+}
+
+.dgambar {
+    width: 80px;
+}

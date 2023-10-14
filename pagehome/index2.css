@@ -1,0 +1,358 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+
+.container{
+    margin: auto;
+    width: 1519px;
+    
+}
+.header2{
+    
+    height: 360px;
+    /* background-color: #3A4F7A; */
+    background: url(img/backgroundkfc.jpg);
+    color: white;
+    display: flex;
+    margin:auto;
+    justify-content: space-around;
+    padding:  150px 60px;
+    
+}
+.header2 ul{
+    display: flex;
+}
+.hero-title{
+    padding-top: 50px;
+    line-height: 40px;
+    text-align: left;
+}
+.hero-desk{
+  margin-top: 10px;  
+  line-height: 25px;
+  text-align: left;
+}
+.menu2{
+    text-align: center;
+    color: white;
+    margin-right: 100px;
+}
+
+.hero-button{
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    margin-top: 50px;
+    border: none;
+    background-color: orange;
+    margin-right: 435px;
+    cursor: pointer;
+}
+.contacttt{
+    display: flex;
+    /* margin-left: 80px; */
+    
+}
+.contacttt img{
+    width: 550px;
+    height: 300px;
+    /* object-fit: cover; */
+}
+.logoo img{
+    margin-right: 10px;
+    width: 70px;
+    height: 50px;
+}
+.profile{
+    margin-left: 150px;
+    margin-right: 150px;
+    padding: 70px 0;
+    
+    justify-content: space-around;
+}
+.profile ul{
+    display: flex;
+    justify-content: space-around;
+
+}
+.profile hr{
+    margin-top: 60px;
+}
+.orang1{
+    
+    margin-right: 10px;
+    display: flex;
+    /* margin-right: 10px; */
+}
+.orang1 li{
+    line-height: 20px;
+    margin-right: 20px;
+    /* display: flex; */
+    align-items: center;
+    /* text-align: center; */
+    /* margin-top: 20px; */
+}
+.orang1 li p{
+    margin-top: 10px;
+  font-size: 12px;  
+}
+.orang1 img{
+    width: 100px;
+    height: 100px;
+}
+.profile ul li{
+list-style: none;
+
+}
+
+
+.info-orang{
+    /* padding-top: 20px; */
+    margin-top: 12px;
+}
+.information{
+    margin-left: 100px;
+    margin-right: 100px;
+    text-align: center;
+    padding: 50px 200px;
+}
+.info-title{
+    margin-bottom: 20px;
+}
+.contact3{
+    /* background-color: rgba(235, 235, 235, 0.6); */
+
+    margin-left: 100px;
+    margin-right: 100px;
+  display: flex;
+  
+    padding: 30px 50px;
+}
+.contact-img{
+    width: 50%;
+}
+.contact-list{
+
+    /* padding-right: 150px; */
+    /* padding-left: 150px; */
+    padding-top: 100px;
+    width: 50%;
+}
+.contact-list ul li{
+    /* font-size: 20px; */
+    
+    list-style: none;
+    font-weight: 600;
+    margin-bottom: 30px;
+    font-size: 20px;
+    
+}
+.contact-list ul li:hover{
+    color: orange;
+    list-style: none;
+    margin-bottom: 30px;
+    /* font-size: 15px; */
+    
+}
+.list1{
+color: orange;
+}
+.teknologi{
+    /* background-color: aquamarine; */
+    height: 550px;
+    padding-left: 900px;
+    background-size: cover;
+    background-image: url(img/info-pict.png);
+    padding-top: 120px;
+}
+.kotak-teks{
+    
+    background-color: white; 
+    margin-left: 70%;
+    margin: auto;
+    text-align: center;
+    width: 300px;
+    border-radius: 15px;
+    /* padding: 20px; */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    height: 300px;
+    
+}
+.kotak-teks p{
+   text-align: justify;
+}
+.kotak-teks img{
+    width: 30px;
+    height: 30px;
+    padding-right: 260px;
+    margin-bottom: 50px;
+}
+.kotak-teks h3{
+    width: 100px;
+    margin-top: 70px;
+}
+.lm{
+    margin-top: 5px ;
+    color: orange;
+
+    width: 80px;
+    border-bottom: 1px solid orange;
+}
+.card-mobil{
+    
+    /* padding: 10px; */
+    margin: 20px 120px 60px;
+    height: 500px;
+    background-image: url(img/com.png);
+}
+.box-card-mobil{
+   
+    /* text-align: center; */
+    display: flex;
+}
+.box-card-mobil ul li{
+    list-style: none;
+    margin-bottom: 50px;
+}
+.marketing{
+    margin: 50px 0;
+    /* background-color: rgb(244, 222, 179); */
+    padding: 20px;
+    background-color: rgba(235, 235, 235, 0.6);
+
+display: flex;
+
+}
+.kotak-mark{
+    display: flex;
+    width: 1519px;
+    margin: auto;
+}
+.mark-left{
+    line-height: 25px;
+    /* text-align: center; */
+    width: 60%;
+    text-align: justify;
+    padding-left: 100px;
+    /* padding: 20px; */
+}
+.mark-right{
+    padding-left: 60px;
+    width: 40%;
+}
+.mark-title{
+    font-size: 25px;
+    /* text-align: center; */
+    margin-bottom: 30px;
+}
+.list-mark  li{
+    list-style: none;
+    margin-bottom: 100px;
+    /* text-align: left; */
+}
+.mark-card{
+    
+    /* box-shadow: 5px 5px 9px rgb(183, 180, 180); */
+
+    /* background-color: bisque;     */
+    display: flex;
+}
+.card-mark{
+    box-shadow: 5px 5px 9px rgb(183, 180, 180);
+
+    /* box-shadow: 5px 5px solid grey; */
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 100px;
+    border-radius: 15px;
+    padding: 15px;
+    /* border: 1px so   lid; */
+    background-color: white;
+    width: 350px;
+    height: 375px;
+}
+.card-mark ul li{
+list-style: none;
+margin-bottom: 30px;
+
+}
+.box-card-mobil{
+    padding-left: 5%;
+    /* padding: 10px; */
+    margin-left: 50%;
+    text-align: left;
+    align-items: center;
+    width: 45%;
+    /* padding-left: 50%; */
+    background-color: rgb(217, 212, 212);
+    /* width: 100px; */
+    height: 100%;
+}
+.box-logo{
+    
+    /* text-align: center; */
+    align-items: center;
+    display: flex;
+    margin-right: 10px;
+}
+.box-logo li{
+    margin-right: 25px;
+    color: orange; 
+    font-size: 20px;
+    font-weight: 700;
+}
+.lm2{
+    color: orange;
+    margin-top: 10px;
+    width: 90px;
+    border-bottom: 1px solid orange;
+}
+.bisnis{
+    display: flex;
+    margin: 120px 120px;
+}
+.bisnis-info{
+    padding: 10px;
+    width: 60%;
+}
+.bisnis-title{
+    margin-bottom: 20px;
+    /* padding-bottom: 20px; */
+    font-size: 30px;
+}
+.bisnis-desk{
+    font-size: 20px;
+    line-height: 25px;
+    text-align: justify;
+}
+.bisnis-foto{
+    padding-left: 80px;
+    width: 40%;
+}
+.hero-button2{
+    /* margin-left: 350px; */
+    border-radius: 5px;
+    padding: 15px;
+    color: white;
+    margin-top: 50px;
+    border: none;
+    background-color: orange;
+}
+html{
+    overflow-x: hidden;
+}
+html::-webkit-scrollbar{
+    width: 1rem;
+}
+html::-webkit-scrollbar-track{
+    background-color: #c1002d;
+}
+html::-webkit-scrollbar-thumb{
+    background-color: #75001b;
+}

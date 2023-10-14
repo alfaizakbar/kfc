@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+
+}
+
+.containerr{
+    width: 1200px;
+    margin: auto;
+    padding-top: 80px;
+}
+
+.post{
+    height: 50px;
+    /* padding-top: 50px; */
+    display: flex;
+    justify-content: space-between;
+}
+h3{
+    font-size: 28px;
+    margin-top: 70px;
+}
+
+.gambar{
+    display: flex;
+    margin-top: 70px;
+}
+
+
+
+.tulisan{
+    width: 55%;
+    margin-left: 50px;
+    margin-top: 30px;
+    border: none;
+}
+
+h1{
+    font-size: 45px;
+    margin-top: 0px;
+}
+
+h6{
+    font-size: 18px;
+    font-weight: 800;
+    /* font-family: 'Times New Roman', Times, serif; */
+    margin-top: 5px;
+}
+
+h4{
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.tulisan p{
+    margin-top: 9px;
+    text-align: left;
+    background-color: #f2f2f2;
+}
+
+.ou{
+    display: flex;
+    justify-content: space-between;
+}
+.up{
+    background-color: #2192FF;
+    border: 1px solid #2192FF;
+    margin-right: 10px;
+    margin-left: 1000px;
+}
+.up:hover{
+    background-color: #2194ff77;
+    border: 1px solid #2194ff77;
+}
+.uh{
+    background-color: red;
+    border: 1px solid red;
+}
+.uh:hover{
+    background-color: rgba(255, 0, 0, 0.534);
+    border: 1px solid rgba(255, 0, 0, 0.534);
+}
+.ou a{
+    padding: 7px 15px;
+    border: 1px solid #2192FF;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+}
+.fitur{ 
+    padding-top: 19px;
+    display: flex;
+    justify-content: space-between;
+}
+h5{
+    margin-top: 15px;
+    font-size: 17px;
+    /* font-family: sans-serif; */
+}
+.gambarr .imgs{
+    width: 500px;
+    height: 50vh;
+    border: 1px solid;
+}
+.imgs{
+    width: 100%;
+    height: 100%;
+    border: 1px solid aqua;
+}
+.gambarr p{
+    font-weight: bold;
+    /* font-family: 'comic sans ms'; */
+    font-size: 15px;
+}
