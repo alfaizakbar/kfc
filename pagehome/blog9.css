@@ -9,8 +9,8 @@ font-family: 'calibri';
 
 
 .blog{
-    width: 100%;
-    height: 200px;
+    /* width: 100%; */
+    height: 300px;
     background-color: #75001b;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
@@ -20,24 +20,28 @@ font-family: 'calibri';
     font-family: 'calibri';
 }
 
-.blog ul {
+/* .blog ul {
     
     padding-right: 580px;
-}
+} */
 
 .blog ul li {
+    margin: auto;
+    padding: 0  20px;
     list-style: none;
     text-align: center;
 }
 
 .blog ul li h1 {
-    width: 100%;
+    /* width: 100%; */
     padding-top: 120px;
     text-align: center;
-    padding-left: 300px;
+    /* padding-left: 300px; */
     /* padding-right: 355px; */
     font-size: 39px;
     font-family: 'comic sans ms';
+    transition: all 0.5 ease;
+
 }
 
 .blog ul li h3 {

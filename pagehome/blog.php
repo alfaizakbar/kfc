@@ -29,11 +29,11 @@ if (!isset($_SESSION['usernamee'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href=".img/logo-removebg-preview.png">
         <title>Pesanan || KFC Lhokseumawe</title>
-        <link rel="stylesheet" href="blog8.css">
+        <link rel="stylesheet" href="blog9.css">
     <link rel="shortcut icon" href="img/logokfc.png" type="image/x-icon">
 
         <style>
-        <?php include 'header.css';
+        <?php include 'header3.css';
               
 ?>
 
@@ -42,33 +42,9 @@ if (!isset($_SESSION['usernamee'])) {
 </head>
 <body>
     <header>
-    <div class="header">
-        <div class="logo">
-
-            <!-- <li class="logoo"><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/wifi-zone-14-858430.png?w=128&f=avif" alt=""></li> -->
-            <li class="judull"><a href="index.php"><img src="img/logo_header.jpg" alt=""></a></li>
-        </div>
-        <ul>
-            <div class="menu">
-                <li><a href="index.php">HOME</a></li>
-                <li><a href="menu.php">MENU</a></li>
-                <!-- <li><a href="#">SERVICE</a></li> -->
-                <li><a href="portofolio.php">GALLERY</a></li>
-                <li><a href="blog.php">PESANAN</a></li>
-                <li><a href="store.php">STORE</a></li>
-            </div>
-            <!-- <div class="keranjang">
-                <a href="keranjang.php"><img src="img/keranjangkfc.png" alt=""><span>(3)</span></a>
-            </div> -->
-            <div class="oi">
-            <div class="dropbtnn"><img class="img" src="../pagehome/img/<?= $pelanggan['foto']?>" alt=""></div>
-            <div class="dropdownn-contentt">
-            <a href="setting.php">Setting</a>
-            <a href="../pelanggan/logout.php">Log Out</a>
-            </div>
-            </div>
-        </ul>
-    </div>
+    <?php include 'header3.php';
+              
+              ?>
     </header>
     <div class="container">
         <div class="blog">
@@ -120,6 +96,6 @@ if (!isset($_SESSION['usernamee'])) {
             
             
     </div>
+    <?php include 'footer2.php' ?>
 </body>
-<?php include'footer.php' ?>
 </html>
