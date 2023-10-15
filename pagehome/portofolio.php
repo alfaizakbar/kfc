@@ -208,7 +208,7 @@ include "header3.php";
         
     </div>
             <?php 
-        include "footer.php";
+        include "footer2.php";
         ?>
 </body>
 </html>

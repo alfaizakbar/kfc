@@ -49,6 +49,6 @@ Telepon: (021) 14022</h1>
         </div>
     </div>
 </body>
-<?php include "footer.php"; ?>
+<?php include "footer2.php"; ?>
 
 </html> 

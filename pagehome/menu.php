@@ -154,7 +154,7 @@
             <h2>O.R BURGER SINGLE</h2>
         </div>
     </div>
-                 <?php include'footer.php'; ?>
+                 <?php include 'footer2.php'; ?>
 </div>
 </body>
 </html>
