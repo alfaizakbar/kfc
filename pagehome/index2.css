@@ -14,7 +14,8 @@
     
     height: 670px;
     /* background-color: #3A4F7A; */
-    background: url(img/backgroundkfc.jpg);
+    background: rgb(0,0,0);
+background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(193,0,45,1) 100%);
     color: white;
     display: flex;
     margin:auto;
