@@ -257,3 +257,17 @@ h1{
       color: var(--font-color);
       cursor: pointer;
     }
+
+    @media(max-width:868px){
+      .container{
+        width: 100%;
+        margin: auto;
+        /* padding-right: 50px; */
+      }
+      .foto{
+        display: none;
+      }
+      .flip-card__inner{
+        margin-right: 150px;
+      }
+    }
