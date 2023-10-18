@@ -18,7 +18,7 @@
             <div class="logo"><a href="#">VYNLNXN</a></div>
             <ul class="menu-list">
                 <div class="icon cancel-btn">
-                    <i class="fa-solid fa-times"></i>
+                    <i class="fa-solid fa-times">X</i>
                 </div>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="menu.php">Menu</a></li>
@@ -27,7 +27,7 @@
                 <li><a href="store.php">Store</a></li>
             </ul>
             <div class="icon menu-btn">
-                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-bars">=</i>
             </div>
             
         </div>

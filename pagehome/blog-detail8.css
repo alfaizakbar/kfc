@@ -4,18 +4,18 @@
     text-decoration: none;
 }
 .blog{
-    height: 200px;
+    height: 300px;
     background-color: #75001b;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
-    padding-top: 30px;
+    padding-top: 60px;
     padding-bottom: 60px;
     color: white;
     font-family: 'calibri';
 }
 
 .beli{
-    margin-top: 150px;
+    /* margin-top: 150px; */
     font-size: 20px;
     border: 1px solid #75001b;
     height: 50px;
@@ -33,6 +33,11 @@
     font-size: 39px;
 
 }
+.btnn{
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+}
 .nama{
     text-align: center;
     width: 350px;
@@ -40,6 +45,13 @@
     /* background-color: aqua; */
     margin-top: 10px;
     /* text-align: center; */
+}
+.desk{
+    /* width: 600px; */
+    padding-left:5px ;
+    display: block;
+    align-items: center;
+    justify-content: center;
 }
 .blog ul li {
     list-style: none;
@@ -52,22 +64,18 @@
 
 
 .bungkus{
-    width: 1200px;
+    width: 100%;
     padding-top: 60px;
-    margin: auto;
+    /* margin: auto; */
     display: flex;
     justify-content: center;
     
 }
-.content{
-    margin-left: 40px;
-    width: 60%;
-   
-}
 
 .fotoone {
-    width: 350px;
-    height: 350px;
+    /* width: 280px; */
+    height: 200px;
+    padding-left: 50px;
     object-fit: cover;
 }
 
@@ -80,11 +88,11 @@
 
 .content p{
     text-align: justify;
-    padding-right: 20px;
+    /* padding-right: 20px; */
     font-size: 20px;
     font-family: 'calibri';
     height: 450px;
-    width: 680px;
+    /* width: 680px; */
     flex-wrap: wrap;
     /* color: blue; */
     

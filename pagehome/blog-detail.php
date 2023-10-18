@@ -27,15 +27,15 @@ $data = query("SELECT * FROM blog WHERE id = $id");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detail Pesanan || KFC Lhokseumawe</title>
     <link rel="shortcut icon" href="img/logokfc.png" type="image/x-icon">
-    <link rel="stylesheet" href="blog-detail7.css">
+    <link rel="stylesheet" href="blog-detail8.css">
 
     <style>
         <?php 
         // include 'header.css'; 
         // include 'header.php';
 
-        include 'blog-detail7.css';
-        include 'header.css';
+        include 'blog-detail8.css';
+        include 'header3.css';
 
 
         ?>
@@ -43,33 +43,9 @@ $data = query("SELECT * FROM blog WHERE id = $id");
 </head>
 
 <body>
-<header>
-    <div class="header">
-        <div class="logo">
-
-            <!-- <li class="logoo"><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/wifi-zone-14-858430.png?w=128&f=avif" alt=""></li> -->
-            <li class="judull"><a href="index.php"><img src="img/logo_header.jpg" alt=""></a></li>
-        </div>
-        <ul>
-            <div class="menu">
-                <li><a href="index.php">HOME</a></li>
-                <li><a href="menu.php">MENU</a></li>
-                <li><a href="#">SERVICE</a></li>
-                <li><a href="portofolio.php">GALLERY</a></li>
-                <li><a href="blog.php">PESANAN</a></li>
-                <li><a href="store.php">STORE</a></li>
-            </div>
-            <div class="oi">
-            <!-- <div class="dropbtnn"><img class="img" src="https://cdn.iconscout.com/icon/free/png-128/person-1780867-1514182.png" alt=""></div> -->
-            <div class="dropbtnn"><img class="img" src="../pagehome/img/<?= $pelanggan['foto']?>" alt=""></div>
-            <div class="dropdownn-contentt">
-            <a href="setting.php">Setting</a>
-            <a href="../pelanggan/logout.php">Log Out</a>
-            </div>
-            </div>
-        </ul>
-    </div>
-    </header>
+<?php
+include 'header3.php';
+?>
     <div class="blog">
         <ul>
             <li><h1>Info Pesanan.</h1></li>
@@ -80,16 +56,22 @@ $data = query("SELECT * FROM blog WHERE id = $id");
                 <!-- <input type="hidden" name="id" value="<?= $data["id"];?>"> -->
                 <?php foreach($data as $row){?> 
                         <img src="../admin/img/<?= $row['foto']?>" alt="" class="fotoone">
-                        <h2 class="nama"><?= $row['judul']?></h2>
-                        <h4 class="kat">Harga : <?= $row['kategori']?></h4>
-                        <!-- <input type="number" name="qty" class="qty" min="1" max="99" value="1" onkeypress="if(this.value.length == 2) return false;"> -->
-                        <h4 class="tanggal"><?= $row['tanggal']?></h4>
+                        <div class="desk">
+
+                            <h2 class="nama"><?= $row['judul']?></h2>
+                            <h4 class="kat">Harga : <?= $row['kategori']?></h4>
+                            <!-- <input type="number" name="qty" class="qty" min="1" max="99" value="1" onkeypress="if(this.value.length == 2) return false;"> -->
+                            <h4 class="tanggal"><?= $row['tanggal']?></h4>
+                        </div>
                         <!-- <p><?= $row ['artikel']?></p> -->
                         <?php }?>
-                        
                     </div>
-                        <a href="../pelanggan/pembayaran.php?id=<?= $row['id']?>"><h1 class="beli">beli di sini</h1></a>
-            </div>
+                        
+                </div>
+                <div class="btnn">
+
+                    <a href="../pelanggan/pembayaran.php?id=<?= $row['id']?>"><h1 class="beli">beli di sini</h1></a>
+                </div>
             <!-- <div class="sidebar">
                 <div class="container">
                         <div class="sidebar">
@@ -120,5 +102,5 @@ $data = query("SELECT * FROM blog WHERE id = $id");
 
 
     </body>
-    <?php include "footer.php"; ?>
+    <?php include "footer2.php"; ?>
 </html>
