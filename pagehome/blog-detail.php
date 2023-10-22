@@ -70,7 +70,7 @@ include 'header3.php';
                 </div>
                 <div class="btnn">
 
-                    <a href="../pelanggan/pembayaran.php?id=<?= $row['id']?>"><h1 class="beli">beli di sini</h1></a>
+                    <a href="../pelanggan/pembayaran.php?id=<?= $row['id']?>"><h1 class="beli">Order Now</h1></a>
                 </div>
             <!-- <div class="sidebar">
                 <div class="container">

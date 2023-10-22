@@ -3,13 +3,10 @@
     padding: 0;
     text-decoration: none;
 }
-body{
-    background: url(wallpaper.jpg);
-    background-size: cover;
-}
+
 header{
     display: flex;
-    width: 1500px;
+    /* width: 1500px; */
     justify-content: space-between;
     margin: auto;
     margin-top: 10px;

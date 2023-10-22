@@ -53,7 +53,7 @@ $data = query("SELECT * FROM blog WHERE id = $id");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pembayaran || KFC Lhokseumawe</title>
   </head>
-  <link rel="stylesheet" href="css/pembayaran.css">
+  <link rel="stylesheet" href="css/pembayaran1.css">
 <link rel="shortcut icon" href="../pagehome/img/logokfc.png" type="image/x-icon">
 
   <body> 
