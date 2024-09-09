@@ -93,10 +93,10 @@
           </div>
 
           <div class="col-lg-6  d-flex flex-column justify-content-center" data-aos="fade-in">
-            <h1>Build Your Landing Page With <span>Bootslander</span></h1>
-            <p>We are team of talented designers making websites with Bootstrap</p>
+            <h1>Kami Akan Memberikan Menu yang terbaik Untuk <span>Anda</span></h1>
+            <p>Liat Menu Kami di Sini</p>
             <div class="d-flex">
-              <a href="#about" class="btn-get-started">Get Started</a>
+              <a href="#about" class="btn-get-started">Menu</a>
               <!-- <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
             </div>
           </div>
@@ -151,38 +151,30 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <div><span>Check Our</span> <span class="description-title">Contact</span></div>
+        <h2>Sejarah</h2>
+        <div><span>KFC</span></div>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade" data-aos-delay="100">
 
         <div class="row gy-4">
 
-          <div class="col-lg-4">
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-              <i class="bi bi-geo-alt flex-shrink-0"></i>
-              <div>
-                <h3>Address</h3>
-                <p>A108 Adam Street, New York, NY 535022</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-telephone flex-shrink-0"></i>
-              <div>
-                <h3>Call Us</h3>
-                <p>+1 5589 55488 55</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-              <i class="bi bi-envelope flex-shrink-0"></i>
-              <div>
-                <h3>Email Us</h3>
-                <p>info@example.com</p>
-              </div>
-            </div><!-- End Info Item -->
+          <p class="col-lg-4">
+            <h1>Awal Mula</h1>
+            <p>
+              1. Tahun 1930-an: Harland Sanders memulai bisnisnya dengan menjual ayam goreng di sebuah pom bensin di Corbin, Kentucky, Amerika Serikat. Sanders tidak hanya mengelola pom bensin, tetapi juga memasak makanan untuk para pelancong yang datang. Makanan yang ia tawarkan, terutama ayam goreng, mulai populer karena cita rasa uniknya. <br/>
+              <br/>
+              
+              2.  Tahun 1940-an: Sanders mengembangkan resep rahasianya yang terdiri dari 11 bumbu dan rempah-rempah. Pada tahun 1940, ia menemukan metode penggorengan menggunakan pressure cooker, yang memungkinkan ayam goreng matang lebih cepat dan tetap juicy di dalam.
+              <br/>
+              <br/>
+              
+              3.  1952: Harland Sanders mulai menawarkan model waralaba (franchise) restoran ayam gorengnya. Restoran pertama yang berhasil bekerja sama dengan Sanders adalah milik Pete Harman di Salt Lake City, Utah. Harman adalah orang pertama yang menggunakan nama "Kentucky Fried Chicken" untuk restoran tersebut, yang kemudian menjadi nama merek global.</p>
+              <br/>
+              <br/>
+            </p>
+            </p>
+          </div><!-- End Info Item -->
 
           </div>
 

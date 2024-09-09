@@ -24,7 +24,7 @@
                 <li><a href="menu.php">Menu</a></li>
                 <li><a href="portofolio.php">Gallery</a></li>
                 <li><a href="blog.php">Pesanan</a></li>
-                <li><a href="store.php">Store</a></li>
+                <li><a href="store2.php">Store</a></li>
             </ul>
             <div class="icon menu-btn">
                 <i class="fa-solid fa-bars"></i>
