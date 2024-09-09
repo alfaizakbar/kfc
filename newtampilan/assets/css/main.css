@@ -21,7 +21,7 @@
 :root { 
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #a3080b; /* Color for headings, subheadings and title throughout the website */
+  --heading-color: #161D6F; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #ffffff; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
@@ -44,10 +44,10 @@
 }
 
 .dark-background {
-  --background-color: #a3080b;
+  --background-color: #161D6F;
   --default-color: #ffffff;
   --heading-color: #ffffff;
-  --surface-color: #a3080b;
+  --surface-color: #161D6F;
   --contrast-color: #000000;
 }
 
@@ -90,7 +90,7 @@ h6 {
 ------------------------------*/
 .php-email-form .error-message {
   display: none;
-  background: #df1529;
+  background: #161D6F;
   color: #ffffff;
   text-align: left;
   padding: 15px;
@@ -175,7 +175,7 @@ h6 {
 /* Global Header on Scroll
 ------------------------------*/
 .scrolled .header {
-  --background-color: #a3080b;
+  --background-color: #161D6F;
 }
 
 /*--------------------------------------------------------------

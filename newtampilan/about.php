@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>KFC Lhokseumawe / About</title>
+  <title>AAFood | About</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -135,7 +135,7 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Sejarah</h2>
-        <div><span>KFC</span></div>
+        <div><span>AAFood</span></div>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade" data-aos-delay="100">
@@ -145,14 +145,14 @@
           <p class="col-lg-4">
             <h1>Awal Mula</h1>
             <p>
-              1. Tahun 1930-an: Harland Sanders memulai bisnisnya dengan menjual ayam goreng di sebuah pom bensin di Corbin, Kentucky, Amerika Serikat. Sanders tidak hanya mengelola pom bensin, tetapi juga memasak makanan untuk para pelancong yang datang. Makanan yang ia tawarkan, terutama ayam goreng, mulai populer karena cita rasa uniknya. <br/>
+              1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit reprehenderit a, porro deserunt tempora esse, ducimus aliquam facilis alias magni dolores cupiditate, eligendi eveniet quis enim dolorem quos voluptate! Praesentium eum, distinctio tempora magni ullam quos! Asperiores voluptatibus repudiandae quae corporis, ad, assumenda voluptate alias repellat dolore architecto ab ipsum!. <br/>
               <br/>
               
-              2.  Tahun 1940-an: Sanders mengembangkan resep rahasianya yang terdiri dari 11 bumbu dan rempah-rempah. Pada tahun 1940, ia menemukan metode penggorengan menggunakan pressure cooker, yang memungkinkan ayam goreng matang lebih cepat dan tetap juicy di dalam.
+              2.  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem dolores ratione molestias, dignissimos magni eum tempore ullam minima quam ut consequatur libero rem natus ducimus laboriosam esse illo doloremque aperiam deserunt rerum non accusamus aliquid! Sed voluptatem pariatur architecto similique fugit ea enim quaerat beatae error! Laudantium pariatur repudiandae quibusdam.
               <br/>
               <br/>
               
-              3.  1952: Harland Sanders mulai menawarkan model waralaba (franchise) restoran ayam gorengnya. Restoran pertama yang berhasil bekerja sama dengan Sanders adalah milik Pete Harman di Salt Lake City, Utah. Harman adalah orang pertama yang menggunakan nama "Kentucky Fried Chicken" untuk restoran tersebut, yang kemudian menjadi nama merek global.</p>
+              3.  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio laborum adipisci ullam facilis dolores, excepturi earum sapiente animi expedita maxime atque! Laborum, aperiam esse. Quos pariatur delectus laboriosam distinctio ducimus quasi, voluptatem voluptate ab optio recusandae, consectetur magnam dolorum quaerat!</p>
               <br/>
               <br/>
             </p>
@@ -164,14 +164,14 @@
           <p class="col-lg-4">
             <h1>Ekspansi dan Keberhasilan</h1>
             <p>
-              4. Tahun 1960-an: KFC berkembang pesat di seluruh Amerika Serikat dan mulai merambah ke luar negeri. Pada saat ini, Colonel Sanders sering tampil sebagai juru bicara perusahaan, menggunakan jubah putih dan kumis khasnya yang menjadikannya ikon perusahaan. <br/>
+              4. Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda consequuntur, ut, velit doloremque dignissimos quia molestiae animi expedita quos illo facilis odit, impedit distinctio laboriosam eveniet tempore sequi libero iure repellat iste reprehenderit minima! Explicabo voluptates aperiam ut quos corrupti! Voluptate adipisci nulla culpa tenetur similique numquam! Quis, recusandae corrupti. <br/>
               <br/>
               
-              5.  Tahun 1964: Pada usia 73 tahun, Sanders menjual KFC kepada sekelompok investor yang dipimpin oleh John Y. Brown Jr. dan Jack C. Massey seharga $2 juta. Meskipun menjual KFC, Sanders tetap menjadi wajah perusahaan dan terus mempromosikan merek tersebut.
+              5.  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, sunt voluptatum! Totam sit, iure dicta cupiditate sapiente eaque molestiae quia eum dolorem asperiores dolorum error fugiat corrupti esse velit, sequi reiciendis repudiandae iusto eligendi repellat! Quasi maxime tenetur culpa quaerat?
               <br/>
               <br/>
               
-              6.  Tahun 1970-an dan 1980-an: KFC mengalami pertumbuhan yang signifikan, menjadi salah satu merek makanan cepat saji terbesar di dunia. KFC juga mulai mengembangkan menu baru, namun tetap fokus pada produk ayam goreng yang menjadi ciri khasnya.</p>
+              6.  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod nisi deserunt itaque beatae eos labore veniam, doloribus ipsum placeat in vero quas officia modi corrupti! Quam pariatur magnam eveniet similique!</p>
               <br/>
               <br/>
             </p>
@@ -181,9 +181,9 @@
         <div class="row gy-4">
 
           <p class="col-lg-4">
-            <h1>KFC di Indonesia</h1>
+            <h1>AA Food</h1>
             <p>
-            KFC pertama kali hadir di Indonesia pada tahun 1979, dan sejak saat itu terus berkembang menjadi salah satu restoran cepat saji terpopuler di tanah air. Dengan inovasi lokal, seperti nasi sebagai pelengkap ayam goreng, KFC berhasil memikat pasar Indonesia.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore aperiam nihil rerum eius amet perferendis iure facilis aut voluptatibus maxime repellendus cum expedita, illo, sint fugit maiores voluptas, explicabo necessitatibus neque voluptatem. Eligendi expedita aspernatur repudiandae, nobis accusantium ipsam mollitia aliquid deleniti facilis in natus placeat repellendus. Iste, eligendi quod.
             </p>
             </p>
           </div><!-- End Info Item -->
@@ -193,10 +193,10 @@
           <p class="col-lg-4">
             <h1>Perkembangan Modern</h1>
             <p>
-            Kini, KFC memiliki ribuan gerai di seluruh dunia dan terus berinovasi dengan berbagai menu baru, seperti burger ayam, wrap, dan makanan penutup. Namun, fokus utamanya tetap pada ayam goreng dengan resep rahasia Colonel Sanders yang legendaris.<br/>
+           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident illum id est omnis at nemo molestias aliquid, alias ipsam doloribus esse ex dolorum mollitia vitae velit exercitationem reiciendis asperiores minima aperiam commodi. Recusandae vel cupiditate exercitationem quibusdam maiores, nisi quidem et ipsum animi nam molestiae.<br/>
               <br/>
               
-              KFC juga merupakan bagian dari Yum! Brands, perusahaan induk yang memiliki beberapa merek makanan cepat saji besar lainnya seperti Pizza Hut dan Taco Bell.
+             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis doloremque possimus nesciunt molestiae eos excepturi rem, magni voluptas perferendis quaerat.
 
             </p>
             </p>

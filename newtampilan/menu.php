@@ -8,7 +8,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>KFC - Lhokseumawe</title>
+  <title>AAFood | Menu</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -149,7 +149,7 @@
             <div class="row">
   <div class="col-lg-3 col-md-12 mb-4 mb-lg-0 my-4">
     <img
-      src="../pagehome/img/menu/menu1.png"
+      src="./assets/img/menu/menu-1.jpeg"
       class="w-100 shadow-1-strong rounded mb-4"
       alt="Wintry Mountain Landscape"
     />
@@ -158,7 +158,7 @@
 
   <div class="col-lg-3 mb-4 mb-lg-0 my-4">
     <img
-      src="../pagehome/img/menu/menu2.png"
+      src="./assets/img/menu/menu-2.jpeg"
       class="w-100 shadow-1-strong rounded mb-4"
       alt="Boat on Calm Water"
     />
@@ -167,7 +167,7 @@
 
   <div class="col-lg-3 mb-4 mb-lg-0 my-4">
     <img
-      src="../pagehome/img/menu/menu3.png"
+      src="./assets/img/menu/menu-3.jpeg"
       class="w-100 shadow-1-strong rounded mb-4"
       alt="Yosemite National Park"
     />
@@ -176,7 +176,7 @@
   
   <div class="col-lg-3 mb-4 mb-lg-0 my-4">
     <img
-      src="../pagehome/img/menu/menu4.png"
+      src="./assets/img/menu/menu-4.jpeg"
       class="w-100 shadow-1-strong rounded mb-4"
       alt="Yosemite National Park"
     />
@@ -185,7 +185,7 @@
 
   <div class="col-lg-3 mb-4 mb-lg-0 my-4">
     <img
-      src="../pagehome/img/menu/menu5.png"
+      src="./assets/img/menu/menu-5.jpeg"
       class="w-100 shadow-1-strong rounded mb-4"
       alt="Yosemite National Park"
     />
@@ -194,7 +194,7 @@
 
   <div class="col-lg-3 mb-4 mb-lg-0 my-4">
     <img
-      src="../pagehome/img/menu/menu6.png"
+      src="./assets/img/menu/menu-6.jpeg"
       class="w-100 shadow-1-strong rounded mb-4"
       alt="Yosemite National Park"
     />
@@ -203,7 +203,7 @@
 
   <div class="col-lg-3 mb-4 mb-lg-0 my-4">
     <img
-      src="../pagehome/img/menu/menu7.png"
+      src="./assets/img/menu/menu-7.jpeg"
       class="w-100 shadow-1-strong rounded mb-4"
       alt="Yosemite National Park"
     />
@@ -212,7 +212,7 @@
 
   <div class="col-lg-3 mb-4 mb-lg-0 my-4">
     <img
-      src="../pagehome/img/menu/menu8.png"
+      src="./assets/img/menu/menu-8.jpeg"
       class="w-100 shadow-1-strong rounded mb-4"
       alt="Yosemite National Park"
     />
@@ -221,7 +221,7 @@
 
   <div class="col-lg-3 mb-4 mb-lg-0 my-4">
     <img
-      src="../pagehome/img/menu/menu9.png"
+      src="./assets/img/menu/menu-9.jpeg"
       class="w-100 shadow-1-strong rounded mb-4"
       alt="Yosemite National Park"
     />
@@ -230,7 +230,7 @@
 
   <div class="col-lg-3 mb-4 mb-lg-0 my-4">
     <img
-      src="../pagehome/img/menu/menu10.png"
+      src="./assets/img/menu/menu-10.jpeg"
       class="w-100 shadow-1-strong rounded mb-4"
       alt="Yosemite National Park"
     />
@@ -239,7 +239,7 @@
 
   <div class="col-lg-3 mb-4 mb-lg-0 my-4">
     <img
-      src="../pagehome/img/menu/menu11.png"
+      src="./assets/img/menu/menu-11.jpeg"
       class="w-100 shadow-1-strong rounded mb-4"
       alt="Yosemite National Park"
     />
@@ -248,7 +248,7 @@
 
   <div class="col-lg-3 mb-4 mb-lg-0 my-4">
     <img
-      src="../pagehome/img/menu/menu12.png"
+      src="./assets/img/menu/menu-12.jpeg"
       class="w-100 shadow-1-strong rounded mb-4"
       alt="Yosemite National Park"
     />
@@ -257,7 +257,7 @@
 
   <div class="col-lg-3 mb-4 mb-lg-0 my-4">
     <img
-      src="../pagehome/img/menu/menu13.png"
+      src="./assets/img/menu/menu-13.jpeg"
       class="w-100 shadow-1-strong rounded mb-4"
       alt="Yosemite National Park"
     />
@@ -266,7 +266,7 @@
 
   <div class="col-lg-3 mb-4 mb-lg-0 my-4">
     <img
-      src="../pagehome/img/menu/menu14.png"
+      src="./assets/img/menu/menu-14.jpeg"
       class="w-100 shadow-1-strong rounded mb-4"
       alt="Yosemite National Park"
     />
@@ -275,7 +275,7 @@
 
   <div class="col-lg-3 mb-4 mb-lg-0 my-4">
     <img
-      src="../pagehome/img/menu/menu15.png"
+      src="./assets/img/menu/menu-15.jpeg"
       class="w-100 shadow-1-strong rounded mb-4"
       alt="Yosemite National Park"
     />
@@ -284,7 +284,7 @@
 
   <div class="col-lg-3 mb-4 mb-lg-0 my-4">
     <img
-      src="../pagehome/img/menu/menu16.png"
+      src="./assets/img/menu/menu-16.jpeg"
       class="w-100 shadow-1-strong rounded mb-4"
       alt="Yosemite National Park"
     />
