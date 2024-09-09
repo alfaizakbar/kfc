@@ -1,10 +1,14 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>AAFood | About</title>
+  <title>AAFood | Menu</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -50,10 +54,10 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.php" >Home</a></li>
-          <li><a href="about.php" class="active">About</a></li>
-          <li><a href="menu.php">Menu</a></li>
-          <li><a href="pesanan.php">Pesanan</a></li>
-          <li><a href="gallery.php">Gallery</a></li>
+          <li><a href="about.php">About</a></li>
+          <li><a href="menu.php" >Menu</a></li>
+          <li><a href="pesanan.php" class="active">Pesanan</a></li>
+          <li><a href="gallery.php" >Gallery</a></li>
           <!-- <li><a href="#team">Team</a></li> -->
           <!-- <li><a href="#pricing">Pricing</a></li> -->
           <li><a href="contact.php">Contact</a></li>
@@ -77,10 +81,10 @@
           </div>
 
           <div class="col-lg-6  d-flex flex-column justify-content-center" data-aos="fade-in">
-            <h1> <span>About</span></h1>
-            <p>Liat Menu Kami di Sini</p>
+            <h1> <span>Pesanan</span></h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta, ipsa?</p>
             <div class="d-flex">
-              <!-- <a href="#about" class="btn-get-started">Menu</a> -->
+              <!-- <a href="#about" class="btn-get-started">Get Started</a> -->
               <!-- <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
             </div>
           </div>
@@ -103,7 +107,8 @@
         </g>
       </svg>
 
-    </section><!-- /Hero Section -->
+    </section>
+    <!-- /Hero Section -->
 
     <!-- About Section -->
     <!-- /About Section -->
@@ -135,81 +140,205 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Sejarah</h2>
-        <div><span>AAFood</span></div>
+        <h2>Pesanan</h2>
+        <div><span>Check Our</span> <span class="description-title">Pesanan</span></div>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade" data-aos-delay="100">
 
-        <div class="row gy-4">
+            <!-- Gallery -->
+            <div class="row">
+  <div class="col-lg-3 col-md-12 mb-4 mb-lg-0 my-4">
+    <img
+      src="./assets/img/menu/menu-1.jpeg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Wintry Mountain Landscape"
+    />
+    <h2 class="text-center"><strong>Makanan</strong></h2>
+  </div>
 
-          <p class="col-lg-4">
-            <h1>Awal Mula</h1>
-            <p>
-              1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit reprehenderit a, porro deserunt tempora esse, ducimus aliquam facilis alias magni dolores cupiditate, eligendi eveniet quis enim dolorem quos voluptate! Praesentium eum, distinctio tempora magni ullam quos! Asperiores voluptatibus repudiandae quae corporis, ad, assumenda voluptate alias repellat dolore architecto ab ipsum!. <br/>
-              <br/>
-              
-              2.  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem dolores ratione molestias, dignissimos magni eum tempore ullam minima quam ut consequatur libero rem natus ducimus laboriosam esse illo doloremque aperiam deserunt rerum non accusamus aliquid! Sed voluptatem pariatur architecto similique fugit ea enim quaerat beatae error! Laudantium pariatur repudiandae quibusdam.
-              <br/>
-              <br/>
-              
-              3.  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio laborum adipisci ullam facilis dolores, excepturi earum sapiente animi expedita maxime atque! Laborum, aperiam esse. Quos pariatur delectus laboriosam distinctio ducimus quasi, voluptatem voluptate ab optio recusandae, consectetur magnam dolorum quaerat!</p>
-              <br/>
-              <br/>
-            </p>
-            </p>
-          </div><!-- End Info Item -->
+  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+    <img
+      src="./assets/img/menu/menu-2.jpeg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Boat on Calm Water"
+    />
+    <h2 class="text-center"><strong>Makanan</strong></h2>
+  </div>
 
-        <div class="row gy-4">
+  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+    <img
+      src="./assets/img/menu/menu-3.jpeg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+    <h2 class="text-center"><strong>Makanan</strong></h2>
+  </div>
+  
+  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+    <img
+      src="./assets/img/menu/menu-4.jpeg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+    <h2 class="text-center"><strong>Makanan</strong></h2>
+  </div>
 
-          <p class="col-lg-4">
-            <h1>Ekspansi dan Keberhasilan</h1>
-            <p>
-              4. Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda consequuntur, ut, velit doloremque dignissimos quia molestiae animi expedita quos illo facilis odit, impedit distinctio laboriosam eveniet tempore sequi libero iure repellat iste reprehenderit minima! Explicabo voluptates aperiam ut quos corrupti! Voluptate adipisci nulla culpa tenetur similique numquam! Quis, recusandae corrupti. <br/>
-              <br/>
-              
-              5.  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, sunt voluptatum! Totam sit, iure dicta cupiditate sapiente eaque molestiae quia eum dolorem asperiores dolorum error fugiat corrupti esse velit, sequi reiciendis repudiandae iusto eligendi repellat! Quasi maxime tenetur culpa quaerat?
-              <br/>
-              <br/>
-              
-              6.  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod nisi deserunt itaque beatae eos labore veniam, doloribus ipsum placeat in vero quas officia modi corrupti! Quam pariatur magnam eveniet similique!</p>
-              <br/>
-              <br/>
-            </p>
-            </p>
-          </div><!-- End Info Item -->
+  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+    <img
+      src="./assets/img/menu/menu-5.jpeg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+    <h2 class="text-center"><strong>Makanan</strong></h2>
+  </div>
 
-        <div class="row gy-4">
+  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+    <img
+      src="./assets/img/menu/menu-6.jpeg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+    <h2 class="text-center"><strong>Makanan</strong></h2>
+  </div>
 
-          <p class="col-lg-4">
-            <h1>AA Food</h1>
-            <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore aperiam nihil rerum eius amet perferendis iure facilis aut voluptatibus maxime repellendus cum expedita, illo, sint fugit maiores voluptas, explicabo necessitatibus neque voluptatem. Eligendi expedita aspernatur repudiandae, nobis accusantium ipsam mollitia aliquid deleniti facilis in natus placeat repellendus. Iste, eligendi quod.
-            </p>
-            </p>
-          </div><!-- End Info Item -->
+  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+    <img
+      src="./assets/img/menu/menu-7.jpeg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+    <h2 class="text-center"><strong>Makanan</strong></h2>
+  </div>
 
-        <div class="row gy-4">
+  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+    <img
+      src="./assets/img/menu/menu-8.jpeg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+    <h2 class="text-center"><strong>Makanan</strong></h2>
+  </div>
 
-          <p class="col-lg-4">
-            <h1>Perkembangan Modern</h1>
-            <p>
-           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident illum id est omnis at nemo molestias aliquid, alias ipsam doloribus esse ex dolorum mollitia vitae velit exercitationem reiciendis asperiores minima aperiam commodi. Recusandae vel cupiditate exercitationem quibusdam maiores, nisi quidem et ipsum animi nam molestiae.<br/>
-              <br/>
-              
-             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis doloremque possimus nesciunt molestiae eos excepturi rem, magni voluptas perferendis quaerat.
+  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+    <img
+      src="./assets/img/menu/menu-9.jpeg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+    <h2 class="text-center"><strong>Makanan</strong></h2>
+  </div>
 
-            </p>
-            </p>
-          </div><!-- End Info Item -->
+  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+    <img
+      src="./assets/img/menu/menu-10.jpeg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+    <h2 class="text-center"><strong>Makanan</strong></h2>
+  </div>
 
-          </div>
+  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+    <img
+      src="./assets/img/menu/menu-11.jpeg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+    <h2 class="text-center"><strong>Makanan</strong></h2>
+  </div>
 
-          <div class="col-lg-8">
-          
-          </div><!-- End Contact Form -->
+  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+    <img
+      src="./assets/img/menu/menu-12.jpeg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+    <h2 class="text-center"><strong>Makanan</strong></h2>
+  </div>
 
-        </div>
+  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+    <img
+      src="./assets/img/menu/menu-13.jpeg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+    <h2 class="text-center"><strong>Makanan</strong></h2>
+  </div>
+
+  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+    <img
+      src="./assets/img/menu/menu-14.jpeg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+    <h2 class="text-center"><strong>Makanan</strong></h2>
+  </div>
+
+  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+    <img
+      src="./assets/img/menu/menu-15.jpeg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+    <h2 class="text-center"><strong>Makanan</strong></h2>
+  </div>
+
+  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+    <img
+      src="./assets/img/menu/menu-16.jpeg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+    <h2 class="text-center"><strong>Makanan</strong></h2>
+  </div>
+
+  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+    <img
+      src="../pagehome/img/menu/menu17.png"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+    <h2 class="text-center"><strong>Makanan</strong></h2>
+  </div>
+
+  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+    <img
+      src="../pagehome/img/menu/menu18.png"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+    <h2 class="text-center"><strong>Makanan</strong></h2>
+  </div>
+
+  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+    <img
+      src="../pagehome/img/menu/menu19.png"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+    <h2 class="text-center"><strong>Makanan</strong></h2>
+  </div>
+
+  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+    <img
+      src="../pagehome/img/menu/menu20.png"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+    <h2 class="text-center"><strong>Makanan</strong></h2>
+  </div>
+
+  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+    <img
+      src="../pagehome/img/menu/menu21.png"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+    <h2 class="text-center"><strong>Makanan</strong></h2>
+  </div>
+</div>
+
+<!-- Gallery -->
 
       </div>
 

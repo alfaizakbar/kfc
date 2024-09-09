@@ -52,6 +52,7 @@
           <li><a href="index.php" >Home</a></li>
           <li><a href="about.php">About</a></li>
           <li><a href="menu.php">Menu</a></li>
+          <li><a href="pesanan.php">Pesanan</a></li>
           <li><a href="gallery.php" class="active">Gallery</a></li>
           <!-- <li><a href="#team">Team</a></li> -->
           <!-- <li><a href="#pricing">Pricing</a></li> -->
