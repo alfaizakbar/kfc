@@ -159,6 +159,49 @@
             </p>
           </div><!-- End Info Item -->
 
+        <div class="row gy-4">
+
+          <p class="col-lg-4">
+            <h1>Ekspansi dan Keberhasilan</h1>
+            <p>
+              4. Tahun 1960-an: KFC berkembang pesat di seluruh Amerika Serikat dan mulai merambah ke luar negeri. Pada saat ini, Colonel Sanders sering tampil sebagai juru bicara perusahaan, menggunakan jubah putih dan kumis khasnya yang menjadikannya ikon perusahaan. <br/>
+              <br/>
+              
+              5.  Tahun 1964: Pada usia 73 tahun, Sanders menjual KFC kepada sekelompok investor yang dipimpin oleh John Y. Brown Jr. dan Jack C. Massey seharga $2 juta. Meskipun menjual KFC, Sanders tetap menjadi wajah perusahaan dan terus mempromosikan merek tersebut.
+              <br/>
+              <br/>
+              
+              6.  Tahun 1970-an dan 1980-an: KFC mengalami pertumbuhan yang signifikan, menjadi salah satu merek makanan cepat saji terbesar di dunia. KFC juga mulai mengembangkan menu baru, namun tetap fokus pada produk ayam goreng yang menjadi ciri khasnya.</p>
+              <br/>
+              <br/>
+            </p>
+            </p>
+          </div><!-- End Info Item -->
+
+        <div class="row gy-4">
+
+          <p class="col-lg-4">
+            <h1>KFC di Indonesia</h1>
+            <p>
+            KFC pertama kali hadir di Indonesia pada tahun 1979, dan sejak saat itu terus berkembang menjadi salah satu restoran cepat saji terpopuler di tanah air. Dengan inovasi lokal, seperti nasi sebagai pelengkap ayam goreng, KFC berhasil memikat pasar Indonesia.
+            </p>
+            </p>
+          </div><!-- End Info Item -->
+
+        <div class="row gy-4">
+
+          <p class="col-lg-4">
+            <h1>Perkembangan Modern</h1>
+            <p>
+            Kini, KFC memiliki ribuan gerai di seluruh dunia dan terus berinovasi dengan berbagai menu baru, seperti burger ayam, wrap, dan makanan penutup. Namun, fokus utamanya tetap pada ayam goreng dengan resep rahasia Colonel Sanders yang legendaris.<br/>
+              <br/>
+              
+              KFC juga merupakan bagian dari Yum! Brands, perusahaan induk yang memiliki beberapa merek makanan cepat saji besar lainnya seperti Pizza Hut dan Taco Bell.
+
+            </p>
+            </p>
+          </div><!-- End Info Item -->
+
           </div>
 
           <div class="col-lg-8">

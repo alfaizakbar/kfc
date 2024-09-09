@@ -79,7 +79,7 @@
             <h1>Kami Akan Memberikan Menu yang terbaik Untuk <span>Anda</span></h1>
             <p>Liat Menu Kami di Sini</p>
             <div class="d-flex">
-              <a href="#about" class="btn-get-started">Menu</a>
+              <a href="menu.php" class="btn-get-started">Menu</a>
               <!-- <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
             </div>
           </div>
@@ -103,31 +103,6 @@
       </svg>
 
     </section><!-- /Hero Section -->
-
-    <!-- About Section -->
-    <!-- /About Section -->
-
-    <!-- Features Section -->
-
-    <!-- /Features Section -->
-
-    <!-- Stats Section -->
-    <!-- /Details Section -->
-
-    <!-- Gallery Section -->
-      <!-- /Gallery Section -->
-
-    <!-- Testimonials Section -->
-    <!-- /Testimonials Section -->
-
-    <!-- Team Section -->
-    <!-- /Team Section -->
-
-    <!-- Pricing Section -->
-   <!--Pricing Section -->
-
-    <!-- Faq Section -->
-   <!-- /Faq Section -->
 
     <!-- Contact Section -->
     <section id="details" class="details section">

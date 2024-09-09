@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -147,7 +151,7 @@
   
 
     <img
-      src="assets/img/gallery/gallery-5.jpg"
+      src="../pagehome/img/menu/menu1.png"
       class="w-100 shadow-1-strong rounded mb-4"
       alt="Wintry Mountain Landscape"
     />
@@ -157,7 +161,7 @@
   
 
     <img
-      src="assets/img/gallery/gallery-6.jpg"
+      src="../pagehome/img/menu/menu2.png"
       class="w-100 shadow-1-strong rounded mb-4"
       alt="Boat on Calm Water"
     />
@@ -167,7 +171,7 @@
  
 
     <img
-      src="assets/img/gallery/gallery-7.jpg"
+      src="../pagehome/img/menu/menu3.png"
       class="w-100 shadow-1-strong rounded mb-4"
       alt="Yosemite National Park"
     />
@@ -176,7 +180,160 @@
  
 
     <img
-      src="assets/img/gallery/gallery-8.jpg"
+      src="../pagehome/img/menu/menu4.png"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+  </div>
+  <div class="col-lg-4 mb-4 mb-lg-0">
+ 
+
+    <img
+      src="../pagehome/img/menu/menu5.png"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+  </div>
+  <div class="col-lg-4 mb-4 mb-lg-0">
+ 
+
+    <img
+      src="../pagehome/img/menu/menu6.png"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+  </div>
+  <div class="col-lg-4 mb-4 mb-lg-0">
+ 
+
+    <img
+      src="../pagehome/img/menu/menu7.png"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+  </div>
+  <div class="col-lg-4 mb-4 mb-lg-0">
+ 
+
+    <img
+      src="../pagehome/img/menu/menu8.png"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+  </div>
+  <div class="col-lg-4 mb-4 mb-lg-0">
+ 
+
+    <img
+      src="../pagehome/img/menu/menu9.png"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+  </div>
+  <div class="col-lg-4 mb-4 mb-lg-0">
+ 
+
+    <img
+      src="../pagehome/img/menu/menu10.png"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+  </div>
+  <div class="col-lg-4 mb-4 mb-lg-0">
+ 
+
+    <img
+      src="../pagehome/img/menu/menu11.png"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+  </div>
+  <div class="col-lg-4 mb-4 mb-lg-0">
+ 
+
+    <img
+      src="../pagehome/img/menu/menu12.png"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+  </div>
+  <div class="col-lg-4 mb-4 mb-lg-0">
+ 
+
+    <img
+      src="../pagehome/img/menu/menu13.png"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+  </div>
+  <div class="col-lg-4 mb-4 mb-lg-0">
+ 
+
+    <img
+      src="../pagehome/img/menu/menu14.png"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+  </div>
+  <div class="col-lg-4 mb-4 mb-lg-0">
+ 
+
+    <img
+      src="../pagehome/img/menu/menu15.png"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+  </div>
+  <div class="col-lg-4 mb-4 mb-lg-0">
+ 
+
+    <img
+      src="../pagehome/img/menu/menu16.png"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+  </div>
+  <div class="col-lg-4 mb-4 mb-lg-0">
+ 
+
+    <img
+      src="../pagehome/img/menu/menu17.png"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+  </div>
+  <div class="col-lg-4 mb-4 mb-lg-0">
+ 
+
+    <img
+      src="../pagehome/img/menu/menu18.png"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+  </div>
+  <div class="col-lg-4 mb-4 mb-lg-0">
+ 
+
+    <img
+      src="../pagehome/img/menu/menu19.png"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+  </div>
+  <div class="col-lg-4 mb-4 mb-lg-0">
+ 
+
+    <img
+      src="../pagehome/img/menu/menu20.png"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+  </div>
+  <div class="col-lg-4 mb-4 mb-lg-0">
+ 
+
+    <img
+      src="../pagehome/img/menu/menu21.png"
       class="w-100 shadow-1-strong rounded mb-4"
       alt="Yosemite National Park"
     />
