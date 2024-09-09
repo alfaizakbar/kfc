@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>KFC - Lhokseumawe</title>
+  <title>KFC Lhokseumawe / About</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -49,30 +49,13 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="index.php" >Home</a></li>
+          <li><a href="about.php" class="active">About</a></li>
           <li><a href="#features">Features</a></li>
-          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="gallery.php">Gallery</a></li>
           <li><a href="#team">Team</a></li>
           <li><a href="#pricing">Pricing</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="contact.php">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -93,10 +76,10 @@
           </div>
 
           <div class="col-lg-6  d-flex flex-column justify-content-center" data-aos="fade-in">
-            <h1> <span>Contact</span></h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta, ipsa?</p>
+            <h1> <span>About</span></h1>
+            <p>Liat Menu Kami di Sini</p>
             <div class="d-flex">
-              <!-- <a href="#about" class="btn-get-started">Get Started</a> -->
+              <!-- <a href="#about" class="btn-get-started">Menu</a> -->
               <!-- <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
             </div>
           </div>
@@ -119,8 +102,7 @@
         </g>
       </svg>
 
-    </section>
-    <!-- /Hero Section -->
+    </section><!-- /Hero Section -->
 
     <!-- About Section -->
     <!-- /About Section -->
@@ -152,71 +134,35 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <div><span>Check Our</span> <span class="description-title">Contact</span></div>
+        <h2>Sejarah</h2>
+        <div><span>KFC</span></div>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade" data-aos-delay="100">
 
         <div class="row gy-4">
 
-          <div class="col-lg-4">
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-              <i class="bi bi-geo-alt flex-shrink-0"></i>
-              <div>
-                <h3>Address</h3>
-                <p>A108 Adam Street, New York, NY 535022</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-telephone flex-shrink-0"></i>
-              <div>
-                <h3>Call Us</h3>
-                <p>+1 5589 55488 55</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-              <i class="bi bi-envelope flex-shrink-0"></i>
-              <div>
-                <h3>Email Us</h3>
-                <p>info@example.com</p>
-              </div>
-            </div><!-- End Info Item -->
+          <p class="col-lg-4">
+            <h1>Awal Mula</h1>
+            <p>
+              1. Tahun 1930-an: Harland Sanders memulai bisnisnya dengan menjual ayam goreng di sebuah pom bensin di Corbin, Kentucky, Amerika Serikat. Sanders tidak hanya mengelola pom bensin, tetapi juga memasak makanan untuk para pelancong yang datang. Makanan yang ia tawarkan, terutama ayam goreng, mulai populer karena cita rasa uniknya. <br/>
+              <br/>
+              
+              2.  Tahun 1940-an: Sanders mengembangkan resep rahasianya yang terdiri dari 11 bumbu dan rempah-rempah. Pada tahun 1940, ia menemukan metode penggorengan menggunakan pressure cooker, yang memungkinkan ayam goreng matang lebih cepat dan tetap juicy di dalam.
+              <br/>
+              <br/>
+              
+              3.  1952: Harland Sanders mulai menawarkan model waralaba (franchise) restoran ayam gorengnya. Restoran pertama yang berhasil bekerja sama dengan Sanders adalah milik Pete Harman di Salt Lake City, Utah. Harman adalah orang pertama yang menggunakan nama "Kentucky Fried Chicken" untuk restoran tersebut, yang kemudian menjadi nama merek global.</p>
+              <br/>
+              <br/>
+            </p>
+            </p>
+          </div><!-- End Info Item -->
 
           </div>
 
           <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
-
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-                </div>
-
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
-                </div>
-
-              </div>
-            </form>
+          
           </div><!-- End Contact Form -->
 
         </div>
