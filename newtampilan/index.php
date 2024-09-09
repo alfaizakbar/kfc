@@ -51,10 +51,10 @@
         <ul>
           <li><a href="index.php" class="active">Home</a></li>
           <li><a href="about.php">About</a></li>
-          <li><a href="#features">Features</a></li>
+          <li><a href="menu.php">Menu</a></li>
           <li><a href="gallery.php">Gallery</a></li>
-          <li><a href="#team">Team</a></li>
-          <li><a href="#pricing">Pricing</a></li>
+          <!-- <li><a href="#team">Team</a></li> -->
+          <!-- <li><a href="#pricing">Pricing</a></li> -->
           <li><a href="contact.php">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -130,11 +130,59 @@
    <!-- /Faq Section -->
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section">
+    <section id="details" class="details section">
 
-     
+<!-- Section Title -->
+<div class="container section-title" data-aos="fade-up">
+  <h2>Details</h2>
+  <div><span>Check Our</span> <span class="description-title">Details</span></div>
+</div><!-- End Section Title -->
 
-    </section><!-- /Contact Section -->
+<div class="container">
+
+  <div class="row gy-4 align-items-center features-item">
+    <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
+      <img src="assets/img/details-1.png" class="img-fluid" alt="">
+    </div>
+    <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
+      <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+      <p class="fst-italic">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.
+      </p>
+      <ul>
+        <li><i class="bi bi-check"></i><span> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
+        <li><i class="bi bi-check"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
+        <li><i class="bi bi-check"></i> <span>Ullam est qui quos consequatur eos accusamus.</span></li>
+      </ul>
+    </div>
+  </div><!-- Features Item -->
+
+  <div class="row gy-4 align-items-center features-item">
+    <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+      <img src="assets/img/details-2.png" class="img-fluid" alt="">
+    </div>
+    <div class="col-md-7 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
+      <h3>Corporis temporibus maiores provident</h3>
+      <p class="fst-italic">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.
+      </p>
+      <p>
+        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+        culpa qui officia deserunt mollit anim id est laborum
+      </p>
+    </div>
+  </div><!-- Features Item -->
+
+ 
+
+
+
+</div>
+
+</section><!-- /Details Section -->
 
   </main>
 
