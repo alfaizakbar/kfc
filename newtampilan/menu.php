@@ -110,30 +110,6 @@
     </section>
     <!-- /Hero Section -->
 
-    <!-- About Section -->
-    <!-- /About Section -->
-
-    <!-- Features Section -->
-
-    <!-- /Features Section -->
-
-    <!-- Stats Section -->
-    <!-- /Details Section -->
-
-    <!-- Gallery Section -->
-      <!-- /Gallery Section -->
-
-    <!-- Testimonials Section -->
-    <!-- /Testimonials Section -->
-
-    <!-- Team Section -->
-    <!-- /Team Section -->
-
-    <!-- Pricing Section -->
-   <!--Pricing Section -->
-
-    <!-- Faq Section -->
-   <!-- /Faq Section -->
 
     <!-- Contact Section -->
     <section id="contact" class="contact section">
@@ -148,7 +124,7 @@
 
             <!-- Gallery -->
             <div class="row">
-  <div class="col-lg-3 col-md-12 mb-4 mb-lg-0 my-4">
+  <div class="col-lg-2 col-md-12 mb-4 mb-lg-0 my-4">
     <img
       src="./assets/img/menu/menu-1.jpeg"
       class="w-100 shadow-1-strong rounded mb-4"
@@ -157,7 +133,7 @@
     <h2 class="text-center"><strong>Makanan</strong></h2>
   </div>
 
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+  <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="./assets/img/menu/menu-2.jpeg"
       class="w-100 shadow-1-strong rounded mb-4"
@@ -166,7 +142,7 @@
     <h2 class="text-center"><strong>Makanan</strong></h2>
   </div>
 
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+  <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="./assets/img/menu/menu-3.jpeg"
       class="w-100 shadow-1-strong rounded mb-4"
@@ -175,7 +151,7 @@
     <h2 class="text-center"><strong>Makanan</strong></h2>
   </div>
   
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+  <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="./assets/img/menu/menu-4.jpeg"
       class="w-100 shadow-1-strong rounded mb-4"
@@ -184,7 +160,7 @@
     <h2 class="text-center"><strong>Makanan</strong></h2>
   </div>
 
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+  <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="./assets/img/menu/menu-5.jpeg"
       class="w-100 shadow-1-strong rounded mb-4"
@@ -193,7 +169,7 @@
     <h2 class="text-center"><strong>Makanan</strong></h2>
   </div>
 
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+  <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="./assets/img/menu/menu-6.jpeg"
       class="w-100 shadow-1-strong rounded mb-4"
@@ -202,7 +178,7 @@
     <h2 class="text-center"><strong>Makanan</strong></h2>
   </div>
 
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+  <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="./assets/img/menu/menu-7.jpeg"
       class="w-100 shadow-1-strong rounded mb-4"
@@ -211,7 +187,7 @@
     <h2 class="text-center"><strong>Makanan</strong></h2>
   </div>
 
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+  <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="./assets/img/menu/menu-8.jpeg"
       class="w-100 shadow-1-strong rounded mb-4"
@@ -220,7 +196,7 @@
     <h2 class="text-center"><strong>Makanan</strong></h2>
   </div>
 
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+  <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="./assets/img/menu/menu-9.jpeg"
       class="w-100 shadow-1-strong rounded mb-4"
@@ -229,7 +205,7 @@
     <h2 class="text-center"><strong>Makanan</strong></h2>
   </div>
 
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+  <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="./assets/img/menu/menu-10.jpeg"
       class="w-100 shadow-1-strong rounded mb-4"
@@ -238,7 +214,7 @@
     <h2 class="text-center"><strong>Makanan</strong></h2>
   </div>
 
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+  <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="./assets/img/menu/menu-11.jpeg"
       class="w-100 shadow-1-strong rounded mb-4"
@@ -247,7 +223,7 @@
     <h2 class="text-center"><strong>Makanan</strong></h2>
   </div>
 
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+  <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="./assets/img/menu/menu-12.jpeg"
       class="w-100 shadow-1-strong rounded mb-4"
@@ -256,7 +232,7 @@
     <h2 class="text-center"><strong>Makanan</strong></h2>
   </div>
 
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+  <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="./assets/img/menu/menu-13.jpeg"
       class="w-100 shadow-1-strong rounded mb-4"
@@ -265,7 +241,7 @@
     <h2 class="text-center"><strong>Makanan</strong></h2>
   </div>
 
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+  <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="./assets/img/menu/menu-14.jpeg"
       class="w-100 shadow-1-strong rounded mb-4"
@@ -274,7 +250,7 @@
     <h2 class="text-center"><strong>Makanan</strong></h2>
   </div>
 
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+  <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="./assets/img/menu/menu-15.jpeg"
       class="w-100 shadow-1-strong rounded mb-4"
@@ -283,7 +259,7 @@
     <h2 class="text-center"><strong>Makanan</strong></h2>
   </div>
 
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+  <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="./assets/img/menu/menu-16.jpeg"
       class="w-100 shadow-1-strong rounded mb-4"
@@ -292,7 +268,7 @@
     <h2 class="text-center"><strong>Makanan</strong></h2>
   </div>
 
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+  <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="../pagehome/img/menu/menu17.png"
       class="w-100 shadow-1-strong rounded mb-4"
@@ -301,7 +277,7 @@
     <h2 class="text-center"><strong>Makanan</strong></h2>
   </div>
 
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+  <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="../pagehome/img/menu/menu18.png"
       class="w-100 shadow-1-strong rounded mb-4"
@@ -310,7 +286,7 @@
     <h2 class="text-center"><strong>Makanan</strong></h2>
   </div>
 
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+  <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="../pagehome/img/menu/menu19.png"
       class="w-100 shadow-1-strong rounded mb-4"
@@ -319,7 +295,7 @@
     <h2 class="text-center"><strong>Makanan</strong></h2>
   </div>
 
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+  <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="../pagehome/img/menu/menu20.png"
       class="w-100 shadow-1-strong rounded mb-4"
@@ -328,7 +304,7 @@
     <h2 class="text-center"><strong>Makanan</strong></h2>
   </div>
 
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
+  <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="../pagehome/img/menu/menu21.png"
       class="w-100 shadow-1-strong rounded mb-4"

@@ -59,7 +59,7 @@ if (!isset($_SESSION['usernamee'])) {
 
  
 
-                    <?php $i =1; ?>
+                <?php $i =1; ?>
                     <?php $data = array_reverse($data);?>
                     <?php foreach($data as $row){?>  
                         <?php $string = strip_tags($row['artikel']);

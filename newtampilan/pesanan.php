@@ -1,4 +1,8 @@
-
+<?php
+require 'function.php';
+$data = query("SELECT * FROM blog");
+$data2 = query("SELECT DISTINCT kategori FROM blog");
+?>
 
 
 
@@ -148,199 +152,29 @@
 
             <!-- Gallery -->
             <div class="row">
-  <div class="col-lg-3 col-md-12 mb-4 mb-lg-0 my-4">
+              <?php $i =1; ?>
+                                <?php $data = array_reverse($data);?>
+                                <?php foreach($data as $row){?>  
+            <div class="col-lg-2 col-md-12 mb-4 mb-lg-0 my-4">
+
+                           
+                                           
     <img
-      src="./assets/img/menu/menu-1.jpeg"
+      src="../admin/img/<?= $row['foto']?>"
       class="w-100 shadow-1-strong rounded mb-4"
       alt="Wintry Mountain Landscape"
     />
-    <h2 class="text-center"><strong>Makanan</strong></h2>
+    <a href="blog-detail.php?id=<?= $row['id']?>"><h5 class="text-center"><?= $row['judul']?></h5></a>
+    
   </div>
+  <?php $i++ ?>
+  <?php }?>
+</div>
 
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
-    <img
-      src="./assets/img/menu/menu-2.jpeg"
-      class="w-100 shadow-1-strong rounded mb-4"
-      alt="Boat on Calm Water"
-    />
-    <h2 class="text-center"><strong>Makanan</strong></h2>
-  </div>
-
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
-    <img
-      src="./assets/img/menu/menu-3.jpeg"
-      class="w-100 shadow-1-strong rounded mb-4"
-      alt="Yosemite National Park"
-    />
-    <h2 class="text-center"><strong>Makanan</strong></h2>
-  </div>
-  
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
-    <img
-      src="./assets/img/menu/menu-4.jpeg"
-      class="w-100 shadow-1-strong rounded mb-4"
-      alt="Yosemite National Park"
-    />
-    <h2 class="text-center"><strong>Makanan</strong></h2>
-  </div>
-
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
-    <img
-      src="./assets/img/menu/menu-5.jpeg"
-      class="w-100 shadow-1-strong rounded mb-4"
-      alt="Yosemite National Park"
-    />
-    <h2 class="text-center"><strong>Makanan</strong></h2>
-  </div>
-
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
-    <img
-      src="./assets/img/menu/menu-6.jpeg"
-      class="w-100 shadow-1-strong rounded mb-4"
-      alt="Yosemite National Park"
-    />
-    <h2 class="text-center"><strong>Makanan</strong></h2>
-  </div>
-
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
-    <img
-      src="./assets/img/menu/menu-7.jpeg"
-      class="w-100 shadow-1-strong rounded mb-4"
-      alt="Yosemite National Park"
-    />
-    <h2 class="text-center"><strong>Makanan</strong></h2>
-  </div>
-
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
-    <img
-      src="./assets/img/menu/menu-8.jpeg"
-      class="w-100 shadow-1-strong rounded mb-4"
-      alt="Yosemite National Park"
-    />
-    <h2 class="text-center"><strong>Makanan</strong></h2>
-  </div>
-
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
-    <img
-      src="./assets/img/menu/menu-9.jpeg"
-      class="w-100 shadow-1-strong rounded mb-4"
-      alt="Yosemite National Park"
-    />
-    <h2 class="text-center"><strong>Makanan</strong></h2>
-  </div>
-
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
-    <img
-      src="./assets/img/menu/menu-10.jpeg"
-      class="w-100 shadow-1-strong rounded mb-4"
-      alt="Yosemite National Park"
-    />
-    <h2 class="text-center"><strong>Makanan</strong></h2>
-  </div>
-
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
-    <img
-      src="./assets/img/menu/menu-11.jpeg"
-      class="w-100 shadow-1-strong rounded mb-4"
-      alt="Yosemite National Park"
-    />
-    <h2 class="text-center"><strong>Makanan</strong></h2>
-  </div>
-
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
-    <img
-      src="./assets/img/menu/menu-12.jpeg"
-      class="w-100 shadow-1-strong rounded mb-4"
-      alt="Yosemite National Park"
-    />
-    <h2 class="text-center"><strong>Makanan</strong></h2>
-  </div>
-
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
-    <img
-      src="./assets/img/menu/menu-13.jpeg"
-      class="w-100 shadow-1-strong rounded mb-4"
-      alt="Yosemite National Park"
-    />
-    <h2 class="text-center"><strong>Makanan</strong></h2>
-  </div>
-
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
-    <img
-      src="./assets/img/menu/menu-14.jpeg"
-      class="w-100 shadow-1-strong rounded mb-4"
-      alt="Yosemite National Park"
-    />
-    <h2 class="text-center"><strong>Makanan</strong></h2>
-  </div>
-
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
-    <img
-      src="./assets/img/menu/menu-15.jpeg"
-      class="w-100 shadow-1-strong rounded mb-4"
-      alt="Yosemite National Park"
-    />
-    <h2 class="text-center"><strong>Makanan</strong></h2>
-  </div>
-
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
-    <img
-      src="./assets/img/menu/menu-16.jpeg"
-      class="w-100 shadow-1-strong rounded mb-4"
-      alt="Yosemite National Park"
-    />
-    <h2 class="text-center"><strong>Makanan</strong></h2>
-  </div>
-
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
-    <img
-      src="../pagehome/img/menu/menu17.png"
-      class="w-100 shadow-1-strong rounded mb-4"
-      alt="Yosemite National Park"
-    />
-    <h2 class="text-center"><strong>Makanan</strong></h2>
-  </div>
-
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
-    <img
-      src="../pagehome/img/menu/menu18.png"
-      class="w-100 shadow-1-strong rounded mb-4"
-      alt="Yosemite National Park"
-    />
-    <h2 class="text-center"><strong>Makanan</strong></h2>
-  </div>
-
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
-    <img
-      src="../pagehome/img/menu/menu19.png"
-      class="w-100 shadow-1-strong rounded mb-4"
-      alt="Yosemite National Park"
-    />
-    <h2 class="text-center"><strong>Makanan</strong></h2>
-  </div>
-
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
-    <img
-      src="../pagehome/img/menu/menu20.png"
-      class="w-100 shadow-1-strong rounded mb-4"
-      alt="Yosemite National Park"
-    />
-    <h2 class="text-center"><strong>Makanan</strong></h2>
-  </div>
-
-  <div class="col-lg-3 mb-4 mb-lg-0 my-4">
-    <img
-      src="../pagehome/img/menu/menu21.png"
-      class="w-100 shadow-1-strong rounded mb-4"
-      alt="Yosemite National Park"
-    />
-    <h2 class="text-center"><strong>Makanan</strong></h2>
-  </div>
 </div>
 
 <!-- Gallery -->
 
-      </div>
 
     </section><!-- /Contact Section -->
 
