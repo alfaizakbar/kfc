@@ -82,6 +82,7 @@ if (!isset($_SESSION['usernamee'])) {
           <!-- <li><a href="#team">Team</a></li> -->
           <!-- <li><a href="#pricing">Pricing</a></li> -->
           <li><a href="contact.php">Contact</a></li>
+          <li><a href="logout.php"><img src="assets/img/logouttt.png" alt=""></a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
