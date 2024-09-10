@@ -268,50 +268,6 @@
     <h2 class="text-center"><strong>Makanan</strong></h2>
   </div>
 
-  <div class="col-lg-2 mb-4 mb-lg-0 my-4">
-    <img
-      src="../pagehome/img/menu/menu17.png"
-      class="w-100 shadow-1-strong rounded mb-4"
-      alt="Yosemite National Park"
-    />
-    <h2 class="text-center"><strong>Makanan</strong></h2>
-  </div>
-
-  <div class="col-lg-2 mb-4 mb-lg-0 my-4">
-    <img
-      src="../pagehome/img/menu/menu18.png"
-      class="w-100 shadow-1-strong rounded mb-4"
-      alt="Yosemite National Park"
-    />
-    <h2 class="text-center"><strong>Makanan</strong></h2>
-  </div>
-
-  <div class="col-lg-2 mb-4 mb-lg-0 my-4">
-    <img
-      src="../pagehome/img/menu/menu19.png"
-      class="w-100 shadow-1-strong rounded mb-4"
-      alt="Yosemite National Park"
-    />
-    <h2 class="text-center"><strong>Makanan</strong></h2>
-  </div>
-
-  <div class="col-lg-2 mb-4 mb-lg-0 my-4">
-    <img
-      src="../pagehome/img/menu/menu20.png"
-      class="w-100 shadow-1-strong rounded mb-4"
-      alt="Yosemite National Park"
-    />
-    <h2 class="text-center"><strong>Makanan</strong></h2>
-  </div>
-
-  <div class="col-lg-2 mb-4 mb-lg-0 my-4">
-    <img
-      src="../pagehome/img/menu/menu21.png"
-      class="w-100 shadow-1-strong rounded mb-4"
-      alt="Yosemite National Park"
-    />
-    <h2 class="text-center"><strong>Makanan</strong></h2>
-  </div>
 </div>
 
 <!-- Gallery -->
