@@ -1,6 +1,13 @@
+<?php
+session_start();
+require 'function.php';
+// $usernamee = $_SESSION["usernamee"];
+// $pelanggan=queryy("SELECT * FROM pelanggan WHERE usernamee='$usernamee'")[0];
 
 
-
+$id = $_GET["id"];
+$data = query("SELECT * FROM blog WHERE id = $id");
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -55,8 +62,8 @@
         <ul>
           <li><a href="index.php" >Home</a></li>
           <li><a href="about.php">About</a></li>
-          <li><a href="menu.php" class="active">Menu</a></li>
-          <li><a href="pesanan.php" >Pesanan</a></li>
+          <li><a href="menu.php" >Menu</a></li>
+          <li><a href="pesanan.php" class="active" >Pesanan</a></li>
           <li><a href="gallery.php" >Gallery</a></li>
           <!-- <li><a href="#team">Team</a></li> -->
           <!-- <li><a href="#pricing">Pricing</a></li> -->
@@ -81,7 +88,7 @@
           </div>
 
           <div class="col-lg-6  d-flex flex-column justify-content-center" data-aos="fade-in">
-            <h1> <span>Menu</span></h1>
+            <h1> <span>Detail Pesanan</span></h1>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta, ipsa?</p>
             <div class="d-flex">
               <!-- <a href="#about" class="btn-get-started">Get Started</a> -->
@@ -116,8 +123,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Menu</h2>
-        <div><span>Check Our</span> <span class="description-title">Menu</span></div>
+        <h2>Pesanan</h2>
+        <div><span>Detail</span> <span class="description-title">Pesanan</span></div>
       </div><!-- End Section Title -->
 
       <!-- detail -->
@@ -128,15 +135,17 @@
       <div class="card mb-3">
         <div class="row g-0">
           <div class="col-md-6">
-            <img src="assets/img/gallery/gallery-1.jpg" class="img-fluid rounded-start" alt="...">
+            <?php foreach($data as $row){?>
+            <img src="../admin/img/<?= $row['foto']?>" class="img-fluid rounded-start" alt="...">
           </div>
           <div class="col-md-6">
             <div class="card-body d-flex flex-column justify-content-between"> <!-- Add flexbox to align items -->
               <div>
-                <h1 class="card-title">Nama Makanan</h1>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text">10.000</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <h1 class="card-title"><?= $row['judul']?></h1>
+                <p class="card-text"></p>
+                <p class="card-text">Harga : <?= $row['kategori']?></p>
+                <p class="card-text"><small class="text-muted"><?= $row['tanggal']?></small></p>
+                <?php }?>
               </div>
               <div class="text-end mt-5"> <!-- Align button to the right -->
                 <input type="submit" class="btn btn-primary" value="Tambahkan ke Keranjang">

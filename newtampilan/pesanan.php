@@ -164,7 +164,7 @@ $data2 = query("SELECT DISTINCT kategori FROM blog");
       class="w-100 shadow-1-strong rounded mb-4"
       alt="Wintry Mountain Landscape"
     />
-    <a href="blog-detail.php?id=<?= $row['id']?>"><h5 class="text-center"><?= $row['judul']?></h5></a>
+    <a href="detail.php?id=<?= $row['id']?>"><h5 class="text-center"><?= $row['judul']?></h5></a>
     
   </div>
   <?php $i++ ?>

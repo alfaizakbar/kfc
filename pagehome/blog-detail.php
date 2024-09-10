@@ -1,21 +1,12 @@
 <?php
 session_start();
 require 'function.php';
-// $data = query("SELECT * FROM blog WHERE id='1'");
 $usernamee = $_SESSION["usernamee"];
 $pelanggan=queryy("SELECT * FROM pelanggan WHERE usernamee='$usernamee'")[0];
 
 
 $id = $_GET["id"];
 $data = query("SELECT * FROM blog WHERE id = $id");
-// $data2 = query("SELECT DISTINCT kategori FROM blog");
-// $data1 = query("SELECT * FROM blog ORDER BY id DESC LIMIT 1 ");
-// $data3 = query("SELECT * FROM blog ORDER BY id DESC LIMIT 2 ");
-
-
-
-
-
 ?>
 
 
