@@ -64,9 +64,11 @@ if( isset($_POST["submit"])){
 
 
 <section class="mt-5">
+  
   <div class="container-fluid h-custom">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-md-9 col-lg-6 col-xl-5">
+        <a href="index.php" class="btn btn-secondary btn-back mb-2">Back</a>
         <img src="assets/img/gallery/gallery-1.jpg"
           class="img-fluid" alt="Sample image">
       </div>
@@ -93,16 +95,16 @@ if( isset($_POST["submit"])){
 
           <!-- Email input -->
           <div data-mdb-input-init class="form-outline mb-4">
+            <label class="form-label" for="form3Example3">Email address</label>
             <input type="text" name="usernamee" id="form3Example3" class="form-control form-control-lg"
               placeholder="Enter a valid Username" />
-            <!-- <label class="form-label" for="form3Example3">Email address</label> -->
           </div>
 
           <!-- Password input -->
           <div data-mdb-input-init class="form-outline mb-3">
+            <label class="form-label" for="form3Example4">Password</label>
             <input type="password" name="password" id="form3Example4" class="form-control form-control-lg"
               placeholder="Enter password" />
-            <!-- <label class="form-label" for="form3Example4">Password</label> -->
           </div>
 
           <div class="d-flex justify-content-between align-items-center">

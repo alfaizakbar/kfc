@@ -47,6 +47,8 @@
   <div class="container-fluid h-custom">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-md-9 col-lg-6 col-xl-5">
+      <a href="index.php" class="btn btn-secondary btn-back mb-2">Back</a>
+
         <img src="assets/img/gallery/gallery-2.jpg"
           class="img-fluid" alt="Sample image">
       </div>
