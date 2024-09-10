@@ -53,6 +53,28 @@
   --contrast-color: #000000;
 }
 
+/* tambahan css */
+.img-fixed-height {
+  height: 400px; /* Set your desired height */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  width: 100%; /* Ensures the image fills the width of the container */
+}
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}
+
 /* Smooth scroll */
 :root {
   scroll-behavior: smooth;
