@@ -17,7 +17,7 @@ if ($cek > 0) {
     $_SESSION['usernamee'] = $usernamee;
     $_SESSION['password'] = $password;
 
-    header("location:../pagehome/blog.php");
+    header("location:pesanan.php");
 }
 ;
 if (isset($_POST['tambahh'])) {
@@ -26,7 +26,7 @@ if (isset($_POST['tambahh'])) {
         echo "
         <script>
         alert('User Tidak Di Temukan');
-        document.location.href = 'loginn.php';
+        document.location.href = 'login.php';
         </script>
         ";
     }

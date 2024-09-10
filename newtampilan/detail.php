@@ -1,8 +1,8 @@
 <?php
 session_start();
 require 'function.php';
-// $usernamee = $_SESSION["usernamee"];
-// $pelanggan=queryy("SELECT * FROM pelanggan WHERE usernamee='$usernamee'")[0];
+$usernamee = $_SESSION["usernamee"];
+$pelanggan=queryy("SELECT * FROM pelanggan WHERE usernamee='$usernamee'")[0];
 
 
 $id = $_GET["id"];

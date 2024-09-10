@@ -1,7 +1,24 @@
-<?php
+<?php 
+session_start();
 require 'function.php';
+
+$usernamee = $_SESSION["usernamee"];
+$pelanggan=queryy("SELECT * FROM pelanggan WHERE usernamee='$usernamee'")[0];
+
+
 $data = query("SELECT * FROM blog");
 $data2 = query("SELECT DISTINCT kategori FROM blog");
+// cariii
+if(isset($_POST["cari"])){
+    $data = cari ($_POST["keyword"]);
+}
+
+
+if (!isset($_SESSION['usernamee'])) {
+    header("location:login.php");
+  }
+  error_reporting(0);
+
 ?>
 
 
