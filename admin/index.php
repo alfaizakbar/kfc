@@ -1,140 +1,259 @@
 <?php
-$data = mysqli_connect('localhost','root','','company_profile');
-$result = mysqli_query ($data, "SELECT * FROM user");
-$user = mysqli_fetch_assoc($result);
-
-require '../database/koneksi.php';
-$data = query("SELECT * FROM user ORDER BY id DESC LIMIT 3");
-$data1 = query("SELECT * FROM blog ORDER BY id DESC LIMIT 5");
-// $data1 = mysqli_query($conn, "SELECT * FROM user LIMIT 5 ");
-
-$get= mysqli_query($conn, "SELECT *  FROM blog");
-$count= mysqli_num_rows($get);
-
-$get1= mysqli_query($conn, "SELECT *  FROM user");
-$count1= mysqli_num_rows($get1);
-
-
 session_start();
-
-if (!isset($_SESSION['username'])) {
-  header("location:login.php");
+include 'koneksi.php';
+if(!isset($_SESSION['admin_id'])) {
+    header("location:login.php");
+    
 }
-error_reporting(0);
+// Mengambil data pengguna dari tabel yang ditambahkan pada hari ini
+$today = date('Y-m-d'); // Mendapatkan tanggal hari ini
+$sql = "SELECT userid, username, email, namalengkap, alamat FROM user WHERE DATE(tanggal_tambah) = '$today'";
+$result = $conn->query($sql);
 
-
-;
-
+// Ambil informasi admin_namalengkap dari sesi
+$adminNamalengkap = isset($_SESSION['admin_namalengkap']) ? $_SESSION['admin_namalengkap'] : '';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-  <link rel="stylesheet" href="css/index.css?<?php echo time(); ?>">
-  <style>
-    <?php include 'css/index.php' ?>
-  </style>
-</head>
-<body>  
-  <?php include 'header_navbar.php'; ?>
-      <div class="isi">
-        <h1>Halaman Dashboard</h1>
+<?php
+include 'navbar.php';
+?>
 
-       <div class="card-content">
-         <div class="content">
-           <div class="card">
-             <img src="./img/artikel.jpg" alt="">
-             <h2><?=$count;?><hr size="1px" width="200px"></h2>
-             <h3>Blog</h3>
-           </div>
-           </div>
-         <div class="content">
-           <div class="card">
-             <img src="./img/userk.png" alt="">
-             <h2><?=$count1;?><hr size="1px" width="200px"></h2>
-             <h3>User</h3>
-           </div>
-           </div>
-           <div class="content">
-           <div class="card">
-             <img src="./img/product.png" alt="">
-             <h2>6<hr size="1px" width="200px"></h2>
-             <h3>Survey</h3>
-           </div>
-           </div>
-           <div class="content">
-           <div class="card">
-             <img src="./img/user.png" alt="">
-             <h2>12<hr size="1px" width="200px"></h2>
-             <h3>Konsumen</h3>
-           </div>
-           </div>
-        <div class="tabel">
-          <div class="blog">
-        <h4>List Menu</h4>
-        <table rules="all">
-          <thead>
+  <main id="main" class="main">
 
-            <tr>
-              <th>NO</th>
-              <th>TITLE</th>
-              <th>CATEGORI</th>
-              <th>DATE</th>
-            </tr>
-          </thead>
-          <tbody>
-
-            <?php $i =1; ?>
-            <?php foreach($data1 as $row){ ?>
-              <tr>
-                
-                <td><?= $i ?></td>
-                <td><?= $row['judul'] ?></td>
-                <td><?= $row['kategori'] ?></td>
-                <td class="tanggal"><?= $row['tanggal'] ?></td>
-              </tr>
-              <?php $i++ ?>
-              <?php } ?>
-            </tbody>
-            </table>
-          </div>
+    <div class="pagetitle">
+      <h1>Dashboard</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
+          <li class="breadcrumb-item active">Home</li>
           
-          <div class="user">
-         <h4>List User</h4>
-         <table rules="all">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>USERNAME</th>
-              <th>EMAIL</th>
-            </tr>
-          </thead>
-            <tbody>
-              <?php $i=1; ?>
-              <?php foreach($data as $user){ ?>
-                <tr>
-                  <td><?= $i ?></td>
-                  <td><?= $user ['username']?></td>
-                  <td><?= $user ['email']?></td>
-                </tr>
-                <?php $i++ ?>
-                <?php } ?>
-              </tbody>
-    </table>
-          </div>
-        </div>
-          </div>
-      </div>
-        <script>
-          let loading = document.getElementById('loading'); 
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
 
-          window.addEventListener('load', function(){
-            loading.style.display= "none";
-          })
-        </script>
-      </body>
-      </html>
-      
+    <section class="section dashboard">
+      <div class="row">
+
+        <!-- Left side columns -->
+        <div class="c">
+          <div class="row">
+
+            <!-- Sales Card -->
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card sales-card">
+
+                <div class="filter">
+                  <!-- <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a> -->
+                  
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Foto </h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-images"></i>
+                    </div>
+                    <div class="ps-3">
+                    <?php
+            // Mengambil jumlah data pada tabel foto
+            $sqlFoto = "SELECT COUNT(*) AS jumlahFoto FROM foto";
+            $resultFoto = $conn->query($sqlFoto);
+            
+            if ($resultFoto->num_rows > 0) {
+                $rowFoto = $resultFoto->fetch_assoc();
+                $jumlahFoto = $rowFoto["jumlahFoto"];
+
+                echo "<h6>" . $jumlahFoto . "</h6>";
+                echo "<span class='text-muted small pt-2 ps-1'> <a href='data_foto.php'>Details</a></span>";
+            } else {
+                echo "Error: " . $conn->error;
+            }
+            ?>
+                      <!-- <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span> -->
+                      <!-- <span class="text-muted small pt-2 ps-1">Cek Detail</span> -->
+                      
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Sales Card -->
+
+            <!-- Revenue Card -->
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card revenue-card">
+
+                <div class="filter">
+               
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Album</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-card-checklist"></i>
+                    </div>
+                    <div class="ps-3">
+                      <?php
+                    $sqlalbum = "SELECT COUNT(*) AS jumlahalbum FROM album";
+            $resultalbum = $conn->query($sqlalbum);
+            
+            if ($resultalbum->num_rows > 0) {
+                $rowalbum = $resultalbum->fetch_assoc();
+                $jumlahalbum = $rowalbum["jumlahalbum"];
+
+                echo "<h6>" . $jumlahalbum . "</h6>";
+                echo "<span class='text-muted small pt-2 ps-1'> <a href='data_album.php'>Details</a></span>";
+            } else {
+                echo "Error: " . $conn->error;
+            }
+            ?>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Revenue Card -->
+
+            <!-- Customers Card -->
+            <div class="col-xxl-4 col-xl-12">
+
+              <div class="card info-card customers-card">
+
+                <div class="filter">
+                  <!-- <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul> -->
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">User</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-people"></i>
+                    </div>
+                    <div class="ps-3">
+                      <?php
+                       $sqluser = "SELECT COUNT(*) AS jumlahuser FROM user";
+                       $resultuser = $conn->query($sqluser);
+                       
+                       if ($resultuser->num_rows > 0) {
+                           $rowuser = $resultuser->fetch_assoc();
+                           $jumlahuser = $rowuser["jumlahuser"];
+           
+                           echo "<h6>" . $jumlahuser . "</h6>";
+                           echo "<span class='text-muted small pt-2 ps-1'> <a href='data_user.php'>Details</a></span>";
+                       } else {
+                           echo "Error: " . $conn->error;
+                       }
+                       ?>
+                    
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div><!-- End Customers Card -->
+
+            <!-- Reports -->
+     
+            
+          </div>
+        </section>
+    
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Data user yang registasi hari ini</h5>
+              
+              <!-- Table with stripped rows -->
+              
+              <div class="table-responsive">
+              <table class="table datatable table-responsive" >
+                <thead>
+                <tr>
+                                        <th>UserID</th>
+                                        <th>Username</th>
+                                        <th>Email</th>
+                                        <th>Nama Lengkap</th>
+                                        <th>Alamat</th>
+                                        <!-- <th>Tanggal Registrasi</th> -->
+                                    </tr>
+                  </thead>
+                  <tbody>
+                  <?php
+                                    // Menampilkan data pengguna ke dalam tabel
+                                    $i = 1;
+                                    if ($result->num_rows > 0) {
+                                      while ($row = $result->fetch_assoc()) {
+                                        echo "<tr>";
+                                        echo "<td>" . $i . "</td>";
+                                        echo "<td>" . $row["username"] . "</td>";
+                                        echo "<td>" . $row["email"] . "</td>";
+                                        echo "<td>" . $row["namalengkap"] . "</td>";
+                                        echo "<td>" . $row["alamat"] . "</td>";
+                                        // echo "<td>" . $row["tanggal_tambah"] . "</td>";
+                                        echo "</tr>";
+                                        $i++;
+                                      }
+                                    } else {
+                                      echo "<tr><td colspan='5'>Tidak ada user baru hari ini</td></tr>";
+                                    }
+                                    ?>
+                </tbody>
+              </table>
+              <!-- End Table with stripped rows -->
+            </div>
+              
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+  
+  
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>AMIRULLAH</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+        <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
+    </div>
+  </footer><!-- End Footer -->
+  
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
