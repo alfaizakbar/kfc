@@ -53,7 +53,7 @@
           class="img-fluid" alt="Sample image">
       </div>
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-        <form>
+        <form method="post">
           <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
             <p class="lead fw-normal mb-0 me-3">Halaman Register</p>
             <!-- <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-floating mx-1">
@@ -75,27 +75,33 @@
 
           <!-- Email input -->
           <div data-mdb-input-init class="form-outline mb-4">
-              <label class="form-label" for="form3Example3">Email address</label>
-            <input type="text" id="form3Example3" class="form-control form-control-lg"
-              placeholder="Enter a valid email address" />
+              <label class="form-label" for="form3Example3">Nama</label>
+            <input type="text" name="usernamee" id="form3Example3" class="form-control form-control-lg"
+              placeholder="Masukkan Nama" />
           </div>
           <!-- Email input -->
           <div data-mdb-input-init class="form-outline mb-4">
-              <label class="form-label" for="form3Example3">Email address</label>
-            <input type="text" id="form3Example3" class="form-control form-control-lg"
-              placeholder="Enter a valid email address" />
+              <label class="form-label" for="form3Example3">Email</label>
+            <input type="email" name="email" id="form3Example3" class="form-control form-control-lg"
+              placeholder="Masukkan Email" />
           </div>
           <!-- Email input -->
           <div data-mdb-input-init class="form-outline mb-4">
-              <label class="form-label" for="form3Example3">Email address</label>
-            <input type="email" id="form3Example3" class="form-control form-control-lg"
-              placeholder="Enter a valid email address" />
+              <label class="form-label" for="form3Example3">Nomor HP</label>
+            <input type="text" name="no_hp" id="form3Example3" class="form-control form-control-lg"
+              placeholder="Masukkan Nomor HP" />
+          </div>
+          <!-- Alamat -->
+          <div data-mdb-input-init class="form-outline mb-4">
+              <label class="form-label" for="form3Example3">Alamat</label>
+            <input type="text" name="alamat" id="form3Example3" class="form-control form-control-lg"
+              placeholder="Masukan Alamat" />
           </div>
 
           <!-- Password input -->
           <div data-mdb-input-init class="form-outline mb-3">
               <label class="form-label" for="form3Example4">Password</label>
-            <input type="password" id="form3Example4" class="form-control form-control-lg"
+            <input type="password" name="password" id="form3Example4" class="form-control form-control-lg"
               placeholder="Enter password" />
           </div>
 
@@ -104,7 +110,7 @@
             
 
           <div class="text-center text-lg-start mt-4 pt-2">
-            <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg"
+            <button  type="submit" name="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg"
               style="padding-left: 2.5rem; padding-right: 2.5rem;">Register</button>
             <p class="small fw-bold mt-2 pt-1 mb-0">You have  account? <a href="login.php"
                 class="link-danger">Login</a></p>
