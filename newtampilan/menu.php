@@ -57,7 +57,10 @@
           <li><a href="about.php">About</a></li>
           <li><a href="menu.php" class="active">Menu</a></li>
           <li><a href="pesanan.php" >Pesanan</a></li>
+          <li><a href="keranjang.php" >Keranjang</a></li>
+
           <li><a href="gallery.php" >Gallery</a></li>
+
           <!-- <li><a href="#team">Team</a></li> -->
           <!-- <li><a href="#pricing">Pricing</a></li> -->
           <li><a href="contact.php">Contact</a></li>
@@ -127,7 +130,7 @@
   <div class="col-lg-2 col-md-12 mb-4 mb-lg-0 my-4">
     <img
       src="./assets/img/menu/menu-1.jpeg"
-      class="w-100 shadow-1-strong rounded mb-4"
+      class="w-100 shadow-1-strong rounded mb-4 img-fixed-height"
       alt="Wintry Mountain Landscape"
     />
     <h2 class="text-center"><strong>Makanan</strong></h2>
@@ -136,7 +139,7 @@
   <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="./assets/img/menu/menu-2.jpeg"
-      class="w-100 shadow-1-strong rounded mb-4"
+      class="w-100 shadow-1-strong rounded mb-4 img-fixed-height"
       alt="Boat on Calm Water"
     />
     <h2 class="text-center"><strong>Makanan</strong></h2>
@@ -145,7 +148,7 @@
   <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="./assets/img/menu/menu-3.jpeg"
-      class="w-100 shadow-1-strong rounded mb-4"
+      class="w-100 shadow-1-strong rounded mb-4 img-fixed-height"
       alt="Yosemite National Park"
     />
     <h2 class="text-center"><strong>Makanan</strong></h2>
@@ -154,7 +157,7 @@
   <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="./assets/img/menu/menu-4.jpeg"
-      class="w-100 shadow-1-strong rounded mb-4"
+      class="w-100 shadow-1-strong rounded mb-4 img-fixed-height"
       alt="Yosemite National Park"
     />
     <h2 class="text-center"><strong>Makanan</strong></h2>
@@ -163,7 +166,7 @@
   <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="./assets/img/menu/menu-5.jpeg"
-      class="w-100 shadow-1-strong rounded mb-4"
+      class="w-100 shadow-1-strong rounded mb-4 img-fixed-height"
       alt="Yosemite National Park"
     />
     <h2 class="text-center"><strong>Makanan</strong></h2>
@@ -172,7 +175,7 @@
   <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="./assets/img/menu/menu-6.jpeg"
-      class="w-100 shadow-1-strong rounded mb-4"
+      class="w-100 shadow-1-strong rounded mb-4 img-fixed-height"
       alt="Yosemite National Park"
     />
     <h2 class="text-center"><strong>Makanan</strong></h2>
@@ -181,7 +184,7 @@
   <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="./assets/img/menu/menu-7.jpeg"
-      class="w-100 shadow-1-strong rounded mb-4"
+      class="w-100 shadow-1-strong rounded mb-4 img-fixed-height"
       alt="Yosemite National Park"
     />
     <h2 class="text-center"><strong>Makanan</strong></h2>
@@ -190,7 +193,7 @@
   <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="./assets/img/menu/menu-8.jpeg"
-      class="w-100 shadow-1-strong rounded mb-4"
+      class="w-100 shadow-1-strong rounded mb-4 img-fixed-height"
       alt="Yosemite National Park"
     />
     <h2 class="text-center"><strong>Makanan</strong></h2>
@@ -199,7 +202,7 @@
   <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="./assets/img/menu/menu-9.jpeg"
-      class="w-100 shadow-1-strong rounded mb-4"
+      class="w-100 shadow-1-strong rounded mb-4 img-fixed-height"
       alt="Yosemite National Park"
     />
     <h2 class="text-center"><strong>Makanan</strong></h2>
@@ -208,7 +211,7 @@
   <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="./assets/img/menu/menu-10.jpeg"
-      class="w-100 shadow-1-strong rounded mb-4"
+      class="w-100 shadow-1-strong rounded mb-4 img-fixed-height"
       alt="Yosemite National Park"
     />
     <h2 class="text-center"><strong>Makanan</strong></h2>
@@ -217,7 +220,7 @@
   <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="./assets/img/menu/menu-11.jpeg"
-      class="w-100 shadow-1-strong rounded mb-4"
+      class="w-100 shadow-1-strong rounded mb-4 img-fixed-height"
       alt="Yosemite National Park"
     />
     <h2 class="text-center"><strong>Makanan</strong></h2>
@@ -226,7 +229,7 @@
   <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="./assets/img/menu/menu-12.jpeg"
-      class="w-100 shadow-1-strong rounded mb-4"
+      class="w-100 shadow-1-strong rounded mb-4 img-fixed-height"
       alt="Yosemite National Park"
     />
     <h2 class="text-center"><strong>Makanan</strong></h2>
@@ -235,7 +238,7 @@
   <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="./assets/img/menu/menu-13.jpeg"
-      class="w-100 shadow-1-strong rounded mb-4"
+      class="w-100 shadow-1-strong rounded mb-4 img-fixed-height"
       alt="Yosemite National Park"
     />
     <h2 class="text-center"><strong>Makanan</strong></h2>
@@ -244,7 +247,7 @@
   <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="./assets/img/menu/menu-14.jpeg"
-      class="w-100 shadow-1-strong rounded mb-4"
+      class="w-100 shadow-1-strong rounded mb-4 img-fixed-height"
       alt="Yosemite National Park"
     />
     <h2 class="text-center"><strong>Makanan</strong></h2>
@@ -253,7 +256,7 @@
   <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="./assets/img/menu/menu-15.jpeg"
-      class="w-100 shadow-1-strong rounded mb-4"
+      class="w-100 shadow-1-strong rounded mb-4 img-fixed-height"
       alt="Yosemite National Park"
     />
     <h2 class="text-center"><strong>Makanan</strong></h2>
@@ -262,7 +265,7 @@
   <div class="col-lg-2 mb-4 mb-lg-0 my-4">
     <img
       src="./assets/img/menu/menu-16.jpeg"
-      class="w-100 shadow-1-strong rounded mb-4"
+      class="w-100 shadow-1-strong rounded mb-4 img-fixed-height"
       alt="Yosemite National Park"
     />
     <h2 class="text-center"><strong>Makanan</strong></h2>

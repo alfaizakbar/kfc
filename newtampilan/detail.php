@@ -64,6 +64,8 @@ $data = query("SELECT * FROM blog WHERE id = $id");
           <li><a href="about.php">About</a></li>
           <li><a href="menu.php" >Menu</a></li>
           <li><a href="pesanan.php" class="active" >Pesanan</a></li>
+          <li><a href="keranjang.php" >Keranjang</a></li>
+
           <li><a href="gallery.php" >Gallery</a></li>
           <!-- <li><a href="#team">Team</a></li> -->
           <!-- <li><a href="#pricing">Pricing</a></li> -->
