@@ -242,16 +242,6 @@ function ubah($data){
 }
 ;
 
-function keranjang($data){
-    global $conn;
-    $judul = $data['judul'];
-    $kategori = $data['kategori'];
-    
-    $mysql = "INSERT INTO pembayaran VALUES ('','$judul','$kategori')";
-    mysqli_query($conn, $mysql);
-    return mysqli_affected_rows($conn);
-    
-}
 
 function cari($keyword){
     $query = "SELECT * FROM blog WHERE 

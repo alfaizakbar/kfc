@@ -151,22 +151,20 @@ $data = query("SELECT * FROM blog WHERE id = $id");
       <div class="card mb-3">
         <div class="row g-0">
           <div class="col-md-6">
-            <?php foreach($data as $row){?>
               <form method="post" enctype="multipart/form-data">
                 <img src="../admin/img/<?= $row['foto']?>" class="img-fluid rounded-start" alt="...">
               </div>
               <div class="col-md-6">
                 <div class="card-body d-flex flex-column justify-content-between"> <!-- Add flexbox to align items -->
                   <div>
-                    <h1 class="card-title"><?= $row['judul']?></h1>
+                    <h1 class="card-title"></h1>
                     <p class="card-text"></p>
-                    <p class="card-text">Harga : <?= $row['kategori']?></p>
-                    <p class="card-text"><small class="text-muted"><?= $row['tanggal']?></small></p>
+                    <p class="card-text"></p>
+                    <p class="card-text"></small></p>
                   </div>
                   <div class="text-end mt-5"> <!-- Align button to the right -->
-                    <button type="submit" name="keranjang" onclick="tambahData()">Bayar</button>
+                    <button type="submit"></button>
                   </form>
-                  <?php }?>
               </div>
             </div>
           </div>
