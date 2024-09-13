@@ -1,12 +1,26 @@
 <?php
 session_start();
-require 'function.php';
+require '../database/konn.php';
+
+
+if (isset($_POST['keranjang'])) {
+  if (keranjang ($_POST) > 0 ){
+    echo "<script>alert('Pesanan Anda Berhasil Di Masukkan Keranjang.');
+    document.location.href = 'keranjang.php'
+    </script>";
+  } else {
+    echo "<script>alert('Pesanan Gagal')</script>";
+  }
+};
+error_reporting(0);
 $usernamee = $_SESSION["usernamee"];
 $pelanggan=queryy("SELECT * FROM pelanggan WHERE usernamee='$usernamee'")[0];
 
-
 $id = $_GET["id"];
+
+
 $data = query("SELECT * FROM blog WHERE id = $id");
+
 ?>
 
 <!DOCTYPE html>
@@ -138,19 +152,21 @@ $data = query("SELECT * FROM blog WHERE id = $id");
         <div class="row g-0">
           <div class="col-md-6">
             <?php foreach($data as $row){?>
-            <img src="../admin/img/<?= $row['foto']?>" class="img-fluid rounded-start" alt="...">
-          </div>
-          <div class="col-md-6">
-            <div class="card-body d-flex flex-column justify-content-between"> <!-- Add flexbox to align items -->
-              <div>
-                <h1 class="card-title"><?= $row['judul']?></h1>
-                <p class="card-text"></p>
-                <p class="card-text">Harga : <?= $row['kategori']?></p>
-                <p class="card-text"><small class="text-muted"><?= $row['tanggal']?></small></p>
-                <?php }?>
+              <form method="post" enctype="multipart/form-data">
+                <img src="../admin/img/<?= $row['foto']?>" class="img-fluid rounded-start" alt="...">
               </div>
-              <div class="text-end mt-5"> <!-- Align button to the right -->
-                <input type="submit" class="btn btn-primary" value="Tambahkan ke Keranjang">
+              <div class="col-md-6">
+                <div class="card-body d-flex flex-column justify-content-between"> <!-- Add flexbox to align items -->
+                  <div>
+                    <h1 class="card-title"><?= $row['judul']?></h1>
+                    <p class="card-text"></p>
+                    <p class="card-text">Harga : <?= $row['kategori']?></p>
+                    <p class="card-text"><small class="text-muted"><?= $row['tanggal']?></small></p>
+                  </div>
+                  <div class="text-end mt-5"> <!-- Align button to the right -->
+                    <button type="submit" name="keranjang" onclick="tambahData()">Bayar</button>
+                  </form>
+                  <?php }?>
               </div>
             </div>
           </div>

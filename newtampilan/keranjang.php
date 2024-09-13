@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -116,14 +119,17 @@
       <div class="col-lg-9">
         <div class="card border shadow-0">
           <div class="m-4">
-            <h4 class="card-title mb-4">Your shopping cart</h4>
+
+            <h4 class="card-title mb-4">Menu Yang Anda Pilih.</h4>
             <div class="row gy-3 mb-4">
               <div class="col-lg-5">
                 <div class="me-lg-5">
                   <div class="d-flex">
+                  <?php foreach($item as $row){?>
+
                     <img src="https://mdbootstrap.com/img/bootstrap-ecommerce/items/11.webp" class="border rounded me-3" style="width: 96px; height: 96px;" />
                     <div class="">
-                      <a href="#" class="nav-link">Winter jacket for men and lady</a>
+                      <a href="#" class="nav-link"><? $row['judul'] ?></a>
                       <p class="text-muted">Yellow, Jeans</p>
                     </div>
                   </div>
@@ -147,6 +153,7 @@
                 <div class="float-md-end">
                   <!-- <a href="#!" class="btn btn-light border px-2 icon-hover-primary"><i class="fas fa-heart fa-lg px-1 text-secondary"></i></a> -->
                   <a href="#" class="btn btn-light border text-danger icon-hover-danger"> Remove</a>
+                  <?php }?>
                 </div>
               </div>
             </div>
@@ -189,6 +196,9 @@
               <div class="col-lg-5">
                 <div class="me-lg-5">
                   <div class="d-flex">
+                  <?php foreach($data as $row){?>
+
+<?php }?>
                     <img src="https://mdbootstrap.com/img/bootstrap-ecommerce/items/13.webp" class="border rounded me-3" style="width: 96px; height: 96px;" />
                     <div class="">
                       <a href="#" class="nav-link">Blazer Suit Dress Jacket for Men</a>

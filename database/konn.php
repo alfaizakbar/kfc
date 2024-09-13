@@ -242,6 +242,32 @@ function ubah($data){
 }
 ;
 
+function keranjang($data){
+    global $conn;
+    $judul = $data['judul'];
+    $kategori = $data['kategori'];
+    
+    $mysql = "INSERT INTO pembayaran VALUES ('','$judul','$kategori')";
+    mysqli_query($conn, $mysql);
+    return mysqli_affected_rows($conn);
+    
+}
+
+function cari($keyword){
+    $query = "SELECT * FROM blog WHERE 
+    judul LIKE '%$keyword%'
+
+    ";
+    return query($query);
+
+}
+function hapus($id){
+    global $conn;
+     mysqli_query($conn, "DELETE FROM blog WHERE id = $id");
+     return mysqli_affected_rows($conn);
+}
+;
+
 
 // function apa($data){
 //     global $conn;

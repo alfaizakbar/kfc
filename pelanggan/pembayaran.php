@@ -28,22 +28,8 @@ $pelanggan=queryy("SELECT * FROM pelanggan WHERE usernamee='$usernamee'")[0];
 
 $id = $_GET["id"];
 
-// $sql = $sql = "SELECT * FROM pembayaran WHERE user_id = $id_pelanggan";
+
 $data = query("SELECT * FROM blog WHERE id = $id");
-// $data - queryy("SELECT * FROM pelanggan WHERE id_pelanggan = $id_pelanggan ");
-// $data2 = query("SELECT DISTINCT kategori FROM blog");
-// $data1 = query("SELECT * FROM blog ORDER BY id DESC LIMIT 1 ");
-// $data3 = query("SELECT * FROM blog ORDER BY id DESC LIMIT 2 ");
-
-
-
-// if (!isset($_SESSION['usernamee'])) {
-//   header("location:loginn.php");
-// }
-// error_reporting(0);
-
-
-// require '../database/konn.php';
 ?>
 
 <!DOCTYPE html>
