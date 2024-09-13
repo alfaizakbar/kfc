@@ -48,5 +48,18 @@ function keranjang($data){
 }
 
 // }
+function tambahKeKeranjang($id_produk) {
+    // Jika keranjang belum ada, buat array keranjang kosong
+    if (!isset($_SESSION['keranjang'])) {
+        $_SESSION['keranjang'] = [];
+    }
+
+    // Tambah produk ke keranjang (gunakan ID produk sebagai kunci)
+    if (isset($_SESSION['keranjang'][$id_produk])) {
+        $_SESSION['keranjang'][$id_produk]++; // Jika sudah ada di keranjang, tambahkan jumlahnya
+    } else {
+        $_SESSION['keranjang'][$id_produk] = 1; // Jika belum ada, tambahkan produk dengan jumlah 1
+    }
+}
 ?>
 

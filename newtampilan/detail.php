@@ -145,12 +145,14 @@ $data = query("SELECT * FROM blog WHERE id = $id");
 
       <!-- detail -->
 <!-- Detail Section -->
+<!-- Detail Produk -->
 <div class="container" data-aos="fade" data-aos-delay="100">
-  <div class="row justify-content-center"> <!-- Center the row horizontally -->
-    <div class="col-md-8"> <!-- Set a width for the card (adjust as needed) -->
+  <div class="row justify-content-center">
+    <div class="col-md-8">
       <div class="card mb-3">
         <div class="row g-0">
           <div class="col-md-6">
+<<<<<<< HEAD
               <form method="post" enctype="multipart/form-data">
                 <img src="../admin/img/<?= $row['foto']?>" class="img-fluid rounded-start" alt="...">
               </div>
@@ -165,6 +167,25 @@ $data = query("SELECT * FROM blog WHERE id = $id");
                   <div class="text-end mt-5"> <!-- Align button to the right -->
                     <button type="submit"></button>
                   </form>
+=======
+            <?php foreach($data as $row){ ?>
+            <img src="../admin/img/<?= $row['foto']?>" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-6">
+            <div class="card-body d-flex flex-column justify-content-between">
+              <div>
+                <h1 class="card-title"><?= $row['judul']?></h1>
+                <p class="card-text">Harga: <?= $row['kategori']?></p>
+                <p class="card-text"><small class="text-muted"><?= $row['tanggal']?></small></p>
+                <?php } ?>
+              </div>
+              <div class="text-end mt-5">
+                <!-- Form Tambah ke Keranjang -->
+                <form action="" method="post">
+                  <input type="hidden" name="id_produk" value="<?= $id ?>">
+                  <input type="submit" name="tambah_keranjang" class="btn btn-primary" value="Tambahkan ke Keranjang">
+                </form>
+>>>>>>> 69260041712c1a4c5cbf9c4c22e35466d1539158
               </div>
             </div>
           </div>
@@ -173,6 +194,15 @@ $data = query("SELECT * FROM blog WHERE id = $id");
     </div>
   </div>
 </div>
+
+<?php
+// Memproses form ketika tombol "Tambah ke Keranjang" diklik
+if (isset($_POST['tambah_keranjang'])) {
+    $id_produk = $_POST['id_produk'];
+    tambahKeKeranjang($id_produk);
+    echo "<script>alert('Produk berhasil ditambahkan ke keranjang!');</script>";
+}
+?>
 
 <!-- Gallery -->
 <!-- detail -->
