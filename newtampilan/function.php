@@ -35,17 +35,15 @@ function queryy($query){
     return $rows;
 };
 
-function keranjang($data){
-    global $conn;
-    
-    $judul = $data['judul'];
-    $kategori = $data['kategori'];
-    
-    $mysql = "INSERT INTO pembayaran VALUES ('','$judul','$kategori')";
-    mysqli_query($conn, $mysql);
-    return mysqli_affected_rows($conn);
-    
-}
+// function ubah($data){
+//     global $conn;
+// $id = $data ['id'];
+// $nama = htmlspecialchars ($data ['judul']);
+// $nis = htmlspecialchars ($data ['artikel']);
+// $email = htmlspecialchars ($data ['email']);
+// $jurusan = htmlspecialchars ($data ['jurusan']);
+// $gambarlama = htmlspecialchars ($data ['gambarlama']);
+
 
 // }
 function tambahKeKeranjang($id_produk) {

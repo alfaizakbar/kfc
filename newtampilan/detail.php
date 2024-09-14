@@ -1,26 +1,12 @@
 <?php
 session_start();
-require '../database/konn.php';
-
-
-if (isset($_POST['keranjang'])) {
-  if (keranjang ($_POST) > 0 ){
-    echo "<script>alert('Pesanan Anda Berhasil Di Masukkan Keranjang.');
-    document.location.href = 'keranjang.php'
-    </script>";
-  } else {
-    echo "<script>alert('Pesanan Gagal')</script>";
-  }
-};
-error_reporting(0);
+require 'function.php';
 $usernamee = $_SESSION["usernamee"];
 $pelanggan=queryy("SELECT * FROM pelanggan WHERE usernamee='$usernamee'")[0];
 
+
 $id = $_GET["id"];
-
-
 $data = query("SELECT * FROM blog WHERE id = $id");
-
 ?>
 
 <!DOCTYPE html>
@@ -152,22 +138,6 @@ $data = query("SELECT * FROM blog WHERE id = $id");
       <div class="card mb-3">
         <div class="row g-0">
           <div class="col-md-6">
-<<<<<<< HEAD
-              <form method="post" enctype="multipart/form-data">
-                <img src="../admin/img/<?= $row['foto']?>" class="img-fluid rounded-start" alt="...">
-              </div>
-              <div class="col-md-6">
-                <div class="card-body d-flex flex-column justify-content-between"> <!-- Add flexbox to align items -->
-                  <div>
-                    <h1 class="card-title"></h1>
-                    <p class="card-text"></p>
-                    <p class="card-text"></p>
-                    <p class="card-text"></small></p>
-                  </div>
-                  <div class="text-end mt-5"> <!-- Align button to the right -->
-                    <button type="submit"></button>
-                  </form>
-=======
             <?php foreach($data as $row){ ?>
             <img src="../admin/img/<?= $row['foto']?>" class="img-fluid rounded-start" alt="...">
           </div>
@@ -185,7 +155,6 @@ $data = query("SELECT * FROM blog WHERE id = $id");
                   <input type="hidden" name="id_produk" value="<?= $id ?>">
                   <input type="submit" name="tambah_keranjang" class="btn btn-primary" value="Tambahkan ke Keranjang">
                 </form>
->>>>>>> 69260041712c1a4c5cbf9c4c22e35466d1539158
               </div>
             </div>
           </div>
