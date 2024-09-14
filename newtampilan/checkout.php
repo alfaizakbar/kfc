@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'function.php'; // Gunakan require_once untuk menghindari deklarasi ulang fungsi
+require_once 'function.php';
 
 // Cek apakah keranjang kosong
 if (empty($_SESSION['keranjang'])) {
@@ -11,10 +11,10 @@ if (empty($_SESSION['keranjang'])) {
 // Ambil data keranjang dari session
 $keranjang = $_SESSION['keranjang'];
 
-//Ambil data pelanggan
+// Ambil data pelanggan dari session
 $usernamee = $_SESSION["usernamee"];
-$pelanggan=queryy("SELECT * FROM pelanggan WHERE usernamee='$usernamee'")[0];
-
+$pelanggan = queryy("SELECT * FROM pelanggan WHERE usernamee='$usernamee'")[0];
+$id_pelanggan = $pelanggan['id_pelanggan']; // Ambil id_pelanggan dari tabel pelanggan
 
 // Ambil detail produk dari database berdasarkan ID di keranjang
 $produk_dikeranjang = [];
@@ -39,36 +39,43 @@ $total_harga_final = $total_harga_diskon + $pajak;
 
 // Simpan data checkout jika form disubmit
 if (isset($_POST['checkout'])) {
-    $usernamee = $_POST['nama_pelanggan'];
+    $nama_pelanggan = $_POST['nama_pelanggan'];
     $alamat = $_POST['alamat'];
     $no_hp = $_POST['no_hp'];
 
     // Validasi data
     if (empty($nama_pelanggan) || empty($alamat) || empty($no_hp)) {
-        echo "Nama, alamat, dan nomor telepon harus diisi.";
+        echo "<script>alert('Nama, alamat, dan nomor telepon harus diisi.');</script>";
         exit;
     }
 
-    // Simpan data pesanan ke database
-    $query = "INSERT INTO pesanan (nama_pelanggan, alamat, no_hp, total_harga, diskon, pajak, total_akhir) VALUES ('$nama_pelanggan', '$alamat', '$no_hp', $total_harga, $diskon, $pajak, $total_harga_final)";
-    mysqli_query($conn, $query);
-    $id_pesanan = mysqli_insert_id($conn);
+    // Simpan data pembayaran ke database
+    $query = "INSERT INTO pembayaran (id_pelanggan, nama_pelanggan, alamat, no_hp, total_harga, diskon, pajak, total_akhir) 
+              VALUES ('$id_pelanggan', '$nama_pelanggan', '$alamat', '$no_hp', '$total_harga', '$diskon', '$pajak', '$total_harga_final')";
+    if (mysqli_query($conn, $query)) {
+        $id_pembayaran = mysqli_insert_id($conn); // Mendapatkan id_pembayaran yang baru saja dimasukkan
 
-    // Simpan detail pesanan
-    foreach ($keranjang as $id_produk => $jumlah) {
-        $produk = query("SELECT * FROM blog WHERE id = $id_produk")[0];
-        $total_produk = $jumlah * $produk['kategori'];
-        $query_detail = "INSERT INTO detail_pesanan (id_pesanan, id_produk, jumlah, total) VALUES ($id_pesanan, $id_produk, $jumlah, $total_produk)";
-        mysqli_query($conn, $query_detail);
+        // Simpan detail pesanan ke tabel detail_pesanan
+        foreach ($keranjang as $id_produk => $jumlah) {
+            $produk = query("SELECT * FROM blog WHERE id = $id_produk")[0];
+            $total_produk = $jumlah * $produk['kategori'];
+            $query_detail = "INSERT INTO detail_pesanan (id_pembayaran, id_produk, jumlah, total) 
+                             VALUES ('$id_pembayaran', '$id_produk', '$jumlah', '$total_produk')";
+            mysqli_query($conn, $query_detail);
+        }
+
+        // Kosongkan keranjang setelah checkout
+        unset($_SESSION['keranjang']);
+        unset($_SESSION['diskon']);
+
+        // Tampilkan alert dan redirect
+        echo "<script>
+                alert('Pesanan sudah dikirim, silahkan tunggu pesanan anda');
+                document.location.href = 'konfirmasi.php?id_pembayaran=$id_pembayaran';
+              </script>";
+    } else {
+        echo "<script>alert('Pembayaran Gagal');</script>";
     }
-
-    // Kosongkan keranjang setelah checkout
-    unset($_SESSION['keranjang']);
-    unset($_SESSION['diskon']);
-
-    // Redirect ke halaman konfirmasi
-    header("Location: konfirmasi.php?id_pesanan=$id_pesanan");
-    exit;
 }
 ?>
 
@@ -89,10 +96,9 @@ if (isset($_POST['checkout'])) {
       <h2>Checkout</h2>
       <div class="row">
         <div class="col-md-8">
-        
-          <form action="checkout.php" method="post" enctype="multipart/form-data">
+          <form action="checkout.php" method="post">
             <div class="form-group">
-              <label for="alamat">Nama:</label>
+              <label for="nama_pelanggan">Nama:</label>
               <input type="text" id="nama_pelanggan" name="nama_pelanggan" value="<?= $pelanggan['usernamee']?>" class="form-control" required>
             </div>
             <div class="form-group">
@@ -100,7 +106,7 @@ if (isset($_POST['checkout'])) {
               <textarea id="alamat" name="alamat" class="form-control" required><?= $pelanggan['alamat']?></textarea>
             </div>
             <div class="form-group">
-              <label for="no_telp">No Telepon:</label>
+              <label for="no_hp">No Telepon:</label>
               <input type="text" id="no_hp" name="no_hp" value="<?= $pelanggan['no_hp']?>" class="form-control" required>
             </div>
             <div class="mt-3">
@@ -110,7 +116,6 @@ if (isset($_POST['checkout'])) {
               <h4>Total Akhir: Rp <?= number_format($total_harga_final, 0, ',', '.') ?></h4>
               <button type="submit" name="checkout" class="btn btn-success">Selesaikan Pesanan</button>
             </div>
-  
           </form>
         </div>
         <div class="col-md-4">
