@@ -11,6 +11,11 @@ if (empty($_SESSION['keranjang'])) {
 // Ambil data keranjang dari session
 $keranjang = $_SESSION['keranjang'];
 
+//Ambil data pelanggan
+$usernamee = $_SESSION["usernamee"];
+$pelanggan=queryy("SELECT * FROM pelanggan WHERE usernamee='$usernamee'")[0];
+
+
 // Ambil detail produk dari database berdasarkan ID di keranjang
 $produk_dikeranjang = [];
 $total_harga = 0;
@@ -34,18 +39,18 @@ $total_harga_final = $total_harga_diskon + $pajak;
 
 // Simpan data checkout jika form disubmit
 if (isset($_POST['checkout'])) {
-    $nama = $_POST['nama'];
+    $usernamee = $_POST['nama_pelanggan'];
     $alamat = $_POST['alamat'];
-    $no_telp = $_POST['no_telp'];
+    $no_hp = $_POST['no_hp'];
 
     // Validasi data
-    if (empty($nama) || empty($alamat) || empty($no_telp)) {
+    if (empty($nama_pelanggan) || empty($alamat) || empty($no_hp)) {
         echo "Nama, alamat, dan nomor telepon harus diisi.";
         exit;
     }
 
     // Simpan data pesanan ke database
-    $query = "INSERT INTO pesanan (nama, alamat, no_telp, total_harga, diskon, pajak, total_akhir) VALUES ('$nama', '$alamat', '$no_telp', $total_harga, $diskon, $pajak, $total_harga_final)";
+    $query = "INSERT INTO pesanan (nama_pelanggan, alamat, no_hp, total_harga, diskon, pajak, total_akhir) VALUES ('$nama_pelanggan', '$alamat', '$no_hp', $total_harga, $diskon, $pajak, $total_harga_final)";
     mysqli_query($conn, $query);
     $id_pesanan = mysqli_insert_id($conn);
 
@@ -84,18 +89,19 @@ if (isset($_POST['checkout'])) {
       <h2>Checkout</h2>
       <div class="row">
         <div class="col-md-8">
-          <form action="checkout.php" method="post">
+        
+          <form action="checkout.php" method="post" enctype="multipart/form-data">
             <div class="form-group">
-              <label for="nama">Nama:</label>
-              <input type="text" name="nama" id="nama" class="form-control" required>
+              <label for="alamat">Nama:</label>
+              <input type="text" id="nama_pelanggan" name="nama_pelanggan" value="<?= $pelanggan['usernamee']?>" class="form-control" required>
             </div>
             <div class="form-group">
               <label for="alamat">Alamat:</label>
-              <textarea name="alamat" id="alamat" class="form-control" required></textarea>
+              <textarea id="alamat" name="alamat" class="form-control" required><?= $pelanggan['alamat']?></textarea>
             </div>
             <div class="form-group">
               <label for="no_telp">No Telepon:</label>
-              <input type="text" name="no_telp" id="no_telp" class="form-control" required>
+              <input type="text" id="no_hp" name="no_hp" value="<?= $pelanggan['no_hp']?>" class="form-control" required>
             </div>
             <div class="mt-3">
               <h4>Total Harga: Rp <?= number_format($total_harga, 0, ',', '.') ?></h4>
@@ -104,6 +110,7 @@ if (isset($_POST['checkout'])) {
               <h4>Total Akhir: Rp <?= number_format($total_harga_final, 0, ',', '.') ?></h4>
               <button type="submit" name="checkout" class="btn btn-success">Selesaikan Pesanan</button>
             </div>
+  
           </form>
         </div>
         <div class="col-md-4">

@@ -59,5 +59,24 @@ function tambahKeKeranjang($id_produk) {
         $_SESSION['keranjang'][$id_produk] = 1; // Jika belum ada, tambahkan produk dengan jumlah 1
     }
 }
+
+function bayarr($data){
+    global $conn;
+    
+    $id_pelanggan = $data['id_pelanggan'];
+    $judul = $data['judul'];
+    $kategori = $data['kategori'];
+    $jumlah_makanan = $data['jumlah_makanan'];
+    $nama_pelanggan = $data['nama_pelanggan'];
+    date_default_timezone_set("Asia/Jakarta");
+    $tanggal_pembayaran =date('y-m-d h:i:s');
+    $alamat = $data['alamat'];
+    $no_hp = $data['no_hp'];
+    
+    $mysql = "INSERT INTO pembayaran VALUES ('','$id_pelanggan','$judul','$kategori','$jumlah_makanan','$nama_pelanggan','$tanggal_pembayaran','$alamat','$no_hp')";
+    mysqli_query($conn, $mysql);
+    return mysqli_affected_rows($conn);
+    
+}
 ?>
 

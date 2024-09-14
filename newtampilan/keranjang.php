@@ -71,7 +71,7 @@ $total_harga_final = $total_harga_diskon + $pajak;
   <section id="keranjang" class="section">
     
     <div class="container">
-      <a href="pesanan.php" class="btn btn-secondary btn-back mb-2">Back</a>
+      <a href="index.php" class="btn btn-secondary btn-back mb-2">Back</a>
       <h2>Keranjang Belanja</h2>
       <?php if (empty($produk_dikeranjang)) : ?>
         <p>Keranjang Anda kosong.</p>
