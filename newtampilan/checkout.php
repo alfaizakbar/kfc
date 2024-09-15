@@ -99,15 +99,15 @@ if (isset($_POST['checkout'])) {
           <form action="checkout.php" method="post">
             <div class="form-group">
               <label for="nama_pelanggan">Nama:</label>
-              <input type="text" id="nama_pelanggan" name="nama_pelanggan" value="<?= $pelanggan['usernamee']?>" class="form-control" required>
+              <input type="text" id="nama_pelanggan" name="nama_pelanggan" value="<?= $pelanggan['usernamee']?>" class="form-control" required readonly>
             </div>
             <div class="form-group">
               <label for="alamat">Alamat:</label>
-              <textarea id="alamat" name="alamat" class="form-control" required><?= $pelanggan['alamat']?></textarea>
+              <textarea id="alamat" name="alamat" class="form-control" required readonly><?= $pelanggan['alamat']?></textarea>
             </div>
             <div class="form-group">
               <label for="no_hp">No Telepon:</label>
-              <input type="text" id="no_hp" name="no_hp" value="<?= $pelanggan['no_hp']?>" class="form-control" required>
+              <input type="text" id="no_hp" name="no_hp" value="<?= $pelanggan['no_hp']?>" class="form-control" required readonly>
             </div>
             <div class="mt-3">
               <h4>Total Harga: Rp <?= number_format($total_harga, 0, ',', '.') ?></h4>

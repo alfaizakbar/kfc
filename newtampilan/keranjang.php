@@ -90,9 +90,11 @@ $total_harga_final = $total_harga_diskon + $pajak;
           </form>
         </div>
         <!-- Form update keranjang -->
+        
         <form action="keranjang.php" method="post">
-          <table class="table table-striped">
-            <thead>
+             <div class="table-responsive">
+             <table class="table table-striped">
+               <thead>
               <tr>
                 <th>Gambar</th>
                 <th>Judul</th>
@@ -117,6 +119,7 @@ $total_harga_final = $total_harga_diskon + $pajak;
               <?php endforeach; ?>
             </tbody>
           </table>
+        </div>
           <button type="submit" name="update" class="btn btn-primary">Update Keranjang</button>
         </form>
         <div class="mt-3">
