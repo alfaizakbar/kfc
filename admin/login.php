@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -56,33 +54,26 @@ session_start();
                                     ?>
                
 
-                  <form action="proses_login.php" method="post" class="row g-3 needs-validation" novalidate>
+                  <form action="../database/ceklogin.php" method="post" class="row g-3 needs-validation" novalidate>
                     <div class="col-12">
                       <label for="yourUsername" class="form-label">Username</label>
-                      <input type="text" name="admin_username" class="form-control" id="yourUsername" required>
+                      <input type="text" name="username" class="form-control" id="yourUsername" required>
                       <div class="invalid-feedback">Silakan masukkan username Anda.</div>
                     </div>
 
                     <div class="col-12">
                       <label for="yourPassword" class="form-label">Password</label>
                       <div class="input-group">
-                        <input type="password" name="admin_password" class="form-control" id="yourPassword" required>
+                        <input type="password" name="password" class="form-control" id="yourPassword" required>
                         <button class="btn btn-outline-secondary" type="button" onclick="togglePassword()">Tampilkan</button>
                         <div class="input-group-append">
                           </div>
                         </div>
                         <div class="invalid-feedback">Silakan masukkan password Anda!</div>
                       </div>
-                      
-                      <!-- <div class="col-12"> -->
-                        <!-- <div class="form-check"> -->
-                          <!-- <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe"> -->
-                        <!-- <label class="form-check-label" for="rememberMe">Ingat saya</label> -->
-                      <!-- </div> -->
-                    <!-- </div> -->
 
                     <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit">Login</button>
+                      <button class="btn btn-primary w-100" name="tambah" value="Login" type="submit">Login</button>
                     </div>
                     
                   </form>

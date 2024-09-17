@@ -1,10 +1,12 @@
 <?php
 session_start();
-include 'koneksi.php';
-if (!isset($_SESSION['admin_id'])) {
-    header("location:login.php");
-    exit();
+
+if (!isset($_SESSION['username'])) {
+  header("location:login.php");
 }
+error_reporting(0);
+
+
 
 // Mengambil data foto dari tabel 'foto' dengan JOIN ke tabel 'user' dan 'album'
 $sqlFoto = "SELECT foto.*, user.userid AS user_userid, user.namalengkap AS user_namalengkap, album.albumid AS album_albumid, album.namaalbum AS album_namaalbum FROM foto JOIN user ON foto.userid = user.userid JOIN album ON foto.albumid = album.albumid";
