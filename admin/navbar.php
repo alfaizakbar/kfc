@@ -172,26 +172,16 @@
         <a class="nav-link collapsed" href="index.php">
           <i class="bi bi-grid"></i><span>Dashboard</span>
         </a>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="data_user.php">
-          <i class="bi bi-people"></i><span>Data User</span>
-        </a>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="data_album.php">
-          <i class="bi bi-menu-button-wide"></i><span>Data Album</span>
-        </a>
+     
       <li class="nav-item">
         <a class="nav-link collapsed" href="data_foto.php">
-          <i class="bi bi-image"></i><span>Data Foto</span>
+          <i class="bi bi-image"></i><span>Data Makanan</span>
         </a>
       <li class="nav-item">
         <a class="nav-link collapsed" href="data_contact.php">
           <i class="bi bi-card-list"></i><span>Data Contact</span>
         </a>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="data_saran.php">
-          <i class="bi bi-chat"></i><span>Data Saran</span>
-        </a>
+      
        
         <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
@@ -215,29 +205,7 @@
           </li>
         </ul>
       </li><!-- End Charts Nav -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Laporan Foto</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="data_foto_harian.php">
-              <i class="bi bi-circle"></i><span>Harian</span>
-            </a>
-          </li>
-          <li>
-            <a href="data_foto_bulanan.php">
-              <i class="bi bi-circle"></i><span>Bulanan</span>
-            </a>
-          </li>
-          <li>
-            <a href="data_foto_tahunan.php">
-              <i class="bi bi-circle"></i><span>Tahunan</span>
-            </a>
-          </li>
-         
-        </ul>
-      </li><!-- End Tables Nav -->
+   
      
 
 
