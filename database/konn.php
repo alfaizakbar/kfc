@@ -37,59 +37,56 @@ function kuery($sql) {
 function registrasii($data){
     global $conn;
     
-    $usernamee = mysqli_real_escape_string($conn, $data['usernamee']);
+    $nama_pelanggan = mysqli_real_escape_string($conn, $data['nama_pelanggan']);
     $email = strtolower(stripslashes($data['email']));
     $password =  mysqli_real_escape_string($conn, $data['password']);
     $alamat =  mysqli_real_escape_string($conn, $data['alamat']);
     $no_hp =  mysqli_real_escape_string($conn, $data['no_hp']);
-    $gambar = uploadd();
-    if ( !$gambar) {
-        return false;
-    }
-    mysqli_query($conn, "INSERT INTO pelanggan VALUES('', '$usernamee', '$email', '$password','$alamat','$no_hp','$gambar')");
+
+    mysqli_query($conn, "INSERT INTO pelanggan VALUES('', '$nama_pelanggan', '$email', '$password','$alamat','$no_hp')");
     return mysqli_affected_rows($conn);
 };
 
-function uploadd() {
-    $namaFile = $_FILES['gambar']['name'];
-    $ukuranFile = $_FILES['gambar']['size'];
-    $error = $_FILES['gambar']['error'];
-    $tmpName = $_FILES['gambar']['tmp_name'];
+// function uploadd() {
+//     $namaFile = $_FILES['gambar']['name'];
+//     $ukuranFile = $_FILES['gambar']['size'];
+//     $error = $_FILES['gambar']['error'];
+//     $tmpName = $_FILES['gambar']['tmp_name'];
     
-    // Periksa apakah ada file yang diunggah
-    if ( $error === 4 ) {
-        // Tidak ada file yang diunggah, Anda bisa menambahkan data tanpa gambar
-        // Tambahkan kode penyimpanan data ke database di sini
-        return true;
-    }
+//     // Periksa apakah ada file yang diunggah
+//     if ( $error === 4 ) {
+//         // Tidak ada file yang diunggah, Anda bisa menambahkan data tanpa gambar
+//         // Tambahkan kode penyimpanan data ke database di sini
+//         return true;
+//     }
     
-    $ekstensiGambarValid = ['jpg', 'jpeg', 'png', 'webp', 'jfif'];
-    $ekstensiGambar = explode('.', $namaFile);
-    $ekstensiGambar = strtolower(end($ekstensiGambar));
+//     $ekstensiGambarValid = ['jpg', 'jpeg', 'png', 'webp', 'jfif'];
+//     $ekstensiGambar = explode('.', $namaFile);
+//     $ekstensiGambar = strtolower(end($ekstensiGambar));
     
-    // Periksa ekstensi gambar
-    if ( !in_array($ekstensiGambar, $ekstensiGambarValid)) {
-        echo "<script>
-        alert('Upload gambar terlebih dahulu!');</script>";
-        return false;
-    }
+//     // Periksa ekstensi gambar
+//     if ( !in_array($ekstensiGambar, $ekstensiGambarValid)) {
+//         echo "<script>
+//         alert('Upload gambar terlebih dahulu!');</script>";
+//         return false;
+//     }
     
-    // Periksa ukuran gambar
-    if ($ukuranFile > 1000000 ) {
-        echo "<script>
-        alert('Ukuran gambar terlalu besar!');</script>";
-        return false;
-    }
+//     // Periksa ukuran gambar
+//     if ($ukuranFile > 1000000 ) {
+//         echo "<script>
+//         alert('Ukuran gambar terlalu besar!');</script>";
+//         return false;
+//     }
     
-    // Pindahkan gambar ke direktori yang ditentukan
-    move_uploaded_file($tmpName, 'img/' . $namaFile);
+//     // Pindahkan gambar ke direktori yang ditentukan
+//     move_uploaded_file($tmpName, 'img/' . $namaFile);
     
-    // Tambahkan kode penyimpanan data ke database di sini
-    // Jika Anda ingin menambahkan data lain selain gambar
+//     // Tambahkan kode penyimpanan data ke database di sini
+//     // Jika Anda ingin menambahkan data lain selain gambar
     
-    return $namaFile;
-}
-;
+//     return $namaFile;
+// }
+// ;
 function nama_file_gambar_lama_dari_database($id_pelanggan) {
     // Membuka koneksi ke database
     $conn = mysqli_connect("localhost", "root", "", "company_profile");
@@ -100,56 +97,56 @@ function nama_file_gambar_lama_dari_database($id_pelanggan) {
     }
 
     // Lakukan query untuk mengambil nama file gambar lama berdasarkan ID data
-    $query = "SELECT foto FROM pelanggan WHERE id = $id_pelanggan";
-    $result = mysqli_query($conn, $query);
+    // $query = "SELECT foto FROM pelanggan WHERE id = $id_pelanggan";
+    // $result = mysqli_query($conn, $query);
 
-    if ($result) {
-        $row = mysqli_fetch_assoc($result);
-        $namaFileLama = $row['foto'];
-    } else {
-        echo "Gagal mengambil data dari database: " . mysqli_error($conn);
-        $namaFileLama = ""; // Atau Anda bisa memberikan nilai default jika terjadi kesalahan
-    }
+    // if ($result) {
+    //     $row = mysqli_fetch_assoc($result);
+    //     $namaFileLama = $row['foto'];
+    // } else {
+    //     echo "Gagal mengambil data dari database: " . mysqli_error($conn);
+    //     $namaFileLama = ""; // Atau Anda bisa memberikan nilai default jika terjadi kesalahan
+    // }
 
-    // Tutup conn database
-    mysqli_close($conn);
+    // // Tutup conn database
+    // mysqli_close($conn);
 
-    return $namaFileLama;
+    // return $namaFileLama;
 }
 
 
-function update() {
-    $namaFile = $_FILES['gambar']['name'];
-    $ukuranFile = $_FILES['gambar']['size'];
-    $error = $_FILES['gambar']['error'];
-    $tmpName = $_FILES['gambar']['tmp_name'];
+// function update() {
+//     $namaFile = $_FILES['gambar']['name'];
+//     $ukuranFile = $_FILES['gambar']['size'];
+//     $error = $_FILES['gambar']['error'];
+//     $tmpName = $_FILES['gambar']['tmp_name'];
     
-    if ( $error === 4 ) {
-        echo "<script>
-        alert('pilih gambar terlebih dahulu!');</script>";
-        return false;
-    }
+//     if ( $error === 4 ) {
+//         echo "<script>
+//         alert('pilih gambar terlebih dahulu!');</script>";
+//         return false;
+//     }
     
-    $ekstensiGambarValid = ['jpg', 'jpeg', 'png','webp', 'jfif' ];
-    $ekstensiGambar = explode('.', $namaFile);
-    $ekstensiGambar = strtolower(end($ekstensiGambar));
-    if ( !in_array($ekstensiGambar, $ekstensiGambarValid)) {
-        echo "<script>
-        alert('Upload gambar terlebih dahulu!');</script>";
-        return false;
-    }
+//     $ekstensiGambarValid = ['jpg', 'jpeg', 'png','webp', 'jfif' ];
+//     $ekstensiGambar = explode('.', $namaFile);
+//     $ekstensiGambar = strtolower(end($ekstensiGambar));
+//     if ( !in_array($ekstensiGambar, $ekstensiGambarValid)) {
+//         echo "<script>
+//         alert('Upload gambar terlebih dahulu!');</script>";
+//         return false;
+//     }
     
-    if ($ukuranFile > 1000000 ) {
-        echo "<script>
-        alert('Ukuran gambar terlalu besar!');</script>";
-        return false;
-    }
+//     if ($ukuranFile > 1000000 ) {
+//         echo "<script>
+//         alert('Ukuran gambar terlalu besar!');</script>";
+//         return false;
+//     }
     
-    move_uploaded_file($tmpName, 'img/' . $namaFile);
+//     move_uploaded_file($tmpName, 'img/' . $namaFile);
     
-    return $namaFile;
-}
-;
+//     return $namaFile;
+// }
+// ;
 // require '../pagehome/function.php';
 
 // function tambahh($data)
@@ -208,25 +205,22 @@ function ubah($data){
     // session_start();
     
     $id_pelanggan = $data['id_pelanggan'];
-    $usernamee = $data['usernamee'];
+    $nama_pelanggan = $data['nama_pelanggan'];
     $email = $data['email'];
     $alamat = $data['alamat'];
     $no_hp = $data['no_hp'];
     $password = $data['password'];
-    $gambar = uploadd();
-    if ( !$gambar) {
-        return false;
-    }
+
     // $gambar = update();
     // if ( !$gambar) {
     //     return false;
     // }
-    $query = "UPDATE pelanggan SET usernamee=?, email=?, alamat=?, no_hp=?, foto=?,  password=? WHERE id_pelanggan=?";
+    $query = "UPDATE pelanggan SET nama_pelanggan=?, email=?, alamat=?, no_hp=?,  password=? WHERE id_pelanggan=?";
     $stmt = mysqli_prepare($conn, $query);
-    $_SESSION['usernamee']=$usernamee;
+    $_SESSION['nama_pelanggan']=$nama_pelanggan;
 
     // Bind parameter ke statement
-    mysqli_stmt_bind_param($stmt, "ssssssi", $usernamee, $email, $alamat, $no_hp, $gambar, $password, $id_pelanggan);
+    mysqli_stmt_bind_param($stmt, "ssssssi", $nama_pelanggan, $email, $alamat, $no_hp,  $password, $id_pelanggan);
 
     // Eksekusi statement
     mysqli_stmt_execute($stmt);

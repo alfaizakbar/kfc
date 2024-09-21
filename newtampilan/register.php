@@ -1,4 +1,20 @@
+<?php
+require '../database/konn.php';
 
+if( isset($_POST["submit"])){
+    if( registrasii($_POST) > 0){
+        echo "<script>
+        alert('user baru berhasil ditambahkan!');
+        document.location.href='login.php';
+        </script>";
+    }else{
+            echo "<script>
+            alert('Data gagal ditambahkan');
+            document.location.href='register.php';
+            </script>";
+        }
+    };
+?>
 
 
 
@@ -76,7 +92,7 @@
           <!-- Email input -->
           <div data-mdb-input-init class="form-outline mb-4">
               <label class="form-label" for="form3Example3">Nama</label>
-            <input type="text" name="usernamee" id="form3Example3" class="form-control form-control-lg"
+            <input type="text" name="nama_pelanggan" id="form3Example3" class="form-control form-control-lg"
               placeholder="Masukkan Nama" />
           </div>
           <!-- Email input -->

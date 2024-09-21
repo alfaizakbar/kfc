@@ -1,25 +1,31 @@
 <?php 
 session_start();
-require 'function.php';
+require_once 'function.php'; // Mengimpor fungsi dari file function.php
 
-$usernamee = $_SESSION["usernamee"];
-$pelanggan=queryy("SELECT * FROM pelanggan WHERE usernamee='$usernamee'")[0];
-
-
-$data = query("SELECT * FROM blog");
-$data2 = query("SELECT DISTINCT kategori FROM blog");
-// cariii
-if(isset($_POST["cari"])){
-    $data = cari ($_POST["keyword"]);
+// Cek apakah pelanggan sudah login, jika belum redirect ke login page
+if (!isset($_SESSION['nama_pelanggan'])) {
+    header("Location: login.php");
+    exit;
 }
 
+// Mengambil data pelanggan berdasarkan session
+$nama_pelanggan = $_SESSION["nama_pelanggan"];
+$pelanggan = queryy("SELECT * FROM pelanggan WHERE nama_pelanggan = '$nama_pelanggan'")[0];
 
-if (!isset($_SESSION['usernamee'])) {
-    header("location:login.php");
-  }
-  error_reporting(0);
+// Mengambil data blog dan kategori
+$data = queryy("SELECT * FROM blog");
+$data2 = queryy("SELECT DISTINCT kategori FROM blog");
+
+// Jika tombol cari ditekan, ambil data berdasarkan keyword pencarian
+if (isset($_POST["cari"])) {
+    $data = cari($_POST["keyword"]);
+}
+
+// Matikan error reporting untuk produksi (gunakan error_reporting(E_ALL) untuk pengembangan)
+error_reporting(0);
 
 ?>
+
 
 
 
@@ -184,7 +190,7 @@ if (!isset($_SESSION['usernamee'])) {
       class="w-100 shadow-1-strong rounded mb-4"
       alt="Wintry Mountain Landscape"
     />
-    <a href="detail.php?id=<?= $row['id']?>"><h5 class="text-center"><?= $row['judul']?></h5></a>
+    <a href="detail.php?id=<?= $row['id']?>"><h5 class="text-center"><?= $row['nama_makanan']?></h5></a>
     
   </div>
   <?php $i++ ?>

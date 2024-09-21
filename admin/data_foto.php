@@ -1,27 +1,24 @@
 <?php
 session_start();
 
+require '../database/post.php';
+
+
+
+$data = query("SELECT * FROM blog ORDER BY id DESC");
+error_reporting(0);
+
+session_start();
+
 if (!isset($_SESSION['username'])) {
   header("location:login.php");
 }
 error_reporting(0);
 
 
+;
 
-// Mengambil data foto dari tabel 'foto' dengan JOIN ke tabel 'user' dan 'album'
-$sqlFoto = "SELECT foto.*, user.userid AS user_userid, user.namalengkap AS user_namalengkap, album.albumid AS album_albumid, album.namaalbum AS album_namaalbum FROM foto JOIN user ON foto.userid = user.userid JOIN album ON foto.albumid = album.albumid";
-$resultFoto = $conn->query($sqlFoto);
 
-// Menyimpan data foto dalam bentuk array
-$fotos = [];
-while ($rowFoto = $resultFoto->fetch_assoc()) {
-    $fotos[] = $rowFoto;
-}
-
-$adminNamalengkap = isset($_SESSION['admin_namalengkap']) ? $_SESSION['admin_namalengkap'] : '';
-
-// Menutup koneksi database
-$conn->close();
 ?>
 
 <?php include 'navbar.php'; ?>
@@ -31,8 +28,8 @@ $conn->close();
           <h1>Dashboard</h1>
           <nav>
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-              <li class="breadcrumb-item active">Data Foto</li>
+              <li class="breadcrumb-item"><a href="index.html">Dashboard Makanan</a></li>
+              <li class="breadcrumb-item active">Data Makanan</li>
               
             </ol>
           </nav>
@@ -47,42 +44,28 @@ $conn->close();
                             <table class="table datatable table-responsive">
                                 <thead>
                                     <tr>
-                                        <th>ID Foto</th>
-                                        <th>Foto</th>
-                                        <th>Judul Foto</th>
-                                        <th>Deskripsi Foto</th>
+                                        <th>No</th>
+                                        <th>Nama Makanan</th>
+                                        <th>Harga</th>
                                         <th>Tanggal Unggah</th>
-                                        <!-- <th>Lokasi File</th> -->
-                                        <th>ID Pengguna</th>
-                                        <th>Nama Pengguna</th>
-                                        <th>ID Album</th>
-                                        <th>Nama Album</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php
-                                    $i = 1;
-                                    foreach ($fotos as $foto) {
-                                        echo "<tr>";
-                                        echo "<td>" . $i . "</td>";
-                                        echo "<td><img class='kk' style='height:100px; width:100px; object-fit:cover;' src='". '../gambar/' . $foto['lokasifile'] . "' alt='Foto' style='width:100px;'></td>";
-                                        echo "<td>" . $foto['judulfoto'] . "</td>";
-                                        echo "<td>" . $foto['deskripsifoto'] . "</td>";
-                                        echo "<td>" . $foto['tanggalunggah'] . "</td>";
-                                        // echo "<td>" . $foto['lokasifile'] . "</td>";
-                                        echo "<td>" . $foto['userid'] . "</td>";
-                                        echo "<td>" . $foto['user_namalengkap'] . "</td>";
-                                        echo "<td>" . $foto['albumid'] . "</td>";
-                                        echo "<td>" . $foto['album_namaalbum'] . "</td>";
-                                        echo "<td>
-                                        <a class='btn btn-danger' href='hapus_foto.php?fotoid=" . $foto['fotoid'] . "'>Hapus</a>
-                                    </td>";
-
-                                        echo "</tr>";
-                                        $i++;
-                                    }
-                                    ?>
+                                <?php $i =1; ?>
+    <?php foreach($data as $row){ ?>
+        <tr>
+            
+            <td><?= $i ?></td>
+            <td><?= $row['nama_makanan'] ?></td>
+            <td><?= $row['kategori'] ?></td>
+            <td><?= $row['tanggal'] ?></td>
+            <td class="yakin">
+            <a href="halamandetail1.php?id=<?= $row['id'] ?>" class="hd">Detail</a>
+            </td>
+        </tr>
+        <?php $i++ ?>
+        <?php } ?>
                                 </tbody>
                             </table>
                         </div>

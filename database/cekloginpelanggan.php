@@ -3,18 +3,18 @@ session_start();
 
 include 'koneksi.php';
 
-$username = $_POST['username'];
+$nama_pelanggan = $_POST['nama_pelanggan'];
 $password = $_POST['password'];
 
 
-$login = mysqli_query($conn, "SELECT * FROM pelanggan WHERE username='$username' and password='$password'");
+$login = mysqli_query($conn, "SELECT * FROM pelanggan WHERE nama_pelanggan='$nama_pelanggan' and password='$password'");
 
 $cek = mysqli_num_rows($login);
 
 if ($cek > 0) {
     $dataa = mysqli_fetch_assoc($login);
 
-    $_SESSION['username'] = $username;
+    $_SESSION['nama_pelanggan'] = $nama_pelanggan;
     $_SESSION['password'] = $password;
     header("location:../pagehome/blog.php");
 }

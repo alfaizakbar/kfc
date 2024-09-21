@@ -1,12 +1,12 @@
 <?php
 session_start();
 require 'function.php';
-$usernamee = $_SESSION["usernamee"];
-$pelanggan=queryy("SELECT * FROM pelanggan WHERE usernamee='$usernamee'")[0];
+$nama_pelanggan = $_SESSION["nama_pelanggan"];
+$pelanggan=queryy("SELECT * FROM pelanggan WHERE nama_pelanggan='$nama_pelanggan'")[0];
 
 
 $id = $_GET["id"];
-$data = query("SELECT * FROM blog WHERE id = $id");
+$data = queryy("SELECT * FROM blog WHERE id = $id");
 ?>
 
 <!DOCTYPE html>
@@ -144,7 +144,7 @@ $data = query("SELECT * FROM blog WHERE id = $id");
           <div class="col-md-6">
             <div class="card-body d-flex flex-column justify-content-between">
               <div>
-                <h1 class="card-title"><?= $row['judul']?></h1>
+                <h1 class="card-title"><?= $row['nama_makanan']?></h1>
                 <p class="card-text">Harga: <?= $row['kategori']?></p>
                 <p class="card-text"><small class="text-muted"><?= $row['tanggal']?></small></p>
                 <?php } ?>

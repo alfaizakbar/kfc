@@ -12,18 +12,21 @@ if (empty($_SESSION['keranjang'])) {
 $keranjang = $_SESSION['keranjang'];
 
 // Ambil data pelanggan dari session
-$usernamee = $_SESSION["usernamee"];
-$pelanggan = queryy("SELECT * FROM pelanggan WHERE usernamee='$usernamee'")[0];
-$id_pelanggan = $pelanggan['id_pelanggan']; // Ambil id_pelanggan dari tabel pelanggan
+$nama_pelanggan = $_SESSION["nama_pelanggan"];
+$pelanggan = queryy("SELECT * FROM pelanggan WHERE nama_pelanggan='$nama_pelanggan'")[0];
+$id_pelanggan = $pelanggan['id_pelanggan'];
 
 // Ambil detail produk dari database berdasarkan ID di keranjang
 $produk_dikeranjang = [];
 $total_harga = 0;
+$total_makanan = 0; // Inisialisasi total makanan
+
 foreach ($keranjang as $id_produk => $jumlah) {
-    $produk = query("SELECT * FROM blog WHERE id = $id_produk")[0];
-    $produk['jumlah'] = $jumlah;
-    $produk['total'] = $jumlah * $produk['kategori']; // Asumsi harga ada di kolom 'kategori'
-    $total_harga += $produk['total'];
+    $produk = queryy("SELECT * FROM blog WHERE id = $id_produk")[0];
+    $produk['jumlah_makanan'] = $jumlah;
+    $produk['total_harga'] = $jumlah * $produk['kategori']; // Asumsi harga ada di kolom 'kategori'
+    $total_harga += $produk['total_harga'];
+    $total_makanan += $jumlah; // Tambahkan jumlah ke total makanan
     $produk_dikeranjang[] = $produk;
 }
 
@@ -39,28 +42,36 @@ $total_harga_final = $total_harga_diskon + $pajak;
 
 // Simpan data checkout jika form disubmit
 if (isset($_POST['checkout'])) {
-    $nama_pelanggan = $_POST['nama_pelanggan'];
     $alamat = $_POST['alamat'];
     $no_hp = $_POST['no_hp'];
 
     // Validasi data
-    if (empty($nama_pelanggan) || empty($alamat) || empty($no_hp)) {
-        echo "<script>alert('Nama, alamat, dan nomor telepon harus diisi.');</script>";
+    if (empty($alamat) || empty($no_hp)) {
+        echo "<script>alert('Alamat dan nomor telepon harus diisi.');</script>";
         exit;
     }
 
+    // Menggabungkan semua nama makanan
+    $nama_makanan = implode(", ", array_column($produk_dikeranjang, 'nama_makanan'));
+
     // Simpan data pembayaran ke database
-    $query = "INSERT INTO pembayaran (id_pelanggan, nama_pelanggan, alamat, no_hp, total_harga, diskon, pajak, total_akhir) 
-              VALUES ('$id_pelanggan', '$nama_pelanggan', '$alamat', '$no_hp', '$total_harga', '$diskon', '$pajak', '$total_harga_final')";
+    $query = "INSERT INTO pembayaran (id_pelanggan, nama_pelanggan, nama_makanan, alamat, no_hp, total_harga, diskon, pajak, total_akhir, jumlah_makanan) 
+              VALUES ('$id_pelanggan', '$nama_pelanggan', '$nama_makanan', '$alamat', '$no_hp', '$total_harga', '$diskon', '$pajak', '$total_harga_final', '$total_makanan')";
+
+    // Debug: Tampilkan query untuk pemeriksaan
+    // echo "<pre>$query</pre>"; // Un-comment untuk debug
+
     if (mysqli_query($conn, $query)) {
         $id_pembayaran = mysqli_insert_id($conn); // Mendapatkan id_pembayaran yang baru saja dimasukkan
 
         // Simpan detail pesanan ke tabel detail_pesanan
-        foreach ($keranjang as $id_produk => $jumlah) {
-            $produk = query("SELECT * FROM blog WHERE id = $id_produk")[0];
-            $total_produk = $jumlah * $produk['kategori'];
-            $query_detail = "INSERT INTO detail_pesanan (id_pembayaran, id_produk, jumlah, total) 
-                             VALUES ('$id_pembayaran', '$id_produk', '$jumlah', '$total_produk')";
+        foreach ($produk_dikeranjang as $produk) {
+            $id_produk = $produk['id'];
+            $jumlah_makanan = $produk['jumlah_makanan'];
+            $total_produk = $produk['total_harga'];
+
+            $query_detail = "INSERT INTO detail_pesanan (id_pembayaran, id_produk, nama_makanan, jumlah_makanan, total_harga) 
+                             VALUES ('$id_pembayaran', '$id_produk', '{$produk['nama_makanan']}', '$jumlah_makanan', '$total_produk')";
             mysqli_query($conn, $query_detail);
         }
 
@@ -74,7 +85,7 @@ if (isset($_POST['checkout'])) {
                 document.location.href = 'konfirmasi.php?id_pembayaran=$id_pembayaran';
               </script>";
     } else {
-        echo "<script>alert('Pembayaran Gagal');</script>";
+        echo "<script>alert('Pembayaran Gagal: " . mysqli_error($conn) . "');</script>";
     }
 }
 ?>
@@ -99,17 +110,18 @@ if (isset($_POST['checkout'])) {
           <form action="checkout.php" method="post">
             <div class="form-group">
               <label for="nama_pelanggan">Nama:</label>
-              <input type="text" id="nama_pelanggan" name="nama_pelanggan" value="<?= $pelanggan['usernamee']?>" class="form-control" required readonly>
+              <input type="text" id="nama_pelanggan" name="nama_pelanggan" value="<?= htmlspecialchars($pelanggan['nama_pelanggan']) ?>" class="form-control" required readonly>
             </div>
             <div class="form-group">
               <label for="alamat">Alamat:</label>
-              <textarea id="alamat" name="alamat" class="form-control" required readonly><?= $pelanggan['alamat']?></textarea>
+              <textarea id="alamat" name="alamat" class="form-control" required><?= htmlspecialchars($pelanggan['alamat']) ?></textarea>
             </div>
             <div class="form-group">
               <label for="no_hp">No Telepon:</label>
-              <input type="text" id="no_hp" name="no_hp" value="<?= $pelanggan['no_hp']?>" class="form-control" required readonly>
+              <input type="text" id="no_hp" name="no_hp" value="<?= htmlspecialchars($pelanggan['no_hp']) ?>" class="form-control" required>
             </div>
             <div class="mt-3">
+              <h4>Total Makanan: <?= $total_makanan ?> item</h4> <!-- Menampilkan total makanan -->
               <h4>Total Harga: Rp <?= number_format($total_harga, 0, ',', '.') ?></h4>
               <h4>Diskon: Rp <?= number_format($total_harga * $diskon, 0, ',', '.') ?> (<?= $diskon * 100 ?>%)</h4>
               <h4>Pajak (8%): Rp <?= number_format($pajak, 0, ',', '.') ?></h4>
@@ -133,11 +145,11 @@ if (isset($_POST['checkout'])) {
             <tbody>
               <?php foreach ($produk_dikeranjang as $item) : ?>
                 <tr>
-                  <td><img src="../admin/img/<?= $item['foto'] ?>" width="80" alt="<?= $item['judul'] ?>"></td>
-                  <td><?= $item['judul'] ?></td>
-                  <td><?= $item['jumlah'] ?></td>
+                  <td><img src="../admin/img/<?= htmlspecialchars($item['foto']) ?>" width="80" alt="<?= htmlspecialchars($item['nama_makanan']) ?>"></td>
+                  <td><?= htmlspecialchars($item['nama_makanan']) ?></td>
+                  <td><?= $item['jumlah_makanan'] ?></td>
                   <td>Rp <?= number_format($item['kategori'], 0, ',', '.') ?></td>
-                  <td>Rp <?= number_format($item['total'], 0, ',', '.') ?></td>
+                  <td>Rp <?= number_format($item['total_harga'], 0, ',', '.') ?></td>
                 </tr>
               <?php endforeach; ?>
             </tbody>

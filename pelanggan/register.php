@@ -1,19 +1,19 @@
 <?php
-// require '../database/konn.php';
+require '../database/konn.php';
 
-// if( isset($_POST["submit"])){
-//     if( registrasii($_POST) > 0){
-//         echo "<script>
-//         alert('user baru berhasil ditambahkan!');
-//         document.location.href='pembayaran.php';
-//         </script>";
-//     }else{
-//             echo "<script>
-//             alert('Data gagal ditambahkan');
-//             document.location.href='register.php';
-//             </script>";
-//         }
-//     };
+if( isset($_POST["submit"])){
+    if( registrasii($_POST) > 0){
+        echo "<script>
+        alert('user baru berhasil ditambahkan!');
+        document.location.href='pembayaran.php';
+        </script>";
+    }else{
+            echo "<script>
+            alert('Data gagal ditambahkan');
+            document.location.href='register.php';
+            </script>";
+        }
+    };
 
 
 

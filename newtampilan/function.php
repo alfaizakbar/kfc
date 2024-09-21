@@ -1,82 +1,92 @@
 <?php 
-$conn = mysqli_connect('localhost','root','','company_profile');
+// Koneksi ke database
+$conn = mysqli_connect('localhost', 'root', '', 'company_profile');
 
+// Cek koneksi
+if (!$conn) {
+    die("Koneksi gagal: " . mysqli_connect_error());
+}
 
-function query ($query){
+// Fungsi untuk menjalankan query dan mengembalikan hasilnya sebagai array
+function queryy($query) {
     global $conn;
-    $result = mysqli_query($conn,$query);
+    $result = mysqli_query($conn, $query);
+    
+    // Cek apakah query berhasil
+    if (!$result) {
+        die("Query gagal: " . mysqli_error($conn));
+    }
+
     $rows = [];
-    while($row= mysqli_fetch_assoc($result)){
-        $rows[] = $row ; 
+    while ($row = mysqli_fetch_assoc($result)) {
+        $rows[] = $row; 
     }
     return $rows;
 }
-function cari($keyword){
-    $query = "SELECT * FROM blog WHERE 
-    judul LIKE '%$keyword%'
 
-    ";
+// Fungsi untuk mencari berdasarkan keyword di tabel blog
+function cari($keyword) {
+    global $conn;
+
+    // Menggunakan mysqli_real_escape_string untuk mencegah SQL injection
+    $keyword = mysqli_real_escape_string($conn, $keyword);
+
+    $query = "SELECT * FROM blog WHERE judul LIKE '%$keyword%'";
     return query($query);
-
-}
-function hapus($id){
-    global $conn;
-     mysqli_query($conn, "DELETE FROM blog WHERE id = $id");
-     return mysqli_affected_rows($conn);
 }
 
-function queryy($query){
+// Fungsi untuk menghapus entri berdasarkan id
+function hapus($id) {
     global $conn;
-    $result = mysqli_query($conn,$query);
-    $rows =[];
-    while($pelanggan = mysqli_fetch_assoc($result)){
-        $rows[] = $pelanggan;
+    mysqli_query($conn, "DELETE FROM blog WHERE id = $id");
+    
+    // Cek apakah query berhasil
+    if (mysqli_affected_rows($conn) > 0) {
+        return true;
+    } else {
+        return false;
     }
-    return $rows;
-};
+}
 
-// function ubah($data){
-//     global $conn;
-// $id = $data ['id'];
-// $nama = htmlspecialchars ($data ['judul']);
-// $nis = htmlspecialchars ($data ['artikel']);
-// $email = htmlspecialchars ($data ['email']);
-// $jurusan = htmlspecialchars ($data ['jurusan']);
-// $gambarlama = htmlspecialchars ($data ['gambarlama']);
-
-
-// }
+// Fungsi untuk menambah produk ke keranjang
 function tambahKeKeranjang($id_produk) {
-    // Jika keranjang belum ada, buat array keranjang kosong
     if (!isset($_SESSION['keranjang'])) {
         $_SESSION['keranjang'] = [];
     }
 
-    // Tambah produk ke keranjang (gunakan ID produk sebagai kunci)
     if (isset($_SESSION['keranjang'][$id_produk])) {
-        $_SESSION['keranjang'][$id_produk]++; // Jika sudah ada di keranjang, tambahkan jumlahnya
+        $_SESSION['keranjang'][$id_produk]++;
     } else {
-        $_SESSION['keranjang'][$id_produk] = 1; // Jika belum ada, tambahkan produk dengan jumlah 1
+        $_SESSION['keranjang'][$id_produk] = 1;
     }
 }
 
-function bayarr($data){
+// Fungsi untuk menambah data pembayaran ke database
+function bayarr($data) {
     global $conn;
+
+    $id_pelanggan = mysqli_real_escape_string($conn, $data['id_pelanggan']);
+    $nama_makanan = mysqli_real_escape_string($conn, $data['nama_makanan']);
+    $kategori = mysqli_real_escape_string($conn, $data['kategori']);
+    $jumlah_makanan = mysqli_real_escape_string($conn, $data['jumlah_makanan']);
+    $nama_pelanggan = mysqli_real_escape_string($conn, $data['nama_pelanggan']);
+    $total_harga = mysqli_real_escape_string($conn, $data['total_harga']);
+    $alamat = mysqli_real_escape_string($conn, $data['alamat']);
+    $no_hp = mysqli_real_escape_string($conn, $data['no_hp']);
     
-    $id_pelanggan = $data['id_pelanggan'];
-    $judul = $data['judul'];
-    $kategori = $data['kategori'];
-    $jumlah_makanan = $data['jumlah_makanan'];
-    $nama_pelanggan = $data['nama_pelanggan'];
     date_default_timezone_set("Asia/Jakarta");
-    $tanggal_pembayaran =date('y-m-d h:i:s');
-    $alamat = $data['alamat'];
-    $no_hp = $data['no_hp'];
-    
-    $mysql = "INSERT INTO pembayaran VALUES ('','$id_pelanggan','$judul','$kategori','$jumlah_makanan','$nama_pelanggan','$tanggal_pembayaran','$alamat','$no_hp')";
-    mysqli_query($conn, $mysql);
-    return mysqli_affected_rows($conn);
-    
+    $tanggal_pembayaran = date('Y-m-d H:i:s');
+
+    $query = "INSERT INTO pembayaran (id_pelanggan, nama_makanan, kategori, jumlah_makanan, nama_pelanggan, total_harga, tanggal_pembayaran, alamat, no_hp) 
+              VALUES ('$id_pelanggan', '$nama_makanan', '$kategori', '$jumlah_makanan', '$nama_pelanggan','$total_harga', '$tanggal_pembayaran', '$alamat', '$no_hp')";
+
+    mysqli_query($conn, $query);
+
+    // Cek apakah query berhasil
+    if (mysqli_affected_rows($conn) > 0) {
+        return true;
+    } else {
+        return false;
+    }
 }
 ?>
-

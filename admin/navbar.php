@@ -171,16 +171,26 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="index.php">
           <i class="bi bi-grid"></i><span>Dashboard</span>
-        </a>
-     
+        </a>  
+      </li>
+      
       <li class="nav-item">
         <a class="nav-link collapsed" href="data_foto.php">
           <i class="bi bi-image"></i><span>Data Makanan</span>
         </a>
+      </li>
+
       <li class="nav-item">
         <a class="nav-link collapsed" href="data_contact.php">
           <i class="bi bi-card-list"></i><span>Data Contact</span>
         </a>
+        </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="detail_pesanan.php">
+          <i class="bi bi-card-list"></i><span>Data Pesanan</span>
+        </a>
+        </li>
       
        
         <li class="nav-item">

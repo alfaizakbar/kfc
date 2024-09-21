@@ -1,36 +1,19 @@
 <?php
+require '../database/post.php';
+$data = query("SELECT * FROM pembayaran");
+    if(isset($_POST["cari"])){
+        $data = cari($_POST["keyword"]);
+    }
+
+
+
+// $data = query("SELECT * FROM pembayaran ORDER BY id_pembayaran DESC");
+error_reporting(0);
 session_start();
-include 'koneksi.php';
-if (!isset($_SESSION['admin_id'])) {
+if (!isset($_SESSION['username'])) {
     header("location:login.php");
-    exit();
 }
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Handle form submission
-    $searchDate = $_POST['search_date'];
-
-    $sql = "SELECT * FROM user WHERE DATE(tanggal_tambah) = '$searchDate'";
-    $result = $conn->query($sql);
-
-    $users = [];
-    while ($row = $result->fetch_assoc()) {
-        $users[] = $row;
-    }
-} else {
-    // Default query without search
-    $sql = "SELECT * FROM user";
-    $result = $conn->query($sql);
-
-    $users = [];
-    while ($row = $result->fetch_assoc()) {
-        $users[] = $row;
-    }
-}
-
-$adminNamalengkap = isset($_SESSION['admin_namalengkap']) ? $_SESSION['admin_namalengkap'] : '';
-
-$conn->close();
+error_reporting(0);
 ?>
 
 <?php include 'navbar.php'; ?>
@@ -67,33 +50,37 @@ $conn->close();
                         <h5 class="card-title">Data user </h5>
                         <!-- Table with stripped rows -->
                         <div class="table-responsive">
-                            <table class="table datatable table-responsive">
+                            <table class="table datatable table-responsive" rules="all">
                                 <thead>
                                     <tr>
-                                        <th>UserID</th>
-                                        <th>Username</th>
-                                        <th>Email</th>
-                                        <th>Nama Lengkap</th>
+                                        <th>Tanggal dan Waktu Pembayaran</th>
                                         <th>Alamat</th>
-                                        <!-- <th>Tanggal Registrasi</th> -->
+                                        <th>No Handphone</th>
+                                        <th>Nama Pelanggan</th>
+                                        <th>Nama Makanan</th>
+                                        <th>Harga</th>
+                                        <th>Jumlah Makanan</th>
                                     </tr>
                                 </thead>
+                                <?php $i =1; ?>
+                        <?php
+                            foreach($data as $row){?>
                                 <tbody>
-                                    <?php
-                                    // Menampilkan data pengguna ke dalam tabel
-                                    $i = 1;
-                                    foreach ($users as $row) {
-                                        echo "<tr>";
-                                        echo "<td>" . $i . "</td>";
-                                        echo "<td>" . $row["username"] . "</td>";
-                                        echo "<td>" . $row["email"] . "</td>";
-                                        echo "<td>" . $row["namalengkap"] . "</td>";
-                                        echo "<td>" . $row["alamat"] . "</td>";
-                                        // echo "<td>" . $row["tanggal_tambah"] . "</td>";
-                                        echo "</tr>";
-                                        $i++;
-                                    }
-                                    ?>
+                                <td><?=date('d-m-Y H:i:s', strtotime($row['tanggal_pembayaran']))?></td>
+                        <td><?=$row['alamat']?></td>
+                        <td><?=$row['no_hp']?></td>
+                        <td>
+                            <?= $row['nama_pelanggan']?>
+                        </td>
+                        <td><?= $row['nama_makanan']?></td>
+                        <td><?= $row['kategori'] ?></td>
+                        <td><?= $row['jumlah_makanan']?></td>
+                        <td class="foto">
+                            <img src="./img/unduh.png" alt="">
+                            <a href="delete_pesanan.php?id_pembayaran=<?= $row['id_pembayaran'] ?>"onclick = "return confirm('yakin untuk menghapus?')"><img src="./img/tong.png" alt=""></a>
+                        </td>
+                        <?php $i++ ?>
+                        <?php }?> 
                                 </tbody>
                             </table>
                             <!-- End Table with stripped rows -->
@@ -145,7 +132,7 @@ $conn->close();
 
 <footer id="footer" class="footer">
     <div class="copyright">
-        &copy; Copyright <strong><span>AMIRULLAH</span></strong>. All Rights Reserved
+    &copy; Copyright <strong><span>AA Food</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
         <!-- All the links in the footer should remain intact. -->

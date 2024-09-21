@@ -95,8 +95,8 @@ if( isset($_POST["submit"])){
 
           <!-- Email input -->
           <div data-mdb-input-init class="form-outline mb-4">
-            <label class="form-label" for="form3Example3">Email address</label>
-            <input type="text" name="usernamee" id="form3Example3" class="form-control form-control-lg"
+            <label class="form-label" for="form3Example3">Nama Pelanggan</label>
+            <input type="text" name="nama_pelanggan" id="form3Example3" class="form-control form-control-lg"
               placeholder="Enter a valid Username" />
           </div>
 

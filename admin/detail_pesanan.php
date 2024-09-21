@@ -1,13 +1,10 @@
 <?php
 require '../database/post.php';
-$data = query("SELECT * FROM pembayaran");
-    if(isset($_POST["cari"])){
-        $data = cari($_POST["keyword"]);
-    }
 
 
 
-// $data = query("SELECT * FROM pembayaran ORDER BY id_pembayaran DESC");
+$data = query("SELECT * FROM pembayaran ORDER BY id_pembayaran DESC");
+
 error_reporting(0);
 session_start();
 if (!isset($_SESSION['username'])) {
@@ -24,7 +21,7 @@ error_reporting(0);
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
               <li class="breadcrumb-item ">Data User</li>
-              <li class="breadcrumb-item active">Bulanan</li>
+              <li class="breadcrumb-item active">Data Makanan</li>
               
             </ol>
           </nav>
@@ -34,11 +31,6 @@ error_reporting(0);
         <div class="row justify-content-start">
             <div class="col-md-4">
                 <form method="post" class="form-inline">
-                    <div class="form-group d-flex mb-4">
-                        <label for="search_month" class="mr- w-100">Search by Month:</label>
-                        <input type="month" name="search_month" id="search_month" class="form-control">
-                        <button type="submit" class="btn btn-primary ml-2">Search</button>
-                    </div>
                 </form>
             </div>
         </div>
@@ -61,6 +53,7 @@ error_reporting(0);
                                         <th>Nama Makanan</th>
                                         <th>Harga</th>
                                         <th>Jumlah Makanan</th>
+                                    
                                     </tr>
                                 </thead>
                                 <?php $i =1; ?>
@@ -74,7 +67,7 @@ error_reporting(0);
                             <?= $row['nama_pelanggan']?>
                         </td>
                         <td><?= $row['nama_makanan']?></td>
-                        <td><?= $row['kategori'] ?></td>
+                        <td><?= $row['total_harga']?></td>
                         <td><?= $row['jumlah_makanan']?></td>
                         <td class="foto">
                             <img src="./img/unduh.png" alt="">

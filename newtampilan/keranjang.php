@@ -41,7 +41,7 @@ if (isset($_POST['diskon_apply'])) {
 $produk_dikeranjang = [];
 $total_harga = 0;
 foreach ($keranjang as $id_produk => $jumlah) {
-    $produk = query("SELECT * FROM blog WHERE id = $id_produk")[0];
+    $produk = queryy("SELECT * FROM blog WHERE id = $id_produk")[0];
     $produk['jumlah'] = $jumlah;
     $produk['total'] = $jumlah * $produk['kategori'];
     $total_harga += $produk['total'];
@@ -107,8 +107,8 @@ $total_harga_final = $total_harga_diskon + $pajak;
             <tbody>
               <?php foreach ($produk_dikeranjang as $item) : ?>
                 <tr>
-                  <td><img src="../admin/img/<?= $item['foto'] ?>" width="100" alt="<?= $item['judul'] ?>"></td>
-                  <td><?= $item['judul'] ?></td>
+                  <td><img src="../admin/img/<?= $item['foto'] ?>" width="100" alt="<?= $item['foto'] ?>"></td>
+                  <td><?= $item['nama_makanan'] ?></td>
                   <td>
                     <input type="number" name="jumlah[<?= $item['id'] ?>]" value="<?= $item['jumlah'] ?>" min="1" class="form-control" style="width: 80px;">
                   </td>
