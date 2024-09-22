@@ -88,7 +88,7 @@ error_reporting(0);
         <?php } ?>
                                 </tbody>
                             </table>
-                            <!-- Modal for Adding Makanan -->
+                         <!-- Modal for Adding Makanan -->
 <div class="modal fade" id="addMakananModal" tabindex="-1" aria-labelledby="addMakananModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -97,7 +97,8 @@ error_reporting(0);
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form id="addMakananForm" action="add_makanan.php" method="POST">
+        <!-- Perhatikan penambahan enctype di sini -->
+        <form id="addMakananForm" action="add_makanan.php" method="POST" enctype="multipart/form-data">
           <div class="mb-3">
             <label for="namaMakanan" class="form-label">Nama Makanan</label>
             <input type="text" class="form-control" id="namaMakanan" name="nama_makanan" required>
@@ -110,12 +111,18 @@ error_reporting(0);
             <label for="tanggal" class="form-label">Tanggal Unggah</label>
             <input type="date" class="form-control" id="tanggal" name="tanggal" required>
           </div>
+          <!-- Tambahkan input untuk upload foto -->
+          <div class="mb-3">
+            <label for="foto" class="form-label">Upload Foto Makanan</label>
+            <input type="file" class="form-control" id="foto" name="foto_makanan" accept="image/*" required>
+          </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
     </div>
   </div>
 </div>
+
 <?php foreach ($data as $row) { ?>
 <!-- Modal View Makanan -->
 <div class="modal fade" id="viewMakananModal<?= $row['id'] ?>" tabindex="-1" aria-labelledby="viewMakananModalLabel" aria-hidden="true">
@@ -126,14 +133,20 @@ error_reporting(0);
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+        <!-- Display the food details -->
         <p><strong>Nama Makanan:</strong> <?= $row['nama_makanan'] ?></p>
         <p><strong>Harga:</strong> <?= $row['kategori'] ?></p>
         <p><strong>Tanggal Unggah:</strong> <?= $row['tanggal'] ?></p>
+        <p><strong>Foto Makanan:</strong></p>
+        <img src="img/<?= $row['foto'] ?>" alt="<?= $row['nama_makanan'] ?>" class="img-fluid" style="max-width: 100%; height: auto;">
+
+        <!-- Display the food image -->
       </div>
     </div>
   </div>
 </div>
 <?php } ?>
+
 <?php foreach ($data as $row) { ?>
 <!-- Modal Edit Makanan -->
 <div class="modal fade" id="editMakananModal<?= $row['id'] ?>" tabindex="-1" aria-labelledby="editMakananModalLabel" aria-hidden="true">
@@ -144,20 +157,36 @@ error_reporting(0);
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form id="editMakananForm<?= $row['id'] ?>" action="edit_makanan.php" method="POST">
+        <form id="editMakananForm<?= $row['id'] ?>" action="edit_makanan.php" method="POST" enctype="multipart/form-data">
           <input type="hidden" name="id" value="<?= $row['id'] ?>">
+          
           <div class="mb-3">
             <label for="namaMakanan" class="form-label">Nama Makanan</label>
             <input type="text" class="form-control" id="namaMakanan" name="nama_makanan" value="<?= $row['nama_makanan'] ?>" required>
           </div>
+          
           <div class="mb-3">
             <label for="kategori" class="form-label">Harga</label>
             <input type="text" class="form-control" id="kategori" name="kategori" value="<?= $row['kategori'] ?>" required>
           </div>
+          
           <div class="mb-3">
             <label for="tanggal" class="form-label">Tanggal Unggah</label>
             <input type="date" class="form-control" id="tanggal" name="tanggal" value="<?= $row['tanggal'] ?>" required>
           </div>
+          
+          <!-- Display current image -->
+          <div class="mb-3">
+            <label for="currentFoto" class="form-label">Foto Saat Ini</label><br>
+            <img src="uploads/<?= $row['foto'] ?>" alt="<?= $row['nama_makanan'] ?>" class="img-fluid mb-2" style="max-width: 100%; height: auto;">
+          </div>
+          
+          <!-- Input for uploading new image -->
+          <div class="mb-3">
+            <label for="foto" class="form-label">Ganti Foto (opsional)</label>
+            <input type="file" class="form-control" id="foto" name="foto">
+          </div>
+          
           <button type="submit" class="btn btn-primary">Update</button>
         </form>
       </div>
@@ -165,6 +194,7 @@ error_reporting(0);
   </div>
 </div>
 <?php } ?>
+
 
 
                         </div>
