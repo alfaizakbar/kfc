@@ -31,9 +31,10 @@ function tambah($data)
 {
     global $conn;
     
-    $judul = $data['judul'];
+    $nama_makanan = $data['nama_makanan'];
     // $artikel = addslashes($data['artikel']); 
     $kategori = $data['kategori'];
+    $kategori = number_format($kategori, 0, ',', '.');
     $tanggal = date('y/m/d');   
     $gambar = upload();
     if ( !$gambar) {
@@ -41,7 +42,7 @@ function tambah($data)
     }
     
     // $artikel = trim($data['artikel'], '[]', );
-    $mysql = "INSERT INTO blog VALUES ('', '$judul', '$kategori', '$gambar', '$tanggal')";
+    $mysql = "INSERT INTO blog VALUES ('', '$nama_makanan', '$kategori', '$gambar', '$tanggal')";
     mysqli_query($conn, $mysql);
     return mysqli_affected_rows($conn);
     // print_r($mysql);
@@ -84,29 +85,43 @@ function edit($data){
     global $conn;
     
     $id = $data['id'];
-    $judul = $data['judul'];
+    $nama_makanan = $data['nama_makanan'];
     $kategori = $data['kategori'];
     // $artikel = addslashes($data['artikel']);
     $tanggal = date('y/m/d');
     // $image = upload();
-    $mysql = "UPDATE blog SET judul='$judul', kategori='$kategori', tanggal='$tanggal' WHERE id=$id";
+    $mysql = "UPDATE blog SET nama_makanan='$nama_makanan', kategori='$kategori', tanggal='$tanggal' WHERE id=$id";
     // print_r( $mysql);
     mysqli_query($conn, $mysql);
     return mysqli_affected_rows($conn);
 };
-function apa($data){
+function apa($data) {
     global $conn;
 
     $id = $data['id'];
-    $username = $data['username'];
-    $email = $data['email'];
-    $password = $data['password'];
-    $query = "UPDATE user SET username='$username', email='$email', password='$password' WHERE id=$id";
-    $_SESSION['username']=$username;
-    mysqli_query($conn, $query);
-    return mysqli_affected_rows($conn);
+    $username = mysqli_real_escape_string($conn, $data['username']);
+    $email = mysqli_real_escape_string($conn, $data['email']);
+    
+    // Ambil password lama dari database
+    $result = mysqli_query($conn, "SELECT password FROM user WHERE id='$id'");
+    $row = mysqli_fetch_assoc($result);
+    $old_password = $row['password'];
+
+    // Jika password baru tidak diisi, gunakan password lama
+    $password = !empty($data['password']) ? mysqli_real_escape_string($conn, $data['password']) : $old_password;
+
+    // Siapkan query untuk update
+    $query = "UPDATE user SET username='$username', email='$email', password='$password' WHERE id='$id'";
+    
+    // Eksekusi query
+    if (mysqli_query($conn, $query)) {
+        $_SESSION['username'] = $username; // Update session hanya jika query berhasil
+        return mysqli_affected_rows($conn);
+    } else {
+        return 0; // Mengembalikan 0 jika query gagal
+    }
 }
-;
+
 
 function hapuss($id){
     global $conn;

@@ -145,7 +145,7 @@ $data = queryy("SELECT * FROM blog WHERE id = $id");
             <div class="card-body d-flex flex-column justify-content-between">
               <div>
                 <h1 class="card-title"><?= $row['nama_makanan']?></h1>
-                <p class="card-text">Harga: <?= $row['kategori']?></p>
+                <p class="card-text">Harga: <?= number_format($row['kategori'], 0, ',', '.')?></p>
                 <p class="card-text"><small class="text-muted"><?= $row['tanggal']?></small></p>
                 <?php } ?>
               </div>
@@ -169,7 +169,8 @@ $data = queryy("SELECT * FROM blog WHERE id = $id");
 if (isset($_POST['tambah_keranjang'])) {
     $id_produk = $_POST['id_produk'];
     tambahKeKeranjang($id_produk);
-    echo "<script>alert('Produk berhasil ditambahkan ke keranjang!');</script>";
+    echo "<script>alert('Produk berhasil ditambahkan ke keranjang!');
+     document.location.href = 'pesanan.php'</script>";
 }
 ?>
 

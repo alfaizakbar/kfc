@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 
 require '../database/post.php';
 
@@ -16,7 +16,24 @@ if (!isset($_SESSION['username'])) {
 error_reporting(0);
 
 
-;
+if (isset($_POST['tambah'])) {
+    if (tambah ($_POST) > 0 ){
+        echo "<script>alert('Data Berhasil Di Tambahkan');
+        document.location.href = 'data_foto.php'</script>";
+    } else {
+        echo "<script>alert('data gagal ditambahakan')</script>";
+    }
+};
+
+if(isset($_POST['edit'])){
+  if(edit($_POST) > 0){
+      echo "<script>alert('Data Berhasil Di Ubah.');
+          document.location.href = 'data_foto.php'</script>";
+  } else {
+      echo "<script>alert('data gagal ditambahakan')</script>";
+  }
+  ;
+};
 
 
 ?>
@@ -64,7 +81,7 @@ error_reporting(0);
             
             <td><?= $i ?></td>
             <td><?= $row['nama_makanan'] ?></td>
-            <td><?= $row['kategori'] ?></td>
+            <td><?= number_format($row['kategori'], 0, ',', '.') ?></td>
             <td><?= $row['tanggal'] ?></td>
             <td class="yakin">
                 <!-- Tombol Detail dengan Ikon -->
@@ -78,7 +95,7 @@ error_reporting(0);
                     <i class="bi bi-pencil"></i>
                 </button>
                 <!-- Tombol Hapus dengan Ikon -->
-                <a href="delete_makanan.php?id=<?= $row['id'] ?>" class="btn btn-danger btn-sm" 
+                <a href="delete.php?id=<?= $row['id'] ?>" class="btn btn-danger btn-sm" 
                    onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');" title="Hapus">
                     <i class="bi bi-trash"></i>
                 </a>
@@ -98,7 +115,7 @@ error_reporting(0);
       </div>
       <div class="modal-body">
         <!-- Perhatikan penambahan enctype di sini -->
-        <form id="addMakananForm" action="add_makanan.php" method="POST" enctype="multipart/form-data">
+        <form id="addMakananForm" action="" method="post" enctype="multipart/form-data">
           <div class="mb-3">
             <label for="namaMakanan" class="form-label">Nama Makanan</label>
             <input type="text" class="form-control" id="namaMakanan" name="nama_makanan" required>
@@ -107,16 +124,16 @@ error_reporting(0);
             <label for="kategori" class="form-label">Harga</label>
             <input type="text" class="form-control" id="kategori" name="kategori" required>
           </div>
-          <div class="mb-3">
+          <!-- <div class="mb-3">
             <label for="tanggal" class="form-label">Tanggal Unggah</label>
             <input type="date" class="form-control" id="tanggal" name="tanggal" required>
-          </div>
+          </div> -->
           <!-- Tambahkan input untuk upload foto -->
           <div class="mb-3">
             <label for="foto" class="form-label">Upload Foto Makanan</label>
-            <input type="file" class="form-control" id="foto" name="foto_makanan" accept="image/*" required>
+            <input type="file" class="form-control" id="foto" name="gambar" accept="image/*" required>
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary" name="tambah">Submit</button>
         </form>
       </div>
     </div>
@@ -134,11 +151,11 @@ error_reporting(0);
       </div>
       <div class="modal-body">
         <!-- Display the food details -->
+        <img src="img/<?= $row['foto'] ?>" alt="<?= $row['nama_makanan'] ?>" class="img-fluid" style="max-width: 100%; height: auto;">
         <p><strong>Nama Makanan:</strong> <?= $row['nama_makanan'] ?></p>
-        <p><strong>Harga:</strong> <?= $row['kategori'] ?></p>
+        <p><strong>Harga:</strong> <?= number_format($row['kategori'], 0, ',', '.') ?></p>
         <p><strong>Tanggal Unggah:</strong> <?= $row['tanggal'] ?></p>
         <p><strong>Foto Makanan:</strong></p>
-        <img src="img/<?= $row['foto'] ?>" alt="<?= $row['nama_makanan'] ?>" class="img-fluid" style="max-width: 100%; height: auto;">
 
         <!-- Display the food image -->
       </div>
@@ -157,7 +174,7 @@ error_reporting(0);
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form id="editMakananForm<?= $row['id'] ?>" action="edit_makanan.php" method="POST" enctype="multipart/form-data">
+        <form id="editMakananForm<?= $row['id'] ?>" action="" method="post" enctype="multipart/form-data">
           <input type="hidden" name="id" value="<?= $row['id'] ?>">
           
           <div class="mb-3">
@@ -187,7 +204,7 @@ error_reporting(0);
             <input type="file" class="form-control" id="foto" name="foto">
           </div>
           
-          <button type="submit" class="btn btn-primary">Update</button>
+          <button type="submit" name="edit" class="btn btn-primary">Update</button>
         </form>
       </div>
     </div>

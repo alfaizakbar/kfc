@@ -187,7 +187,7 @@ error_reporting(0);
                                            
     <img
       src="../admin/img/<?= $row['foto']?>"
-      class="w-100 shadow-1-strong rounded mb-4"
+      class="w-100 shadow-1-strong rounded mb-4 img-fixed-height"
       alt="Wintry Mountain Landscape"
     />
     <a href="detail.php?id=<?= $row['id']?>"><h5 class="text-center"><?= $row['nama_makanan']?></h5></a>

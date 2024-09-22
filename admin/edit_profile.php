@@ -1,44 +1,24 @@
 <?php
 session_start();
-include 'koneksi.php';
+require '../database/post.php';
 
-// Periksa apakah user sudah login
-if (!isset($_SESSION['admin_id'])) {
-    header("Location: login.php");
-    exit();
-}
-
-// Fetch user data
-$admin_id = $_SESSION['admin_id'];
-$sqlUserProfile = "SELECT * FROM admin WHERE admin_id = $admin_id";
-$resultUserProfile = mysqli_query($conn, $sqlUserProfile);
-$userData = mysqli_fetch_assoc($resultUserProfile);
-
-// Inisialisasi variabel untuk menyimpan nilai kolom password lama
-$passwordLama = $userData['admin_password'];
-
-// Proses form pengeditan profile jika form disubmit
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Ambil data dari form
-    $newUsername = mysqli_real_escape_string($conn, $_POST['newUsername']);
-    $newPassword = mysqli_real_escape_string($conn, $_POST['newPassword']);
-    $newNamalengkap = mysqli_real_escape_string($conn, $_POST['newNamalengkap']);
-    $newEmail = mysqli_real_escape_string($conn, $_POST['newEmail']); // Added line
-
-    // Validasi kolom password tidak boleh kosong
-    if (empty($newPassword)) {
-        // Jika password kosong, gunakan password lama
-        $newPassword = $passwordLama;
+$username = $_SESSION["username"];
+$orang=query("SELECT * FROM user WHERE username='$username'")[0];
+if(isset($_POST['apa'])){
+    if(apa($_POST) > 0){
+        echo "<script>alert('data berhasil di ubah');
+            document.location.href = 'index.php'</script>";
+    } else {
+        echo "<script>alert('data gagal di ubah')</script>";
     }
-
-    // Update data pengguna
-    $sqlUpdateProfile = "UPDATE admin SET admin_username='$newUsername', admin_password='$newPassword', admin_namalengkap='$newNamalengkap', admin_email='$newEmail' WHERE admin_id = $admin_id";
-    mysqli_query($conn, $sqlUpdateProfile);
-
-    // Redirect ke halaman profile setelah update
-    header("Location: users-profile.php");
-    exit();
+    ;
 }
+;
+
+if (!isset($_SESSION['username'])) {
+  header("location:login.php");
+}
+error_reporting(0);
 ?>
 
 <!DOCTYPE html>
@@ -68,19 +48,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <form method="post" action="edit_profile.php" onsubmit="return confirmEdit()">
             <label for="newUsername">Username Baru:</label>
-            <input type="text" name="newUsername" id="newUsername" value="<?= $userData['admin_username'] ?>" required>
+            <input type="text" name="username" id="newUsername" value="<?= $orang['username'] ?>" required>
 
             <label for="newPassword">Password Baru:</label>
-            <input type="password" name="newPassword" id="newPassword">
+            <input type="password" name="password" id="newPassword">
             <small>Kosongkan jika tidak ingin mengganti password</small>
 
             <label for="newEmail">Email Baru:</label> <!-- Added line -->
-            <input type="email" name="newEmail" id="newEmail" value="<?= $userData['admin_email'] ?>" required> <!-- Added line -->
+            <input type="email" name="newEmail" id="newEmail" value="<?= $orang['email'] ?>" required> <!-- Added line -->
 
-            <label for="newNamalengkap">Nama Lengkap Baru:</label>
-            <input type="text" name="newNamalengkap" id="newNamalengkap" value="<?= $userData['admin_namalengkap'] ?>" required>
 
-            <input type="submit" value="Simpan">
+            <button type="submit" name="apa" value="Simpan">Simpan</button>
         </form>
 
         <script>

@@ -1,15 +1,32 @@
 <?php
 session_start();
-include 'koneksi.php';
-if(!isset($_SESSION['admin_id'])) {
-    header("location:login.php");
-    
+require '../database/post.php';
+
+$username = $_SESSION["username"];
+
+$orang = query("SELECT * FROM user WHERE username='$username'");
+if (!empty($orang)) {
+    $orang = $orang[0];
+} else {
+    echo "User tidak ditemukan";
+    exit;
 }
-$adminNamalengkap = isset($_SESSION['admin_namalengkap']) ? $_SESSION['admin_namalengkap'] : '';
-$admin_id = $_SESSION['admin_id'];
-$sqlUserProfile = "SELECT * FROM admin WHERE admin_id = $admin_id";
-$resultUserProfile = mysqli_query($conn, $sqlUserProfile);
-$userData = mysqli_fetch_assoc($resultUserProfile);
+
+if(isset($_POST['apa'])){
+    if(apa($_POST) > 0){
+        echo "<script>alert('data berhasil di ubah');
+            document.location.href = 'index.php'</script>";
+    } else {
+        echo "<script>alert('data gagal di ubah')</script>";
+    }
+    ;
+}
+;
+
+if (!isset($_SESSION['username'])) {
+  header("location:login.php");
+}
+error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -76,8 +93,8 @@ include 'navbar.php';
           <div class="card">
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-              <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-              <h2> <?= isset($userData['admin_namalengkap']) ? $userData['admin_namalengkap'] : '' ?></h2>
+              <!-- <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle"> -->
+              <h2> <?= isset($orang['username']) ? $orang['username'] : '' ?></h2>
               <h3>Job : Admin</h3>
               <div class="social-links mt-2">
                 <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
@@ -112,37 +129,28 @@ include 'navbar.php';
               <div class="tab-content pt-2">
 
               <div class="tab-pane fade show active profile-overview" id="profile-overview">
-              <h5 class="card-title">About</h5>
-                  <p class="small fst-italic">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque odit consectetur maiores. Quidem esse possimus assumenda perspiciatis doloribus, mollitia aut. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque dolor odit adipisci fuga nobis nam eos! Vero reiciendis suscipit rerum . Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. </p>
+
 
 
 <h5 class="card-title">Profile Details</h5>
 
+
 <div class="row">
-    <div class="col-lg-3 col-md-4 label ">Nama Lengkap</div>
-    <div class="col-lg-9 col-md-8"><?= isset($userData['admin_namalengkap']) ? $userData['admin_namalengkap'] : '' ?></div>
+    <div class="col-lg-3 col-md-4 label">Username : </div>
+    <div class="col-lg-9 col-md-8"><?= isset($orang['username']) ? $orang['username'] : '' ?></div>
 </div>
 
 <div class="row">
-    <div class="col-lg-3 col-md-4 label">Username</div>
-    <div class="col-lg-9 col-md-8"><?= isset($userData['admin_username']) ? $userData['admin_username'] : '' ?></div>
+    <div class="col-lg-3 col-md-4 label">Email : </div>
+    <div class="col-lg-9 col-md-8"><?= isset($orang['email']) ? $orang['email'] : '' ?></div>
 </div>
 
 <div class="row">
-    <div class="col-lg-3 col-md-4 label">Email</div>
-    <div class="col-lg-9 col-md-8"><?= isset($userData['admin_email']) ? $userData['admin_email'] : '' ?></div>
+    <div class="col-lg-3 col-md-4 label">Password : </div>
+    <div class="col-lg-9 col-md-8"><?= isset($orang['password']) ? $orang['password'] : '' ?></div>
 </div>
 
-<div class="row">
-    <div class="col-lg-3 col-md-4 label">Password</div>
-    <div class="col-lg-9 col-md-8"><?= isset($userData['admin_password']) ? $userData['admin_password'] : '' ?></div>
-</div>
 
-<!-- <div class="row mt-3">
-    <div class="col-lg-12 text-right">
-        <a href="edit_profile.php?adminid=<?= isset($userData['adminid']) ? $userData['adminid'] : '' ?>" class="btn btn-primary">Edit Profile</a>
-    </div>
-</div> -->
 <div class="row mt-3">
     <div class="col-lg-12 text-right">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editProfileModal">Edit Profile</button>
@@ -159,30 +167,26 @@ include 'navbar.php';
             </div>
             <div class="modal-body">
                 <!-- Place the edit profile form here -->
-                <form id="editProfileForm" method="post" action="edit_profile.php">
+                <form id="editProfileForm" method="post" action="">
+                <input type="hidden" name="id" value="<?= $orang['id']?>">
                     <!-- Existing form fields -->
                     <div class="mb-3">
-                        <label for="newNamalengkap" class="form-label">Nama Lengkap Baru:</label>
-                        <input type="text" class="form-control" id="newNamalengkap" name="newNamalengkap" value="<?= $userData['admin_namalengkap'] ?>" required>
-                    </div>
-
-                    <div class="mb-3">
                         <label for="newUsername" class="form-label">Username Baru:</label>
-                        <input type="text" class="form-control" id="newUsername" name="newUsername" value="<?= $userData['admin_username'] ?>" required>
+                        <input type="text" class="form-control" id="newUsername" name="username" value="<?= $orang['username'] ?>" required>
                     </div>
 
                     <div class="mb-3">
                         <label for="newEmail" class="form-label">Email Baru:</label>
-                        <input type="email" class="form-control" id="newEmail" name="newEmail" value="<?= $userData['admin_email'] ?>" required>
+                        <input type="email" class="form-control" id="newEmail" name="email" value="<?= $orang['email'] ?>" required>
                     </div>
 
                     <div class="mb-3">
                         <label for="newPassword" class="form-label">Password Baru:</label>
-                        <input type="password" class="form-control" id="newPassword" name="newPassword">
+                        <input type="password" class="form-control" id="newPassword" name="password">
                         <small class="form-text text-muted">Kosongkan jika tidak ingin mengganti password.</small>
                     </div>
 
-                    <button type="button" class="btn btn-primary" onclick="showConfirmation()">Simpan</button>
+                    <button type="submit" name="apa" class="btn btn-primary" onclick="showConfirmation()">Simpan</button>
                 </form>
             </div>
         </div>
