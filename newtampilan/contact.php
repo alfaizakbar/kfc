@@ -80,7 +80,7 @@
 
           <div class="col-lg-6  d-flex flex-column justify-content-center" data-aos="fade-in">
             <h1> <span>Contact</span></h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta, ipsa?</p>
+            <p>Hubungi kami untuk pertanyaan atau informasi lebih lanjut. Kami siap membantu Anda.</p>
             <div class="d-flex">
               <!-- <a href="#about" class="btn-get-started">Get Started</a> -->
               <!-- <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
@@ -139,7 +139,7 @@
 <!-- Section Title -->
 <div class="container section-title" data-aos="fade-up">
         <h2>Contact</h2>
-        <div><span>Check Our</span> <span class="description-title">Contact</span></div>
+        <div><span>Cek</span> <span class="description-title">Kontak kami</span></div>
       </div><!-- End Section Title -->
 
 <div class="container" data-aos="fade" data-aos-delay="100">
@@ -151,24 +151,24 @@
       <div class="info-item d-flex align-items-center mb-4" data-aos="fade-up" data-aos-delay="200">
         <i class="bi bi-geo-alt flex-shrink-0 display-6 text-primary me-3"></i>
         <div>
-          <h5>Address</h5>
-          <p>A108 Adam Street, New York, NY 535022</p>
+          <h5>Alamat</h5>
+          <p>Lhokseumawe</p>
         </div>
       </div>
 
       <div class="info-item d-flex align-items-center mb-4" data-aos="fade-up" data-aos-delay="300">
         <i class="bi bi-telephone flex-shrink-0 display-6 text-primary me-3"></i>
         <div>
-          <h5>Call Us</h5>
-          <p>+1 5589 55488 55</p>
+          <h5>Hubungi Kami </h5>
+          <p>081234567890</p>
         </div>
       </div>
 
       <div class="info-item d-flex align-items-center mb-4" data-aos="fade-up" data-aos-delay="400">
         <i class="bi bi-envelope flex-shrink-0 display-6 text-primary me-3"></i>
         <div>
-          <h5>Email Us</h5>
-          <p>info@example.com</p>
+          <h5>Email kami</h5>
+          <p>info@gmail.com</p>
         </div>
       </div>
 
@@ -177,7 +177,7 @@
 
     <!-- Google Maps Location for Lhokseumawe -->
     <div class="col-lg-8" data-aos="fade-up" data-aos-delay="500">
-      <h3 class="mb-4">Our Location in Lhokseumawe</h3>
+      <h3 class="mb-4">Lokasi kami di Lhokseumawe</h3>
       <div class="map-container" style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31800.392362036163!2d97.14209970000001!3d5.1818229999999985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303e457332dce8fb%3A0x775ee0dd1d7d5c02!2sLhokseumawe%2C%20Aceh%2C%20Indonesia!5e0!3m2!1sen!2sid!4v1639835678543!5m2!1sen!2sid"
@@ -195,19 +195,19 @@
         <div class="row gy-4">
 
           <div class="col-md-6">
-            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+            <input type="text" name="name" class="form-control" placeholder="Nama Anda" required>
           </div>
 
           <div class="col-md-6">
-            <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+            <input type="email" class="form-control" name="email" placeholder="Email Anda" required>
           </div>
 
           <div class="col-md-12">
-            <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+            <input type="text" class="form-control" name="subject" placeholder="Subjek" required>
           </div>
 
           <div class="col-md-12">
-            <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+            <textarea class="form-control" name="message" rows="6" placeholder="Pesan" required></textarea>
           </div>
 
           <div class="col-md-12 text-center">

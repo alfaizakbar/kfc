@@ -68,101 +68,93 @@
 
   <main class="main">
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
-      <img src="assets/img/hero-bg-2.jpg" alt="" class="hero-bg">
+<!-- Bagian Hero -->
+<section id="hero" class="hero section dark-background">
+  <img src="assets/img/hero-bg-2.jpg" alt="" class="hero-bg">
 
-      <div class="container">
-        <div class="row gy-4 justify-content-between">
-          <div class="col-lg-4 order-lg-last hero-img" data-aos="zoom-out" data-aos-delay="100">
-            <!-- <img src="assets/img/hero-img.png" class="img-fluid animated" alt=""> -->
-          </div>
+  <div class="container">
+    <div class="row gy-4 justify-content-between">
+      <div class="col-lg-4 order-lg-last hero-img" data-aos="zoom-out" data-aos-delay="100">
+        <!-- <img src="assets/img/hero-img.png" class="img-fluid animated" alt=""> -->
+      </div>
 
-          <div class="col-lg-6  d-flex flex-column justify-content-center" data-aos="fade-in">
-            <h1>Kami Akan Memberikan Menu yang terbaik Untuk <span>Anda</span></h1>
-            <p>Liat Menu Kami di Sini</p>
-            <div class="d-flex">
-              <a href="menu.php" class="btn-get-started">Menu</a>
-              <!-- <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
-            </div>
-          </div>
-
+      <div class="col-lg-6  d-flex flex-column justify-content-center" data-aos="fade-in">
+        <h1>Kami Akan Memberikan Menu yang Terbaik Untuk <span>Anda</span></h1>
+        <p>Lihat Menu Kami di Sini</p>
+        <div class="d-flex">
+          <a href="menu.php" class="btn-get-started">Menu</a>
         </div>
       </div>
 
-      <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
-        <defs>
-          <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
-        </defs>
-        <g class="wave1">
-          <use xlink:href="#wave-path" x="50" y="3"></use>
-        </g>
-        <g class="wave2">
-          <use xlink:href="#wave-path" x="50" y="0"></use>
-        </g>
-        <g class="wave3">
-          <use xlink:href="#wave-path" x="50" y="9"></use>
-        </g>
-      </svg>
-
-    </section><!-- /Hero Section -->
-
-    <!-- Contact Section -->
-    <section id="details" class="details section">
-
-<!-- Section Title -->
-<div class="container section-title" data-aos="fade-up">
-  <h2>Details</h2>
-  <div><span>Check Our</span> <span class="description-title">Details</span></div>
-</div><!-- End Section Title -->
-
-<div class="container">
-
-  <div class="row gy-4 align-items-center features-item">
-    <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
-      <img src="assets/img/details-1.png" class="img-fluid" alt="">
     </div>
-    <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
-      <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-      <p class="fst-italic">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua.
-      </p>
-      <ul>
-        <li><i class="bi bi-check"></i><span> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-        <li><i class="bi bi-check"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-        <li><i class="bi bi-check"></i> <span>Ullam est qui quos consequatur eos accusamus.</span></li>
-      </ul>
-    </div>
-  </div><!-- Features Item -->
+  </div>
 
-  <div class="row gy-4 align-items-center features-item">
-    <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
-      <img src="assets/img/details-2.png" class="img-fluid" alt="">
-    </div>
-    <div class="col-md-7 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
-      <h3>Corporis temporibus maiores provident</h3>
-      <p class="fst-italic">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua.
-      </p>
-      <p>
-        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-        culpa qui officia deserunt mollit anim id est laborum
-      </p>
-    </div>
-  </div><!-- Features Item -->
+  <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none">
+    <defs>
+      <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+    </defs>
+    <g class="wave1">
+      <use xlink:href="#wave-path" x="50" y="3"></use>
+    </g>
+    <g class="wave2">
+      <use xlink:href="#wave-path" x="50" y="0"></use>
+    </g>
+    <g class="wave3">
+      <use xlink:href="#wave-path" x="50" y="9"></use>
+    </g>
+  </svg>
 
- 
+</section>
+<!-- /Bagian Hero -->
 
+<!-- Bagian Detail -->
+<section id="details" class="details section">
 
+  <!-- Judul Bagian -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Detail</h2>
+    <div><span>Cek</span> <span class="description-title">Detail Kami</span></div>
+  </div><!-- Akhir Judul Bagian -->
 
-</div>
+  <div class="container">
 
-</section><!-- /Details Section -->
+    <div class="row gy-4 align-items-center features-item">
+      <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
+        <img src="assets/img/details-1.png" class="img-fluid" alt="">
+      </div>
+      <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
+        <h3>Memberikan Kualitas Terbaik dan Kepuasan Pelanggan</h3>
+        <p class="fst-italic">
+          Kami selalu berusaha untuk memberikan pelayanan terbaik dan pengalaman yang memuaskan bagi setiap pelanggan.
+        </p>
+        <ul>
+          <li><i class="bi bi-check"></i><span> Kualitas makanan terbaik dengan bahan-bahan segar.</span></li>
+          <li><i class="bi bi-check"></i> <span> Pelayanan yang cepat dan ramah.</span></li>
+          <li><i class="bi bi-check"></i> <span> Menyediakan berbagai menu yang sesuai dengan selera Anda.</span></li>
+        </ul>
+      </div>
+    </div><!-- Item Fitur -->
 
-  </main>
+    <div class="row gy-4 align-items-center features-item">
+      <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+        <img src="assets/img/details-2.png" class="img-fluid" alt="">
+      </div>
+      <div class="col-md-7 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
+        <h3>Pelayanan yang Ramah dan Profesional</h3>
+        <p class="fst-italic">
+          Kami mengutamakan kenyamanan dan kepuasan pelanggan, serta memberikan pengalaman bersantap yang tak terlupakan.
+        </p>
+        <p>
+          Dari bahan makanan berkualitas hingga pelayanan yang ramah, kami berkomitmen untuk memastikan Anda mendapatkan pengalaman terbaik di setiap kunjungan.
+        </p>
+      </div>
+    </div><!-- Item Fitur -->
+
+  </div>
+
+</section><!-- /Bagian Detail -->
+
+</main>
 
   <footer id="footer" class="footer dark-background">
 

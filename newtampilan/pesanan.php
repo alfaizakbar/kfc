@@ -84,13 +84,18 @@ error_reporting(0);
           <li><a href="about.php">About</a></li>
           <li><a href="menu.php" >Menu</a></li>
           <li><a href="pesanan.php" class="active">Pesanan</a></li>
+          <li class="dropdown"><a href="#"><span>Akun</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="profile.php">Profile</a></li>
+              <li><a href="logout.php">Logout</a></li>
+              
+            </ul>
+          </li>
           <li><a href="keranjang.php" >Keranjang</a></li>
 
           <li><a href="gallery.php" >Gallery</a></li>
-          <!-- <li><a href="#team">Team</a></li> -->
-          <!-- <li><a href="#pricing">Pricing</a></li> -->
           <li><a href="contact.php">Contact</a></li>
-          <li><a href="logout.php"><img src="assets/img/logouttt.png" alt=""></a></li>
+         
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -187,7 +192,7 @@ error_reporting(0);
                                            
     <img
       src="../admin/img/<?= $row['foto']?>"
-      class="w-100 shadow-1-strong rounded mb-4 img-fixed-height"
+      class="w-100 shadow-1-strong rounded mb-4"
       alt="Wintry Mountain Landscape"
     />
     <a href="detail.php?id=<?= $row['id']?>"><h5 class="text-center"><?= $row['nama_makanan']?></h5></a>
