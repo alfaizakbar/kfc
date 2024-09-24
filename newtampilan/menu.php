@@ -154,7 +154,7 @@ $data = queryy("SELECT * FROM blog");
 
 <!-- Gallery -->
 
-      </div>
+
 
     </section><!-- /Contact Section -->
 

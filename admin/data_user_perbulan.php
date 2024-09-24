@@ -1,9 +1,17 @@
 <?php
 require '../database/post.php';
-$data = query("SELECT * FROM pembayaran");
-    if(isset($_POST["cari"])){
-        $data = cari($_POST["keyword"]);
-    }
+$data = query("SELECT p.*, 
+           GROUP_CONCAT(dp.nama_makanan SEPARATOR ', ') AS nama_makanan, 
+           GROUP_CONCAT(dp.jumlah_makanan SEPARATOR ', ') AS jumlah_makanan, 
+           SUM(dp.jumlah_makanan) AS total_jumlah_makanan
+    FROM pembayaran p
+    JOIN detail_pesanan dp ON p.id_pembayaran = dp.id_pembayaran
+    GROUP BY p.id_pembayaran
+    ORDER BY p.id_pembayaran DESC
+");
+if(isset($_POST["cari"])){
+    $data = cari($_POST["keyword"]);
+}
 
 
 
@@ -63,26 +71,36 @@ error_reporting(0);
                                         <th>Jumlah Makanan</th>
                                     </tr>
                                 </thead>
-                                <?php $i =1; ?>
-                        <?php
-                            foreach($data as $row){?>
                                 <tbody>
-                                <td><?=date('d-m-Y H:i:s', strtotime($row['tanggal_pembayaran']))?></td>
-                        <td><?=$row['alamat']?></td>
-                        <td><?=$row['no_hp']?></td>
-                        <td>
-                            <?= $row['nama_pelanggan']?>
-                        </td>
-                        <td><?= $row['nama_makanan']?></td>
-                        <td><?= $row['kategori'] ?></td>
-                        <td><?= $row['jumlah_makanan']?></td>
-                        <td class="foto">
-                            <img src="./img/unduh.png" alt="">
-                            <a href="delete_pesanan.php?id_pembayaran=<?= $row['id_pembayaran'] ?>"onclick = "return confirm('yakin untuk menghapus?')"><img src="./img/tong.png" alt=""></a>
-                        </td>
-                        <?php $i++ ?>
-                        <?php }?> 
-                                </tbody>
+                                        <?php foreach ($data as $row): ?>
+                                            <tr>
+                                                <td><?= date('d-m-Y H:i:s',
+                                                 strtotime($row['tanggal_pembayaran'])) ?></td>
+                                                <td><?= $row['alamat'] ?></td>
+                                                <td><?= $row['no_hp'] ?></td>
+                                                <td><?= $row['nama_pelanggan'] ?></td>
+                                                <td>
+                                                    <?php
+                                                        // Pisahkan nama makanan dan jumlah makanan
+                                                        $nama_makanan = explode(", ", $row['nama_makanan']);
+                                                        $jumlah_makanan = explode(", ", $row['jumlah_makanan']);
+                                                        $nama_dan_jumlah = [];
+
+                                                        // Gabungkan nama makanan dengan jumlah
+                                                        foreach ($nama_makanan as $key => $nama) {
+                                                            $jumlah = isset($jumlah_makanan[$key]) ? $jumlah_makanan[$key] : 0;
+                                                            $nama_dan_jumlah[] = $nama . " (" . $jumlah . ")";
+                                                        }
+
+                                                        // Tampilkan nama makanan dengan jumlah dalam satu kolom
+                                                        echo implode(", ", $nama_dan_jumlah);
+                                                    ?>
+                                                </td>
+                                                <td><?= $row['total_jumlah_makanan'] ?></td> <!-- Menampilkan jumlah total makanan -->
+                                                <td><?= number_format($row['total_harga'], 0, ',', '.') ?></td>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                    </tbody>
                             </table>
                             <!-- End Table with stripped rows -->
                         </div>

@@ -202,8 +202,6 @@ function bayarr($data){
 function ubah($data){
     global $conn;
     
-    // session_start();
-    
     $id_pelanggan = $data['id_pelanggan'];
     $nama_pelanggan = $data['nama_pelanggan'];
     $email = $data['email'];
@@ -211,16 +209,24 @@ function ubah($data){
     $no_hp = $data['no_hp'];
     $password = $data['password'];
 
-    // $gambar = update();
-    // if ( !$gambar) {
-    //     return false;
-    // }
-    $query = "UPDATE pelanggan SET nama_pelanggan=?, email=?, alamat=?, no_hp=?,  password=? WHERE id_pelanggan=?";
-    $stmt = mysqli_prepare($conn, $query);
-    $_SESSION['nama_pelanggan']=$nama_pelanggan;
+    // Ambil password lama dari database jika password tidak diisi
+    if (empty($password)) {
+        $query = "SELECT password FROM pelanggan WHERE id_pelanggan=?";
+        $stmt = mysqli_prepare($conn, $query);
+        mysqli_stmt_bind_param($stmt, "i", $id_pelanggan);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_bind_result($stmt, $password_lama);
+        mysqli_stmt_fetch($stmt);
+        mysqli_stmt_close($stmt);
 
-    // Bind parameter ke statement
-    mysqli_stmt_bind_param($stmt, "ssssssi", $nama_pelanggan, $email, $alamat, $no_hp,  $password, $id_pelanggan);
+        // Gunakan password lama jika kolom password kosong
+        $password = $password_lama;
+    }
+
+    // Update data pelanggan termasuk password (jika ada perubahan)
+    $query = "UPDATE pelanggan SET nama_pelanggan=?, email=?, alamat=?, no_hp=?, password=? WHERE id_pelanggan=?";
+    $stmt = mysqli_prepare($conn, $query);
+    mysqli_stmt_bind_param($stmt, "sssssi", $nama_pelanggan, $email, $alamat, $no_hp, $password, $id_pelanggan);
 
     // Eksekusi statement
     mysqli_stmt_execute($stmt);
@@ -232,9 +238,9 @@ function ubah($data){
     mysqli_stmt_close($stmt);
 
     return $affected_rows;
-    // print_r($query);
 }
-;
+
+
 
 
 function cari($keyword){

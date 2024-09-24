@@ -2,8 +2,7 @@
 require '../database/post.php';
 
 // Query untuk mengambil data dari tabel pembayaran dan detail_pesanan
-$data = query("
-    SELECT p.*, 
+$data = query("SELECT p.*, 
            GROUP_CONCAT(dp.nama_makanan SEPARATOR ', ') AS nama_makanan, 
            GROUP_CONCAT(dp.jumlah_makanan SEPARATOR ', ') AS jumlah_makanan, 
            SUM(dp.jumlah_makanan) AS total_jumlah_makanan
@@ -12,6 +11,7 @@ $data = query("
     GROUP BY p.id_pembayaran
     ORDER BY p.id_pembayaran DESC
 ");
+
 
 error_reporting(0);
 session_start();
