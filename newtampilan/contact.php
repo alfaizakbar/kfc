@@ -106,34 +106,6 @@
       </svg>
 
     </section>
-    <!-- /Hero Section -->
-
-    <!-- About Section -->
-    <!-- /About Section -->
-
-    <!-- Features Section -->
-
-    <!-- /Features Section -->
-
-    <!-- Stats Section -->
-    <!-- /Details Section -->
-
-    <!-- Gallery Section -->
-      <!-- /Gallery Section -->
-
-    <!-- Testimonials Section -->
-    <!-- /Testimonials Section -->
-
-    <!-- Team Section -->
-    <!-- /Team Section -->
-
-    <!-- Pricing Section -->
-   <!--Pricing Section -->
-
-    <!-- Faq Section -->
-   <!-- /Faq Section -->
-
-    <!-- Contact Section -->
     <section id="contact" class="contact section py-5">
 
 <!-- Section Title -->

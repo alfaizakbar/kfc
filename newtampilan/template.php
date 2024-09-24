@@ -1,21 +1,10 @@
-<?php
-session_start();
-require 'function.php';
-$nama_pelanggan = $_SESSION["nama_pelanggan"];
-$pelanggan=queryy("SELECT * FROM pelanggan WHERE nama_pelanggan='$nama_pelanggan'")[0];
-
-
-$id = $_GET["id"];
-$data = queryy("SELECT * FROM blog WHERE id = $id");
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>AAFood | Menu</title>
+  <title>KFC - Lhokseumawe</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -62,14 +51,14 @@ $data = queryy("SELECT * FROM blog WHERE id = $id");
         <ul>
           <li><a href="index.php" >Home</a></li>
           <li><a href="about.php">About</a></li>
-          <li><a href="menu.php" >Menu</a></li>
-          <li><a href="pesanan.php" class="active" >Pesanan</a></li>
+          <li><a href="menu.php">Menu</a></li>
+          <li><a href="pesanan.php">Pesanan</a></li>
           <li><a href="keranjang.php" >Keranjang</a></li>
 
-          <li><a href="gallery.php" >Gallery</a></li>
+          <li><a href="gallery.php">Gallery</a></li>
           <!-- <li><a href="#team">Team</a></li> -->
           <!-- <li><a href="#pricing">Pricing</a></li> -->
-          <li><a href="contact.php">Contact</a></li>
+          <li><a href="contact.php"class="active">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -90,8 +79,8 @@ $data = queryy("SELECT * FROM blog WHERE id = $id");
           </div>
 
           <div class="col-lg-6  d-flex flex-column justify-content-center" data-aos="fade-in">
-            <h1> <span>Detail Pesanan</span></h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta, ipsa?</p>
+            <h1> <span>Contact</span></h1>
+            <p>Hubungi kami untuk pertanyaan atau informasi lebih lanjut. Kami siap membantu Anda.</p>
             <div class="d-flex">
               <!-- <a href="#about" class="btn-get-started">Get Started</a> -->
               <!-- <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
@@ -117,83 +106,7 @@ $data = queryy("SELECT * FROM blog WHERE id = $id");
       </svg>
 
     </section>
-    <!-- /Hero Section -->
 
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Pesanan</h2>
-        <div><span>Detail</span> <span class="description-title">Pesanan</span></div>
-      </div><!-- End Section Title -->
-
-      <!-- detail -->
-<!-- Detail Section -->
-<!-- Detail Produk -->
-<div class="container" data-aos="fade" data-aos-delay="100">
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-      <div class="card mb-3">
-        <div class="row g-0">
-          <div class="col-md-6">
-            <?php foreach($data as $row){ ?>
-            <img src="../admin/img/<?= $row['foto']?>" class="img-fluid rounded-start" alt="...">
-          </div>
-          <div class="col-md-6">
-            <div class="card-body d-flex flex-column justify-content-between">
-              <div>
-                <h1 class="card-title"><?= $row['nama_makanan']?></h1>
-                <p class="card-text">Harga: <?= number_format($row['kategori'], 0, ',', '.')?></p>
-                <p class="card-text"><small class="text-muted"><?= $row['tanggal']?></small></p>
-                <?php } ?>
-              </div>
-              <div class="text-end mt-5">
-                <!-- Form Tambah ke Keranjang -->
-                <form action="" method="post">
-                  <input type="hidden" name="id_produk" value="<?= $id ?>">
-                  <input type="submit" name="tambah_keranjang" class="btn btn-primary" value="Tambahkan ke Keranjang">
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<?php
-// Memproses form ketika tombol "Tambah ke Keranjang" diklik
-if (isset($_POST['tambah_keranjang'])) {
-  $id_produk = $_POST['id_produk'];
-  tambahKeKeranjang($id_produk);
-
-  echo "
-  <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-  <script>
-      Swal.fire({
-          title: 'Berhasil!',
-          text: 'Produk berhasil ditambahkan ke keranjang!',
-          icon: 'success',
-          confirmButtonText: 'OK'
-      }).then((result) => {
-          if (result.isConfirmed) {
-              window.location.href = 'pesanan.php';
-          }
-      });
-  </script>";
-}
-
-?>
-
-<!-- Gallery -->
-<!-- detail -->
-
-      </div>
-
-    </section><!-- /Contact Section -->
 
   </main>
 
@@ -281,7 +194,6 @@ if (isset($_POST['tambah_keranjang'])) {
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
