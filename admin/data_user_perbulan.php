@@ -44,8 +44,8 @@ error_reporting(0);
                 <form method="post" class="form-inline">
                     <div class="form-group d-flex mb-4">
                         <label for="search_month" class="mr- w-100">Search by Month:</label>
-                        <input type="month" name="search_month" id="search_month" class="form-control">
-                        <button type="submit" class="btn btn-primary ml-2">Search</button>
+                        <input type="month" name="keyword" id="search_month" class="form-control">
+                        <button type="submit" name="cari" class="btn btn-primary ml-2">Search</button>
                     </div>
                 </form>
             </div>

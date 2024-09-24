@@ -79,22 +79,14 @@ $total_harga_final = $total_harga_diskon + $pajak;
         <!-- Form diskon -->
         <div class="mb-3">
           <form action="keranjang.php" method="post">
-            <div class="input-group">
-              <select name="diskon" class="form-control">
-                <option value="0" <?= $diskon == 0 ? 'selected' : '' ?>>Tidak ada diskon</option>
-                <option value="10" <?= $diskon == 0.10 ? 'selected' : '' ?>>Diskon 10%</option>
-                <option value="20" <?= $diskon == 0.20 ? 'selected' : '' ?>>Diskon 20%</option>
-              </select>
-              <button type="submit" name="diskon_apply" class="btn btn-info">Terapkan Diskon</button>
-            </div>
-          </form>
-        </div>
-        <!-- Form update keranjang -->
-        
-        <form action="keranjang.php" method="post">
-             <div class="table-responsive">
-             <table class="table table-striped">
-               <thead>
+            </form>
+          </div>
+          <!-- Form update keranjang -->
+          
+          <form action="keranjang.php" method="post">
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
               <tr>
                 <th>Gambar</th>
                 <th>Judul</th>
@@ -120,15 +112,23 @@ $total_harga_final = $total_harga_diskon + $pajak;
             </tbody>
           </table>
         </div>
-          <button type="submit" name="update" class="btn btn-primary">Update Keranjang</button>
-        </form>
-        <div class="mt-3">
-          <h4>Total Harga: Rp <?= number_format($total_harga, 0, ',', '.') ?></h4>
-          <h4>Diskon: Rp <?= number_format($total_harga * $diskon, 0, ',', '.') ?> (<?= $diskon * 100 ?>%)</h4>
-          <h4>Pajak (8%): Rp <?= number_format($pajak, 0, ',', '.') ?></h4>
-          <h4>Total Akhir: Rp <?= number_format($total_harga_final, 0, ',', '.') ?></h4>
-          <a href="checkout.php" class="btn btn-success">Checkout</a>
+        <button type="submit" name="update" class="btn btn-primary">Update Keranjang</button>
+      </form>
+      <div class="mt-3">
+        <h4>Total Harga: Rp <?= number_format($total_harga, 0, ',', '.') ?></h4>
+        <h4>Diskon: Rp <?= number_format($total_harga * $diskon, 0, ',', '.') ?> (<?= $diskon * 100 ?>%)</h4>
+        <div class="input-group">
+          <select name="diskon" class="form-control">
+            <option value="0" <?= $diskon == 0 ? 'selected' : '' ?>>Tidak ada diskon</option>
+            <option value="10" <?= $diskon == 0.10 ? 'selected' : '' ?>>Diskon 10%</option>
+            <option value="20" <?= $diskon == 0.20 ? 'selected' : '' ?>>Diskon 20%</option>
+          </select>
+          <button type="submit" name="diskon_apply" class="btn btn-info">Terapkan Diskon</button>
         </div>
+        <h4>Pajak (8%): Rp <?= number_format($pajak, 0, ',', '.') ?></h4>
+        <h4>Total Akhir: Rp <?= number_format($total_harga_final, 0, ',', '.') ?></h4>
+        <a href="checkout.php" class="btn btn-success">Checkout</a>
+      </div>
       <?php endif; ?>
     </div>
   </section>

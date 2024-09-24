@@ -45,8 +45,8 @@ error_reporting(0);
                 <form method="post" class="form-inline">
                     <div class="form-group d-flex mb-4">
                         <label for="search_year" class="mr-2 w-100">Search by Year:</label>
-                        <input type="number" name="search_year" id="search_year" class="form-control" placeholder="Enter year">
-                        <button type="submit" class="btn btn-primary ml-2">Search</button>
+                        <input type="number" name="keyword" id="search_year" class="form-control" placeholder="Enter year">
+                        <button type="submit" name="cari" class="btn btn-primary ml-2">Search</button>
                     </div>
                 </form>
             </div>

@@ -43,8 +43,8 @@ error_reporting(0);
                 <form method="post" class="form-inline">
                     <div class="form-group d-flex mb-4">
                         <label for="search_date" class="mr-2 w-100 " style="margin-bottom: -30px;">Search by Date:</label>
-                        <input type="date" name="search_date" id="search_date" class="form-control">
-                        <button type="submit" class="btn btn-primary ml-2">Search</button>  
+                        <input type="date" name="keyword" id="search_date" class="form-control">
+                        <button type="submit" name="cari" class="btn btn-primary ml-2">Search</button>  
                     </div>
                 </form>
             </div>

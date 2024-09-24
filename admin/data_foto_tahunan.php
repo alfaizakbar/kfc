@@ -5,7 +5,9 @@ if (!isset($_SESSION['admin_id'])) {
     header("location:login.php");
     exit();
 }
-
+if(isset($_POST["cari"])){
+    $data = cari($_POST["keyword"]);
+}
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $searchYear = $_POST['search_year'];
     $sqlFoto = "SELECT foto.*, user.userid AS user_userid, user.namalengkap AS user_namalengkap, album.albumid AS album_albumid, album.namaalbum AS album_namaalbum FROM foto JOIN user ON foto.userid = user.userid JOIN album ON foto.albumid = album.albumid WHERE YEAR(foto.tanggalunggah) = '$searchYear'";
@@ -45,7 +47,7 @@ $conn->close();
                 <form method="post" class="form-inline">
                     <div class="form-group d-flex mb-3">
                     <label for="search_year" class="mr-2 w-100">Cari berdasarkan Tahun:</label>
-                        <input type="number" name="search_year" id="search_year" class="form-control" placeholder="Tahun">
+                        <input type="number" name="search_year" id="cari" class="form-control" placeholder="Tahun">
                         <button type="submit" class="btn btn-primary ml-2">Cari</button>
                     </div>
                 </form>
