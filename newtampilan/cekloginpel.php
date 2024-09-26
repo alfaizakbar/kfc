@@ -6,6 +6,10 @@ include '../database/konn.php';
 $nama_pelanggan = $_POST['nama_pelanggan'];
 $password = $_POST['password'];
 
+    // Sanitasi input untuk mencegah SQL injection
+    $nama_pelanggan = mysqli_real_escape_string($conn, $nama_pelanggan);
+    $password = mysqli_real_escape_string($conn, $password);
+
 
 $login = mysqli_query($conn, "SELECT * FROM pelanggan WHERE nama_pelanggan='$nama_pelanggan' and password='$password'");
 

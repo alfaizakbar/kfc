@@ -1765,9 +1765,10 @@ section,
   background: color-mix(in srgb, var(--accent-color), transparent 25%);
 }
 
+.swal2-confirm {
+  background-color: #914F1E !important; /* Ganti dengan warna yang diinginkan */
+  color: white !important; /* Mengubah warna teks */
+}
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}

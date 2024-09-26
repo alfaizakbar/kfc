@@ -70,48 +70,82 @@
 </head>
 
 <body>
-<?php
 
+
+<?php
 session_start();
 require '../database/konn.php';
 
 $nama_pelanggan = $_SESSION["nama_pelanggan"];
-// $nama_pelanggan = mysqli_real_escape_string($conn, $nama_pelanggan);
-$pelanggan=queryy("SELECT * FROM pelanggan WHERE nama_pelanggan='$nama_pelanggan'")[0];
-if(isset($_POST['ubah'])){
-  if(ubah($_POST) > 0){
-      echo "
-      <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-      <script>
-          Swal.fire({
-              title: 'Berhasil!',
-              text: 'Data berhasil diubah',
-              icon: 'success',
-              confirmButtonText: 'OK'
-          }).then((result) => {
-              if (result.isConfirmed) {
-                  window.location.href = 'profile.php';
-              }
-          });
-      </script>";
-  } else {
-      echo "
-      <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-      <script>
-          Swal.fire({
-              title: 'Gagal!',
-              text: 'Data gagal diubah',
-              icon: 'error',
-              confirmButtonText: 'OK'
-          });
-      </script>";
-  }
+
+// Ambil data pelanggan berdasarkan session
+$pelanggan_query = queryy("SELECT * FROM pelanggan WHERE nama_pelanggan='$nama_pelanggan'");
+
+if (isset($pelanggan_query[0])) {
+    $pelanggan = $pelanggan_query[0];
+} else {
+    echo "<script>
+        alert('Data pelanggan tidak ditemukan.');
+        window.location.href = 'index.php';
+    </script>";
+    exit;
+}
+
+// Proses ubah data
+if (isset($_POST['ubah'])) {
+    $nama_baru = $_POST['nama_pelanggan'];
+    $email_baru = $_POST['email'];
+    $password_baru = $_POST['password'];
+
+    // Cek apakah password diisi, jika tidak gunakan password lama
+    if (empty($password_baru)) {
+        $password_baru = $pelanggan['password']; // gunakan password lama
+    } else {
+        $password_baru = mysqli_real_escape_string($conn, $password_baru); // sanitasi input
+    }
+
+    // Lakukan update data menggunakan prepared statement untuk keamanan
+    $stmt = mysqli_prepare($conn, "UPDATE pelanggan SET nama_pelanggan=?, email=?, password=? WHERE nama_pelanggan=?");
+    mysqli_stmt_bind_param($stmt, 'ssss', $nama_baru, $email_baru, $password_baru, $nama_pelanggan);
+    
+    if (mysqli_stmt_execute($stmt)) {
+        // Update session dengan nama_pelanggan baru
+        $_SESSION["nama_pelanggan"] = $nama_baru;
+
+        echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script>
+            Swal.fire({
+                title: 'Berhasil!',
+                text: 'Data berhasil diubah',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = 'profile.php';
+                }
+            });
+        </script>";
+    } else {
+        echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script>
+            Swal.fire({
+                title: 'Gagal!',
+                text: 'Data gagal diubah',
+                icon: 'error',
+                confirmButtonText: 'OK'
+            });
+        </script>";
+    }
+    mysqli_stmt_close($stmt);
 }
 
 error_reporting(0);
-
-
 ?>
+
+
+
 
 
 <!DOCTYPE html>
@@ -167,14 +201,20 @@ error_reporting(0);
         <ul>
           <li><a href="index.php" >Home</a></li>
           <li><a href="about.php">About</a></li>
-          <li><a href="menu.php">Menu</a></li>
-          <li><a href="pesanan.php">Pesanan</a></li>
+          <li><a href="menu.php" >Menu</a></li>
+          <li><a href="pesanan.php" class="active">Pesanan</a></li>
           <li><a href="keranjang.php" >Keranjang</a></li>
-
-          <li><a href="gallery.php">Gallery</a></li>
-          <!-- <li><a href="#team">Team</a></li> -->
-          <!-- <li><a href="#pricing">Pricing</a></li> -->
-          <li><a href="contact.php"class="active">Contact</a></li>
+          
+          <li><a href="gallery.php" >Gallery</a></li>
+          <li><a href="contact.php">Contact</a></li>
+          <li class="dropdown"><a href="profile.php"><span>Akun</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="profile.php">Profile</a></li>
+              <li><a href="logout.php">Logout</a></li>
+              
+            </ul>
+          </li>
+         
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -294,12 +334,12 @@ error_reporting(0);
           <form action="" method="post">
             <div class="mb-3">
               <label for="newUsername" class="form-label">New Username</label>
+              <input type="hidden" name="id_pelanggan" value="<?= $pelanggan['id_pelanggan']?>">
               <input type="text" class="form-control" name="nama_pelanggan" id="newUsername" value="<?= $pelanggan['nama_pelanggan']?>" required>
             </div>
 
             <div class="mb-3">
               <label for="newEmail" class="form-label">New Email</label>
-              <input type="hidden" name="id_pelanggan" value="<?= $pelanggan['id_pelanggan']?>">
               <input type="email" class="form-control" name="email" id="newEmail" value="<?= $pelanggan['email']?>" required>
             </div>
 

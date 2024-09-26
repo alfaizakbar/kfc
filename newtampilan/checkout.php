@@ -58,9 +58,6 @@ if (isset($_POST['checkout'])) {
     $query = "INSERT INTO pembayaran (id_pelanggan, nama_pelanggan, nama_makanan, alamat, no_hp, total_harga, diskon, pajak, total_akhir, jumlah_makanan) 
               VALUES ('$id_pelanggan', '$nama_pelanggan', '$nama_makanan', '$alamat', '$no_hp', '$total_harga', '$diskon', '$pajak', '$total_harga_final', '$total_makanan')";
 
-    // Debug: Tampilkan query untuk pemeriksaan
-    // echo "<pre>$query</pre>"; // Un-comment untuk debug
-
     if (mysqli_query($conn, $query)) {
         $id_pembayaran = mysqli_insert_id($conn); // Mendapatkan id_pembayaran yang baru saja dimasukkan
 
@@ -70,25 +67,24 @@ if (isset($_POST['checkout'])) {
             $jumlah_makanan = $produk['jumlah_makanan'];
             $total_produk = $produk['total_harga'];
 
-            $query_detail = "INSERT INTO detail_pesanan (id_pembayaran, id_produk, nama_makanan, jumlah_makanan, total_harga) 
-                             VALUES ('$id_pembayaran', '$id_produk', '{$produk['nama_makanan']}', '$jumlah_makanan', '$total_produk')";
-            mysqli_query($conn, $query_detail);
+            $query_detail = "INSERT INTO detail_pesanan (id_pembayaran, id_produk, nama_pelanggan, nama_makanan, jumlah_makanan, total_harga) 
+                             VALUES ('$id_pembayaran', '$id_produk', '$nama_pelanggan', '{$produk['nama_makanan']}', '$jumlah_makanan', '$total_produk')";
+
+            if (!mysqli_query($conn, $query_detail)) {
+                echo "Error: " . mysqli_error($conn);
+            }
         }
 
         // Kosongkan keranjang setelah checkout
         unset($_SESSION['keranjang']);
         unset($_SESSION['diskon']);
 
-        // Tampilkan alert dan redirect
-        echo "<script>
-                alert('Pesanan sudah dikirim, silahkan tunggu pesanan anda');
-                document.location.href = 'konfirmasi.php?id_pembayaran=$id_pembayaran';
-              </script>";
-    } else {
-        echo "<script>alert('Pembayaran Gagal: " . mysqli_error($conn) . "');</script>";
-    }
+        // Redirect ke halaman detail pesanan
+
+}
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -126,7 +122,13 @@ if (isset($_POST['checkout'])) {
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
-
+<style>
+  .swal2-confirm {
+      background-color: #914F1E !important; /* Ganti dengan warna yang diinginkan */
+      color: white !important; /* Mengubah warna teks */
+      border: 2px solid #914F1E!important; 
+  }
+</style>
 <body class="index-page">
 
   <header id="header" class="header d-flex align-items-center fixed-top">
@@ -149,7 +151,7 @@ if (isset($_POST['checkout'])) {
           <li><a href="gallery.php">Gallery</a></li>
           <!-- <li><a href="#team">Team</a></li> -->
           <!-- <li><a href="#pricing">Pricing</a></li> -->
-          <li><a href="contact.php"class="active">Contact</a></li>
+          <li><a href="contact.php">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -224,6 +226,25 @@ if (isset($_POST['checkout'])) {
               <button type="submit" name="checkout" class="btn btn-success">Selesaikan Pesanan</button>
             </div>
           </form>
+          
+          <?php
+          if (isset($_POST['checkout'])) {
+  echo "
+  <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+  <script>
+      Swal.fire({
+          title: 'Berhasil!',
+          text: 'Pesanan Berhasil di pesan, Silahkan Tunggu Pesanan Anda!',
+          icon: 'success',
+          confirmButtonText: 'OK'
+      }).then((result) => {
+          if (result.isConfirmed) {
+              window.location.href = 'list-pesanan.php';
+          }
+      });
+  </script>";
+} 
+?>
         </div>
         <div class="col-md-4">
           <h4>Rincian Pesanan</h4>

@@ -3,15 +3,27 @@ $conn = mysqli_connect('localhost', 'root', '', 'company_profile');
 
 
 
-function queryy($query){
+function queryy($query) {
     global $conn;
-    $result = mysqli_query($conn,$query);
-    $rows =[];
-    while($pelanggan = mysqli_fetch_assoc($result)){
-        $rows[] = $pelanggan;
+    $result = mysqli_query($conn, $query);
+    
+    // Cek apakah query berhasil dijalankan
+    if (!$result) {
+        // Jika ada error, tampilkan pesan error dari MySQL
+        die("Query gagal: " . mysqli_error($conn));
+    }
+
+    // Jika hasilnya query SELECT, kembalikan array
+    if (is_bool($result)) {
+        return $result; // Jika query seperti INSERT, UPDATE, DELETE
+    }
+    
+    $rows = [];
+    while ($row = mysqli_fetch_assoc($result)) {
+        $rows[] = $row;
     }
     return $rows;
-};
+}
 
 function query($query){
     
@@ -199,9 +211,9 @@ function bayarr($data){
     
 }
 
-function ubah($data){
+function ubah($data) {
     global $conn;
-    
+
     $id_pelanggan = $data['id_pelanggan'];
     $nama_pelanggan = $data['nama_pelanggan'];
     $email = $data['email'];
@@ -221,6 +233,9 @@ function ubah($data){
 
         // Gunakan password lama jika kolom password kosong
         $password = $password_lama;
+    } else {
+        // Jika password baru diisi, hash password baru
+        $password = password_hash($password, PASSWORD_DEFAULT);
     }
 
     // Update data pelanggan termasuk password (jika ada perubahan)
@@ -239,6 +254,7 @@ function ubah($data){
 
     return $affected_rows;
 }
+
 
 
 

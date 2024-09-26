@@ -47,6 +47,13 @@ $data = queryy("SELECT * FROM blog WHERE id = $id");
   ======================================================== -->
 </head>
 
+<style>
+  .swal2-confirm {
+      background-color: #914F1E !important; /* Ganti dengan warna yang diinginkan */
+      color: white !important; /* Mengubah warna teks */
+    }
+
+</style>
 <body class="index-page">
 
   <header id="header" class="header d-flex align-items-center fixed-top">
