@@ -186,12 +186,6 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="data_contact.php">
-          <i class="bi bi-card-list"></i><span>Data Contact</span>
-        </a>
-        </li>
-
-      <li class="nav-item">
         <a class="nav-link collapsed" href="detail_pesanan.php">
           <i class="bi bi-card-list"></i><span>Data Pesanan</span>
         </a>

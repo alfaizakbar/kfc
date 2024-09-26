@@ -13,11 +13,17 @@ $data = query("SELECT p.*,
 ");
 
 
-error_reporting(0);
 session_start();
-if (!isset($_SESSION['username'])) {
-    header("location:login.php");
+
+// Cek apakah admin sudah login, jika belum redirect ke login page
+if (!isset($_SESSION['username'])) { // Ubah nama variabel sesi
+    header("Location: login.php");
+    exit;
 }
+
+// Dapatkan username admin dari sesi
+$username_admin = $_SESSION['username'];
+
 error_reporting(0);
 ?>
 
@@ -97,7 +103,7 @@ error_reporting(0);
                 <!-- Tombol hapus -->
                  
                     
-                     <a href="hapus.php?id=<?= $row['id_pembayaran'] ?>" class="btn btn-danger btn-sm m-1 " onclick="return confirm('Yakin ingin menghapus data ini?');">
+                     <a href="hapus.php?id_pembayaran=<?= $row['id_pembayaran'] ?>" class="btn btn-danger btn-sm m-1 " onclick="return confirm('Yakin ingin menghapus data ini?');">
                          <i class="bi bi-trash"></i> <!-- Ikon hapus Bootstrap -->
                         </a>
                     </div>

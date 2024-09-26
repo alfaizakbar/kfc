@@ -1,21 +1,20 @@
 <?php
-require '../newtampilan/function.php';
-$id = $_GET['id'];
-if(hapus($id) > 0){
+require '../database/post.php';
+
+$id = $_GET['id_pembayaran'];
+if(hapuss($id) > 0){
     echo "
     <script>
     alert('data anda berhasil untuk di hapus');
-    document.location.href = 'data_foto.php';
+    document.location.href = 'detail_pesanan.php';
     </script>
     ";
     } else {
         echo"
     <script>
     alert('data anda gagal untuk dihapus');
-    document.location.href = 'data_foto.php';
+    document.location.href = 'detail_pesanan.php';
     </script>
     ";
     }
-
-
 ?>

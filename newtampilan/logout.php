@@ -1,7 +1,12 @@
 <?php
 session_start();
 
-session_destroy();
+// Hancurkan sesi pelanggan, tidak menghancurkan sesi admin
+if (isset($_SESSION['nama_pelanggan'])) {
+    unset($_SESSION['nama_pelanggan']);
+}
 
-header("location:login.php");
+// Redirect ke halaman login
+header('Location: login.php');
+exit;
 ?>

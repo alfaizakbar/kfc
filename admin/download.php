@@ -127,7 +127,7 @@ if ($data) {
     <div class="">
 
         <p style="text-align: left;">Nama Toko: <strong>AAFood</strong></p>
-        <p style="text-align: left;">Alamat: Jl. Contoh No. 123, Kota Anda</p>
+        <p style="text-align: left;">Alamat: Jl. Darusslaam Lhokseumwe</p>
         <p style="text-align: left;">Telp: (021) 12345678</p>
     </div>
     <hr>

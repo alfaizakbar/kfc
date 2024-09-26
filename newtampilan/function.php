@@ -9,19 +9,15 @@ if (!$conn) {
 
 // Fungsi untuk menjalankan query dan mengembalikan hasilnya sebagai array
 function queryy($query) {
-    global $conn;
+    global $conn; // Pastikan koneksi global
     $result = mysqli_query($conn, $query);
-    
-    // Cek apakah query berhasil
+
     if (!$result) {
-        die("Query gagal: " . mysqli_error($conn));
+        echo "Error: " . mysqli_error($conn);
+        return [];
     }
 
-    $rows = [];
-    while ($row = mysqli_fetch_assoc($result)) {
-        $rows[] = $row; 
-    }
-    return $rows;
+    return mysqli_fetch_all($result, MYSQLI_ASSOC);
 }
 
 // Fungsi untuk mencari berdasarkan keyword di tabel blog
@@ -32,7 +28,7 @@ function cari($keyword) {
     $keyword = mysqli_real_escape_string($conn, $keyword);
 
     $query = "SELECT * FROM blog WHERE judul LIKE '%$keyword%'";
-    return query($query);
+    return queryy($query); // Memperbaiki fungsi yang dipanggil
 }
 
 // Fungsi untuk menghapus entri berdasarkan id
@@ -47,6 +43,7 @@ function hapus($id) {
         return false;
     }
 }
+
 function hapuss($id_pembayaran) {
     global $conn;
     mysqli_query($conn, "DELETE FROM detail_pesanan WHERE id_pembayaran = $id_pembayaran");
@@ -72,7 +69,6 @@ function tambahKeKeranjang($id_produk) {
     }
 }
 
-
 // Fungsi untuk menambah data pembayaran ke database
 function bayarr($data) {
     global $conn;
@@ -92,13 +88,12 @@ function bayarr($data) {
     $query = "INSERT INTO pembayaran (id_pelanggan, nama_makanan, kategori, jumlah_makanan, nama_pelanggan, total_harga, tanggal_pembayaran, alamat, no_hp) 
               VALUES ('$id_pelanggan', '$nama_makanan', '$kategori', '$jumlah_makanan', '$nama_pelanggan','$total_harga', '$tanggal_pembayaran', '$alamat', '$no_hp')";
 
-    mysqli_query($conn, $query);
-
-    // Cek apakah query berhasil
-    if (mysqli_affected_rows($conn) > 0) {
-        return true;
-    } else {
+    if (!mysqli_query($conn, $query)) {
+        echo "Error: " . mysqli_error($conn); // Menampilkan error jika ada
         return false;
     }
+
+    // Cek apakah query berhasil
+    return mysqli_affected_rows($conn) > 0;
 }
 ?>

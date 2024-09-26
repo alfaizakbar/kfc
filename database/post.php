@@ -32,21 +32,21 @@ function tambah($data)
     global $conn;
     
     $nama_makanan = $data['nama_makanan'];
-    // $artikel = addslashes($data['artikel']); 
     $kategori = $data['kategori'];
-    $kategori = number_format($kategori, 0, ',', '.');
+    
     $tanggal = date('y/m/d');   
     $gambar = upload();
-    if ( !$gambar) {
+    if (!$gambar) {
         return false;
     }
-    
-    // $artikel = trim($data['artikel'], '[]', );
+
+    // Menyimpan nilai yang diformat ke database
     $mysql = "INSERT INTO blog VALUES ('', '$nama_makanan', '$kategori', '$gambar', '$tanggal')";
     mysqli_query($conn, $mysql);
+    
     return mysqli_affected_rows($conn);
-    // print_r($mysql);
 }
+
 
 
 function upload() {
@@ -123,11 +123,32 @@ function apa($data) {
 }
 
 
-function hapuss($id){
+function hapuss($id_pembayaran) {
     global $conn;
-     mysqli_query($conn, "DELETE FROM pembayaran WHERE id_pembayaran = $id");
-     return mysqli_affected_rows($conn);
+    
+    // Escape string untuk mencegah SQL injection
+    $id_pembayaran = mysqli_real_escape_string($conn, $id_pembayaran);
+
+    // Hapus data dari tabel detail_pesanan terlebih dahulu
+    $query = "DELETE FROM detail_pesanan WHERE id_pembayaran = '$id_pembayaran'";
+    mysqli_query($conn, $query);
+
+    // Cek apakah penghapusan dari detail_pesanan berhasil
+    if (mysqli_affected_rows($conn) > 0) {
+        // Hapus data dari tabel pembayaran setelah berhasil menghapus dari detail_pesanan
+        $query = "DELETE FROM pembayaran WHERE id_pembayaran = '$id_pembayaran'";
+        mysqli_query($conn, $query);
+
+        if (mysqli_affected_rows($conn) > 0) {
+            return true; // Hapus berhasil
+        } else {
+            return false; // Gagal menghapus dari tabel pembayaran
+        }
+    } else {
+        return false; // Gagal menghapus dari tabel detail_pesanan
+    }
 }
+
 
 function cari($keyword){
     $query = "SELECT * FROM pembayaran WHERE tanggal_pembayaran LIKE '%$keyword%'";
