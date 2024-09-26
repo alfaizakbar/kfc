@@ -47,12 +47,17 @@
           <li><a href="menu.php">Menu</a></li>
           <li><a href="pesanan.php">Pesanan</a></li>
           <li><a href="keranjang.php" >Keranjang</a></li>
-
+          <li><a href="list-pesanan.php"class="">List Pesanan</a></li>
           <li><a href="gallery.php">Gallery</a></li>
-          <!-- <li><a href="#team">Team</a></li> -->
-          <!-- <li><a href="#pricing">Pricing</a></li> -->
           <li><a href="contact.php"class="active">Contact</a></li>
-        </ul>
+          <li class="dropdown"><a href="profile.php"><span>Akun</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="profile.php">Profile</a></li>
+              <li><a href="logout.php">Logout</a></li>
+              
+            </ul>
+          </li>
+         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
@@ -153,41 +158,7 @@
 
   </div><!-- End Row -->
 
-  <div class="row mt-5">
-    <!-- Contact Form -->
-    <div class="col-lg-8 offset-lg-4">
-      <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-        <div class="row gy-4">
-
-          <div class="col-md-6">
-            <input type="text" name="name" class="form-control" placeholder="Nama Anda" required>
-          </div>
-
-          <div class="col-md-6">
-            <input type="email" class="form-control" name="email" placeholder="Email Anda" required>
-          </div>
-
-          <div class="col-md-12">
-            <input type="text" class="form-control" name="subject" placeholder="Subjek" required>
-          </div>
-
-          <div class="col-md-12">
-            <textarea class="form-control" name="message" rows="6" placeholder="Pesan" required></textarea>
-          </div>
-
-          <div class="col-md-12 text-center">
-            <div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Your message has been sent. Thank you!</div>
-
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </div>
-
-        </div>
-      </form>
-    </div><!-- End Contact Form -->
-  </div>
-
+ 
 </div>
 
 </section><!-- /Contact Section -->

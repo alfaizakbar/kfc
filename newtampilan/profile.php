@@ -192,15 +192,15 @@ error_reporting(0);
       </a>
 
       <nav id="navmenu" class="navmenu">
-        <ul>
+      <ul>
           <li><a href="index.php" >Home</a></li>
           <li><a href="about.php">About</a></li>
-          <li><a href="menu.php" >Menu</a></li>
-          <li><a href="pesanan.php" class="active">Pesanan</a></li>
+          <li><a href="menu.php">Menu</a></li>
+          <li><a href="pesanan.php">Pesanan</a></li>
           <li><a href="keranjang.php" >Keranjang</a></li>
-          
-          <li><a href="gallery.php" >Gallery</a></li>
-          <li><a href="contact.php">Contact</a></li>
+          <li><a href="list-pesanan.php"class="">List Pesanan</a></li>
+          <li><a href="gallery.php">Gallery</a></li>
+          <li><a href="contact.php"class="">Contact</a></li>
           <li class="dropdown"><a href="profile.php"><span>Akun</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="profile.php">Profile</a></li>
@@ -208,8 +208,7 @@ error_reporting(0);
               
             </ul>
           </li>
-         
-        </ul>
+         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
