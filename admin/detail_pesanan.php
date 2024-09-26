@@ -50,47 +50,62 @@ error_reporting(0);
                             <!-- Table with stripped rows -->
                             <div class="table-responsive">
                                 <table class="table datatable table-responsive">
-                                    <thead>
-                                        <tr>
-                                            <th>Tanggal dan Waktu Pembayaran</th>
-                                            <th>Alamat</th>
-                                            <th>No Handphone</th>
-                                            <th>Nama Pelanggan</th>
-                                            <th>Nama Makanan</th> <!-- Gabungan kolom nama makanan dan jumlah makanan -->
-                                            <th>Jumlah Makanan</th> <!-- Kolom baru untuk jumlah total makanan -->
-                                            <th>Harga</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php foreach ($data as $row): ?>
-                                            <tr>
-                                                <td><?= date('d-m-Y H:i:s',
-                                                 strtotime($row['tanggal_pembayaran'])) ?></td>
-                                                <td><?= $row['alamat'] ?></td>
-                                                <td><?= $row['no_hp'] ?></td>
-                                                <td><?= $row['nama_pelanggan'] ?></td>
-                                                <td>
-                                                    <?php
-                                                        // Pisahkan nama makanan dan jumlah makanan
-                                                        $nama_makanan = explode(", ", $row['nama_makanan']);
-                                                        $jumlah_makanan = explode(", ", $row['jumlah_makanan']);
-                                                        $nama_dan_jumlah = [];
+                                <thead>
+    <tr>
+        <th>Tanggal dan Waktu Pembayaran</th>
+        <th>Alamat</th>
+        <th>No Handphone</th>
+        <th>Nama Pelanggan</th>
+        <th>Nama Makanan</th> <!-- Gabungan kolom nama makanan dan jumlah makanan -->
+        <th>Jumlah Makanan</th> <!-- Kolom baru untuk jumlah total makanan -->
+        <th>Harga</th>
+        <th>Aksi</th> <!-- Tambahkan kolom Aksi -->
+    </tr>
+</thead>
+<tbody>
+    <?php foreach ($data as $row): ?>
+        <tr>
+            <td><?= date('d-m-Y H:i:s', strtotime($row['tanggal_pembayaran'])) ?></td>
+            <td><?= $row['alamat'] ?></td>
+            <td><?= $row['no_hp'] ?></td>
+            <td><?= $row['nama_pelanggan'] ?></td>
+            <td>
+                <?php
+                    // Pisahkan nama makanan dan jumlah makanan
+                    $nama_makanan = explode(", ", $row['nama_makanan']);
+                    $jumlah_makanan = explode(", ", $row['jumlah_makanan']);
+                    $nama_dan_jumlah = [];
 
-                                                        // Gabungkan nama makanan dengan jumlah
-                                                        foreach ($nama_makanan as $key => $nama) {
-                                                            $jumlah = isset($jumlah_makanan[$key]) ? $jumlah_makanan[$key] : 0;
-                                                            $nama_dan_jumlah[] = $nama . " (" . $jumlah . ")";
-                                                        }
+                    // Gabungkan nama makanan dengan jumlah
+                    foreach ($nama_makanan as $key => $nama) {
+                        $jumlah = isset($jumlah_makanan[$key]) ? $jumlah_makanan[$key] : 0;
+                        $nama_dan_jumlah[] = $nama . " (" . $jumlah . ")";
+                    }
 
-                                                        // Tampilkan nama makanan dengan jumlah dalam satu kolom
-                                                        echo implode(", ", $nama_dan_jumlah);
-                                                    ?>
-                                                </td>
-                                                <td><?= $row['total_jumlah_makanan'] ?></td> <!-- Menampilkan jumlah total makanan -->
-                                                <td><?= number_format($row['total_harga'], 0, ',', '.') ?></td>
-                                            </tr>
-                                        <?php endforeach; ?>
-                                    </tbody>
+                    // Tampilkan nama makanan dengan jumlah dalam satu kolom
+                    echo implode(", ", $nama_dan_jumlah);
+                ?>
+            </td>
+            <td><?= $row['total_jumlah_makanan'] ?></td> <!-- Menampilkan jumlah total makanan -->
+            <td><?= number_format($row['total_harga'], 0, ',', '.') ?></td>
+            <td>
+                <!-- Tombol download -->
+                <div class="" style="display:flex;">
+                <a href="download.php?id_pembayaran=<?= $row['id_pembayaran'] ?>" class="btn btn-primary btn-sm m-1">
+                    <i class="bi bi-download"></i> <!-- Ikon download Bootstrap -->
+                </a>
+                <!-- Tombol hapus -->
+                 
+                    
+                     <a href="hapus.php?id=<?= $row['id_pembayaran'] ?>" class="btn btn-danger btn-sm m-1 " onclick="return confirm('Yakin ingin menghapus data ini?');">
+                         <i class="bi bi-trash"></i> <!-- Ikon hapus Bootstrap -->
+                        </a>
+                    </div>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</tbody>
+
                                 </table>
                                 <!-- End Table with stripped rows -->
                             </div>
@@ -129,4 +144,6 @@ error_reporting(0);
     setTimeout(function(){
         location.reload();
     }, 5000); // 5000 milidetik = 5 detik
+    
 </script>
+

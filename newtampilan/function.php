@@ -47,6 +47,17 @@ function hapus($id) {
         return false;
     }
 }
+function hapuss($id_pembayaran) {
+    global $conn;
+    mysqli_query($conn, "DELETE FROM detail_pesanan WHERE id_pembayaran = $id_pembayaran");
+    
+    // Cek apakah query berhasil
+    if (mysqli_affected_rows($conn) > 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 // Fungsi untuk menambah produk ke keranjang
 function tambahKeKeranjang($id_produk) {
@@ -60,6 +71,7 @@ function tambahKeKeranjang($id_produk) {
         $_SESSION['keranjang'][$id_produk] = 1;
     }
 }
+
 
 // Fungsi untuk menambah data pembayaran ke database
 function bayarr($data) {

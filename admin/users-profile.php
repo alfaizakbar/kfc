@@ -12,16 +12,7 @@ if (!empty($orang)) {
     exit;
 }
 
-if(isset($_POST['apa'])){
-    if(apa($_POST) > 0){
-        echo "<script>alert('data berhasil di ubah');
-            document.location.href = 'index.php'</script>";
-    } else {
-        echo "<script>alert('data gagal di ubah')</script>";
-    }
-    ;
-}
-;
+
 
 if (!isset($_SESSION['username'])) {
   header("location:login.php");
@@ -167,7 +158,7 @@ include 'navbar.php';
             </div>
             <div class="modal-body">
                 <!-- Place the edit profile form here -->
-                <form id="editProfileForm" method="post" action="">
+                <form id="editProfileForm" method="post" action="" id="editForm">
                 <input type="hidden" name="id" value="<?= $orang['id']?>">
                     <!-- Existing form fields -->
                     <div class="mb-3">
@@ -187,20 +178,63 @@ include 'navbar.php';
                     </div>
 
                     <button type="submit" name="apa" class="btn btn-primary" onclick="showConfirmation()">Simpan</button>
+                        <script>
+                        function showConfirmation() {
+                            Swal.fire({
+                                title: 'Yakin ingin menyimpan perubahan?',
+                                text: "Pastikan data yang dimasukkan sudah benar.",
+                                icon: 'warning',
+                                showCancelButton: true,
+                                confirmButtonColor: '#3085d6',
+                                cancelButtonColor: '#d33',
+                                confirmButtonText: 'Ya, simpan!',
+                                cancelButtonText: 'Batal'
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    document.getElementById('editForm').submit(); // Submit form jika dikonfirmasi
+                                }
+                            });
+                        }
+                        </script>
                 </form>
             </div>
         </div>
     </div>
 </div>
-
-<script>
-    function showConfirmation() {
-        var confirmation = confirm("Yakin ingin mengganti data?");
-        if (confirmation) {
-            document.getElementById("editProfileForm").submit();
-        }
+<?php
+if (isset($_POST['apa'])) {
+    if (apa($_POST) > 0) {
+        // Jika data berhasil diubah, gunakan SweetAlert success dan redirect
+        echo "<script>
+            Swal.fire({
+                title: 'Berhasil!',
+                text: 'Data berhasil diubah',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = 'index.php'; // Redirect ke halaman index.php setelah OK
+                }
+            });
+        </script>";
+    } else {
+        // Jika data gagal diubah, gunakan SweetAlert error
+        echo "<script>
+            Swal.fire({
+                title: 'Gagal!',
+                text: 'Data gagal diubah',
+                icon: 'error',
+                confirmButtonText: 'OK'
+            });
+        </script>";
     }
-</script>
+}
+?>
+
+<!-- Tambahkan library SweetAlert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
 
 
 

@@ -16,24 +16,7 @@ if (!isset($_SESSION['username'])) {
 error_reporting(0);
 
 
-if (isset($_POST['tambah'])) {
-    if (tambah ($_POST) > 0 ){
-        echo "<script>alert('Data Berhasil Di Tambahkan');
-        document.location.href = 'data_foto.php'</script>";
-    } else {
-        echo "<script>alert('data gagal ditambahakan')</script>";
-    }
-};
 
-if(isset($_POST['edit'])){
-  if(edit($_POST) > 0){
-      echo "<script>alert('Data Berhasil Di Ubah.');
-          document.location.href = 'data_foto.php'</script>";
-  } else {
-      echo "<script>alert('data gagal ditambahakan')</script>";
-  }
-  ;
-};
 
 
 ?>
@@ -100,6 +83,7 @@ if(isset($_POST['edit'])){
                     <i class="bi bi-trash"></i>
                 </a>
             </td>
+            
         </tr>
         <?php $i++ ?>
         <?php } ?>
@@ -139,6 +123,39 @@ if(isset($_POST['edit'])){
     </div>
   </div>
 </div>
+<?php
+if (isset($_POST['tambah'])) {
+    if (tambah($_POST) > 0) {
+        echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script>
+        Swal.fire({
+            title: 'Berhasil!',
+            text: 'Data Berhasil Ditambahkan',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.location.href = 'data_foto.php'; // Redirect ke halaman data_foto.php
+            }
+        });
+        </script>
+        ";
+    } else {
+        echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script>
+        Swal.fire({
+            title: 'Gagal!',
+            text: 'Data gagal ditambahkan',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        });
+        </script>
+        ";
+    }
+}
+?>
 
 <?php foreach ($data as $row) { ?>
 <!-- Modal View Makanan -->
@@ -210,6 +227,43 @@ if(isset($_POST['edit'])){
     </div>
   </div>
 </div>
+<?php
+if (isset($_POST['edit'])) {
+  if (edit($_POST) > 0) {
+      echo "
+      <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+      <script>
+      Swal.fire({
+          title: 'Berhasil!',
+          text: 'Data Berhasil Diubah.',
+          icon: 'success',
+          confirmButtonText: 'OK'
+      }).then((result) => {
+          if (result.isConfirmed) {
+              document.location.href = 'data_foto.php'; // Redirect ke halaman data_foto.php
+          }
+      });
+      </script>
+      ";
+  } else {
+      echo "
+      <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+      <script>
+      Swal.fire({
+          title: 'Berhasil!',
+          text: 'Data Berhasil Diubah.',
+          icon: 'success',
+          confirmButtonText: 'OK'
+      }).then((result) => {
+          if (result.isConfirmed) {
+              document.location.href = 'data_foto.php'; // Redirect ke halaman data_foto.php
+          }
+      });
+      </script>
+      ";
+  }
+}
+?>
 <?php } ?>
 
 

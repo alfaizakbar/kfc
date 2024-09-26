@@ -31,6 +31,8 @@
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 
   <!-- Template Main CSS File -->
