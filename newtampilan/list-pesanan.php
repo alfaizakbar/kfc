@@ -12,7 +12,7 @@ $nama_pelanggan = $_SESSION['nama_pelanggan'];
 
 
 // Query untuk mendapatkan data pesanan dari pelanggan yang login
-$query = "SELECT id_pembayaran, nama_pelanggan, nama_makanan, jumlah_makanan, total_harga, waktu_pemesanan, status
+$query = "SELECT id_pembayaran, nama_pelanggan, nama_makanan, jumlah_makanan, total_harga, waktu_pemesanan
           FROM detail_pesanan
           WHERE nama_pelanggan = '$nama_pelanggan'";
 
@@ -138,7 +138,7 @@ $detail_pesanan = queryy($query);
                 <th>Jumlah Makanan</th>
                 <th>Harga</th>
                 <th>Tanggal & Waktu Pemesanan</th>
-                <th>Status</th>
+              
               </tr>
             </thead>
             <tbody>
@@ -152,10 +152,7 @@ $detail_pesanan = queryy($query);
                   <td class="text-center"><?= ($row['jumlah_makanan']) ?></td>
                   <td class="text-center fw-bold text-success">Rp <?= number_format(($row['total_harga']), 0, ',', '.') ?></td>
                   <td class="text-center"><?= (date('d-m-Y H:i:s', strtotime($row['waktu_pemesanan']))) ?></td>
-                  <td class="text-center">
-                  <span class="badge bg-<?= $row['status'] == 'Done' ? 'success' : 'warning' ?>">
-                  <?= $row['status'] ?>
-                  </td>
+          
                 </tr>
               <?php endforeach; ?>
             </tbody>
