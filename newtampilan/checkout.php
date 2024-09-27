@@ -51,39 +51,37 @@ if (isset($_POST['checkout'])) {
         exit;
     }
 
-    // Menggabungkan semua nama makanan
-    $nama_makanan = implode(", ", array_column($produk_dikeranjang, 'nama_makanan'));
+    // Menggabungkan nama makanan dengan jumlahnya dalam format nama(jumlah)
+    $nama_makanan = [];
+    foreach ($produk_dikeranjang as $produk) {
+        $nama_makanan[] = $produk['nama_makanan'] . '(' . $produk['jumlah_makanan'] . ')';
+    }
+    $nama_makanan_str = implode(", ", $nama_makanan); // Contoh: burger(5), nasi(10)
 
     // Simpan data pembayaran ke database
     $query = "INSERT INTO pembayaran (id_pelanggan, nama_pelanggan, nama_makanan, alamat, no_hp, total_harga, diskon, pajak, total_akhir, jumlah_makanan) 
-              VALUES ('$id_pelanggan', '$nama_pelanggan', '$nama_makanan', '$alamat', '$no_hp', '$total_harga', '$diskon', '$pajak', '$total_harga_final', '$total_makanan')";
+              VALUES ('$id_pelanggan', '$nama_pelanggan', '$nama_makanan_str', '$alamat', '$no_hp', '$total_harga', '$diskon', '$pajak', '$total_harga_final', '$total_makanan')";
 
     if (mysqli_query($conn, $query)) {
         $id_pembayaran = mysqli_insert_id($conn); // Mendapatkan id_pembayaran yang baru saja dimasukkan
 
-        // Simpan detail pesanan ke tabel detail_pesanan
-        foreach ($produk_dikeranjang as $produk) {
-            $id_produk = $produk['id'];
-            $jumlah_makanan = $produk['jumlah_makanan'];
-            $total_produk = $produk['total_harga'];
+        // Simpan detail pesanan ke tabel detail_pesanan dengan semua makanan dalam satu baris
+        $query_detail = "INSERT INTO detail_pesanan (id_pembayaran, nama_pelanggan, nama_makanan, jumlah_makanan, total_harga) 
+                         VALUES ('$id_pembayaran', '$nama_pelanggan', '$nama_makanan_str', '$total_makanan', '$total_harga_final')";
 
-            $query_detail = "INSERT INTO detail_pesanan (id_pembayaran, id_produk, nama_pelanggan, nama_makanan, jumlah_makanan, total_harga) 
-                             VALUES ('$id_pembayaran', '$id_produk', '$nama_pelanggan', '{$produk['nama_makanan']}', '$jumlah_makanan', '$total_produk')";
-
-            if (!mysqli_query($conn, $query_detail)) {
-                echo "Error: " . mysqli_error($conn);
-            }
+        if (!mysqli_query($conn, $query_detail)) {
+            echo "Error: " . mysqli_error($conn);
         }
 
         // Kosongkan keranjang setelah checkout
         unset($_SESSION['keranjang']);
         unset($_SESSION['diskon']);
 
-        // Redirect ke halaman detail pesanan
-
-}
+    }
 }
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">

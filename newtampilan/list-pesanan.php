@@ -145,12 +145,16 @@ $detail_pesanan = queryy($query);
               <?php foreach ($detail_pesanan as $row): ?>
                 <tr class="bg-white align-middle">
                   <td class="text-center "><?= ($row['nama_pelanggan']) ?></td>
-                  <td class="text-center"><?= ($row['nama_makanan']) ?></td>
+                  <td class="text-center"> <?php 
+            // Format penggabungan nama makanan dan jumlah makanan
+            echo $row['nama_makanan'] ;
+            ?></td>
                   <td class="text-center"><?= ($row['jumlah_makanan']) ?></td>
                   <td class="text-center fw-bold text-success">Rp <?= number_format(($row['total_harga']), 0, ',', '.') ?></td>
                   <td class="text-center"><?= (date('d-m-Y H:i:s', strtotime($row['waktu_pemesanan']))) ?></td>
                   <td class="text-center">
-                    <span class="badge bg-success">Done</span>
+                  <span class="badge bg-<?= $row['status'] == 'Done' ? 'success' : 'warning' ?>">
+                  <?= $row['status'] ?>
                   </td>
                 </tr>
               <?php endforeach; ?>
