@@ -27,7 +27,7 @@ function cari($keyword) {
     // Menggunakan mysqli_real_escape_string untuk mencegah SQL injection
     $keyword = mysqli_real_escape_string($conn, $keyword);
 
-    $query = "SELECT * FROM blog WHERE judul LIKE '%$keyword%'";
+    $query = "SELECT * FROM blog WHERE nama_makanan LIKE '%$keyword%'";
     return queryy($query); // Memperbaiki fungsi yang dipanggil
 }
 

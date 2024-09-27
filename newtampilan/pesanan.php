@@ -12,9 +12,8 @@ if (!isset($_SESSION['nama_pelanggan'])) {
 $nama_pelanggan = $_SESSION["nama_pelanggan"];
 $pelanggan = queryy("SELECT * FROM pelanggan WHERE nama_pelanggan = '$nama_pelanggan'")[0];
 
-// Mengambil data blog dan kategori
+// Mengambil semua data blog
 $data = queryy("SELECT * FROM blog");
-$data2 = queryy("SELECT DISTINCT kategori FROM blog");
 
 // Jika tombol cari ditekan, ambil data berdasarkan keyword pencarian
 if (isset($_POST["cari"])) {
@@ -24,10 +23,13 @@ if (isset($_POST["cari"])) {
 // Matikan error reporting untuk produksi (gunakan error_reporting(E_ALL) untuk pengembangan)
 error_reporting(0);
 
+// Fungsi untuk mencari data berdasarkan keyword (nama makanan)
+// function cari($keyword) {
+//     $query = "SELECT * FROM blog WHERE nama_makanan LIKE '%$keyword%'";
+//     return queryy($query);
+// }
+
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +48,7 @@ error_reporting(0);
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -57,8 +59,6 @@ error_reporting(0);
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-
-
 </head>
 
 <body class="index-page">
@@ -66,30 +66,28 @@ error_reporting(0);
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
+      <a href="index.php" class="logo d-flex align-items-center">
         <h1 class="sitename">AAFood</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
-      <ul>
-          <li><a href="index.php" >Home</a></li>
+        <ul>
+          <li><a href="index.php">Home</a></li>
           <li><a href="about.php">About</a></li>
           <li><a href="menu.php">Menu</a></li>
           <li><a href="pesanan.php" class="active">Pesanan</a></li>
-          <li><a href="keranjang.php" >Keranjang</a></li>
-          <li><a href="list-pesanan.php"class="">List Pesanan</a></li>
+          <li><a href="keranjang.php">Keranjang</a></li>
+          <li><a href="list-pesanan.php">List Pesanan</a></li>
           <li><a href="gallery.php">Gallery</a></li>
-          <li><a href="contact.php"class="">Contact</a></li>
-          <li class="dropdown"><a href="profile.php"><span>Akun</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li><a href="contact.php">Contact</a></li>
+          <li class="dropdown">
+            <a href="profile.php"><span>Akun</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="profile.php">Profile</a></li>
               <li><a href="logout.php">Logout</a></li>
-              
             </ul>
           </li>
-         </ul>
+        </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
@@ -105,22 +103,17 @@ error_reporting(0);
       <div class="container">
         <div class="row gy-4 justify-content-between">
           <div class="col-lg-4 order-lg-last hero-img" data-aos="zoom-out" data-aos-delay="100">
-            <!-- <img src="assets/img/hero-img.png" class="img-fluid animated" alt=""> -->
           </div>
 
-          <div class="col-lg-6  d-flex flex-column justify-content-center" data-aos="fade-in">
-            <h1> <span>Pesanan</span></h1>
+          <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-in">
+            <h1><span>Pesanan</span></h1>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta, ipsa?</p>
-            <div class="d-flex">
-              <!-- <a href="#about" class="btn-get-started">Get Started</a> -->
-              <!-- <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
-            </div>
           </div>
 
         </div>
       </div>
 
-      <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+      <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none">
         <defs>
           <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
         </defs>
@@ -134,9 +127,7 @@ error_reporting(0);
           <use xlink:href="#wave-path" x="50" y="9"></use>
         </g>
       </svg>
-
     </section>
-
 
     <!-- Contact Section -->
     <section id="contact" class="contact section">
@@ -147,41 +138,44 @@ error_reporting(0);
         <div><span>Check Our</span> <span class="description-title">Pesanan</span></div>
       </div><!-- End Section Title -->
 
+      <!-- Form Pencarian -->
+      <div class="container" data-aos="fade-up">
+        <form action="" method="POST" class="d-flex justify-content-center my-4">
+          <input type="text" name="keyword" class="form-control w-50" placeholder="Cari nama makanan..." autofocus>
+          <button type="submit" name="cari" class="btn btn-primary ms-2">Cari</button>
+        </form>
+      </div>
+
+      <!-- Gallery Section -->
       <div class="container" data-aos="fade" data-aos-delay="100">
-
-            <!-- Gallery -->
-            <div class="row">
-              <?php $i =1; ?>
-                                <?php $data = array_reverse($data);?>
-                                <?php foreach($data as $row){?>  
+        <div class="row">
+          <?php if (empty($data)) : ?>
+            <!-- Jika hasil pencarian kosong -->
+            <div class="col-12">
+              <h5 class="text-center">Menu tidak tersedia</h5>
+            </div>
+          <?php else : ?>
+            <!-- Jika ada hasil pencarian -->
+            <?php $i =1; ?>
+            <?php $data = array_reverse($data); ?>
+            <?php foreach($data as $row) { ?>  
             <div class="col-lg-2 col-md-12 mb-4 mb-lg-0 my-4">
-
-                           
-                                           
-    <img
-      src="../admin/img/<?= $row['foto']?>"
-      class="w-100 shadow-1-strong rounded mb-4 img-fixed-height"
-      alt="Wintry Mountain Landscape"
-    />
-    <a href="detail.php?id=<?= $row['id']?>"><h5 class="text-center"><?= $row['nama_makanan']?></h5></a>
-    
-  </div>
-  <?php $i++ ?>
-  <?php }?>
-</div>
-
-</div>
-
-<!-- Gallery -->
-
+              <img src="../admin/img/<?= $row['foto'] ?>" class="w-100 shadow-1-strong rounded mb-4 img-fixed-height" alt="<?= $row['nama_makanan'] ?>" />
+              <a href="detail.php?id=<?= $row['id'] ?>"><h5 class="text-center"><?= $row['nama_makanan'] ?></h5></a>
+            </div>
+            <?php $i++ ?>
+            <?php } ?>
+          <?php endif; ?>
+        </div>
+      </div>
 
     </section><!-- /Contact Section -->
 
   </main>
 
   <?php
- include 'footer.php';
- ?>
+    include 'footer.php';
+  ?>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -201,5 +195,4 @@ error_reporting(0);
   <script src="assets/js/main.js"></script>
 
 </body>
-
 </html>

@@ -1,19 +1,7 @@
 <?php
 require '../database/konn.php';
 
-if( isset($_POST["submit"])){
-    if( registrasii($_POST) > 0){
-        echo "<script>
-        alert('user baru berhasil ditambahkan!');
-        document.location.href='login.php';
-        </script>";
-    }else{
-            echo "<script>
-            alert('Data gagal ditambahkan');
-            document.location.href='register.php';
-            </script>";
-        }
-    };
+
 ?>
 
 
@@ -43,17 +31,11 @@ if( isset($_POST["submit"])){
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Bootslander
-  * Template URL: https://bootstrapmade.com/bootslander-free-bootstrap-landing-page-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body >
@@ -136,6 +118,38 @@ if( isset($_POST["submit"])){
       </div>
     </div>
   </div>
+  <?php 
+  if( isset($_POST["submit"])){
+    if( registrasii($_POST) > 0){
+        echo "<script>
+        Swal.fire({
+            title: 'Success!',
+            text: 'Register berhasil!',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = 'login.php';
+            }
+        });
+        </script>";
+    } else {
+        echo "<script>
+        Swal.fire({
+            title: 'Oops...',
+            text: 'Register gagal!',
+            icon: 'error',
+            confirmButtonText: 'Coba Lagi'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = 'register.php';
+            }
+        });
+        </script>";
+    }
+};
+
+  ?>
 
 </section>
 <!-- </main> -->
