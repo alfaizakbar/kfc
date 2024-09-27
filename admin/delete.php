@@ -1,21 +1,16 @@
 <?php
 require '../newtampilan/function.php';
-$id = $_GET['id'];
-if(hapus($id) > 0){
-    echo "
-    <script>
-    alert('data anda berhasil untuk di hapus');
-    document.location.href = 'data_foto.php';
-    </script>
-    ";
+
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    
+    if (hapus($id) > 0) {
+        header("Location: data_foto.php?status=success");
     } else {
-        echo"
-    <script>
-    alert('data anda gagal untuk dihapus');
-    document.location.href = 'data_foto.php';
-    </script>
-    ";
+        header("Location: data_foto.php?status=fail");
     }
-
-
+} else {
+    header("Location: data_foto.php");
+}
+exit;
 ?>

@@ -1,20 +1,16 @@
 <?php
 require '../database/post.php';
 
-$id = $_GET['id_pembayaran'];
-if(hapuss($id) > 0){
-    echo "
-    <script>
-    alert('data anda berhasil untuk di hapus');
-    document.location.href = 'detail_pesanan.php';
-    </script>
-    ";
+if (isset($_GET['id_pembayaran'])) {
+    $id = $_GET['id_pembayaran'];
+    
+    if (hapuss($id) > 0) {
+        header("Location: detail_pesanan.php?status=success");
     } else {
-        echo"
-    <script>
-    alert('data anda gagal untuk dihapus');
-    document.location.href = 'detail_pesanan.php';
-    </script>
-    ";
+        header("Location: detail_pesanan.php?status=fail");
     }
+} else {
+    header("Location: detail_pesanan.php");
+}
+exit;
 ?>

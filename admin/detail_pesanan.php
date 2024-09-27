@@ -103,9 +103,31 @@ error_reporting(0);
                 <!-- Tombol hapus -->
                  
                     
-                     <a href="hapus.php?id_pembayaran=<?= $row['id_pembayaran'] ?>" class="btn btn-danger btn-sm m-1 " onclick="return confirm('Yakin ingin menghapus data ini?');">
-                         <i class="bi bi-trash"></i> <!-- Ikon hapus Bootstrap -->
-                        </a>
+                <a href="javascript:void(0)" class="btn btn-danger btn-sm m-1" onclick="konfirmasiHapus('<?= $row['id_pembayaran'] ?>')" title="Hapus">
+    <i class="bi bi-trash"></i> <!-- Ikon hapus Bootstrap -->
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+function konfirmasiHapus(id) {
+    Swal.fire({
+        title: 'Apakah Anda yakin?',
+        text: "Data yang dihapus tidak bisa dikembalikan!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Ya, hapus!',
+        cancelButtonText: 'Batal'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Redirect ke halaman hapus jika dikonfirmasi
+            window.location.href = 'hapus.php?id_pembayaran=' + id;
+        }
+    });
+}
+</script>
+
                     </div>
             </td>
         </tr>

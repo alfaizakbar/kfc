@@ -154,4 +154,16 @@ function cari($keyword){
     $query = "SELECT * FROM pembayaran WHERE tanggal_pembayaran LIKE '%$keyword%'";
     return query($query);
 }
+
+function hapus($id) {
+    global $conn;
+    mysqli_query($conn, "DELETE FROM blog WHERE id = $id");
+    
+    // Cek apakah query berhasil
+    if (mysqli_affected_rows($conn) > 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
 ?>

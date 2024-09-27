@@ -78,10 +78,33 @@ error_reporting(0);
                     <i class="bi bi-pencil"></i>
                 </button>
                 <!-- Tombol Hapus dengan Ikon -->
-                <a href="delete.php?id=<?= $row['id'] ?>" class="btn btn-danger btn-sm" 
-                   onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');" title="Hapus">
-                    <i class="bi bi-trash"></i>
-                </a>
+                <a href="javascript:void(0)" class="btn btn-danger btn-sm" onclick="konfirmasiHapus('<?= $row['id'] ?>')" title="Hapus">
+    <i class="bi bi-trash"></i>
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+function konfirmasiHapus(id) {
+    Swal.fire({
+        title: 'Apakah Anda yakin?',
+        text: "Data yang dihapus tidak bisa dikembalikan!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Ya, hapus!',
+        cancelButtonText: 'Batal'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Jika pengguna menekan "Ya, hapus!", redirect ke halaman penghapusan
+            window.location.href = 'delete.php?id=' + id;
+        }
+    });
+}
+</script>
+
+
+
             </td>
             
         </tr>
