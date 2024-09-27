@@ -5,12 +5,15 @@ require '../database/post.php';
 $data = query("SELECT p.*, 
            GROUP_CONCAT(dp.nama_makanan SEPARATOR ', ') AS nama_makanan, 
            GROUP_CONCAT(dp.jumlah_makanan SEPARATOR ', ') AS jumlah_makanan, 
-           SUM(dp.jumlah_makanan) AS total_jumlah_makanan
+           SUM(dp.jumlah_makanan) AS total_jumlah_makanan,
+           dp.waktu_pemesanan, dp.status
     FROM pembayaran p
     JOIN detail_pesanan dp ON p.id_pembayaran = dp.id_pembayaran
     GROUP BY p.id_pembayaran
     ORDER BY p.id_pembayaran DESC
 ");
+
+
 
 
 session_start();
@@ -56,79 +59,69 @@ error_reporting(0);
                             <!-- Table with stripped rows -->
                             <div class="table-responsive">
                                 <table class="table datatable table-responsive">
+                            
                                 <thead>
     <tr>
         <th>Tanggal dan Waktu Pembayaran</th>
+        <!-- <th>Waktu Pemesanan</th> Kolom baru untuk Waktu Pemesanan -->
         <th>Alamat</th>
         <th>No Handphone</th>
         <th>Nama Pelanggan</th>
-        <th>Nama Makanan</th> <!-- Gabungan kolom nama makanan dan jumlah makanan -->
-        <th>Jumlah Makanan</th> <!-- Kolom baru untuk jumlah total makanan -->
+        <th>Nama Makanan</th>
+        <th>Jumlah Makanan</th>
         <th>Harga</th>
-        <th>Aksi</th> <!-- Tambahkan kolom Aksi -->
+        <th>Status</th> <!-- Kolom baru untuk Status -->
+        <th>Aksi</th>
     </tr>
 </thead>
 <tbody>
     <?php foreach ($data as $row): ?>
         <tr>
             <td><?= date('d-m-Y H:i:s', strtotime($row['tanggal_pembayaran'])) ?></td>
+            <!-- <td>
+                <?php 
+                   
+                    $waktu_pemesanan = explode(", ", $row['waktu_pemesanan']);
+                    echo implode(", ", array_map(function($time) {
+                        return date('d-m-Y H:i:s', strtotime($time));
+                    }, $waktu_pemesanan));
+                ?>
+            </td> -->
             <td><?= $row['alamat'] ?></td>
             <td><?= $row['no_hp'] ?></td>
             <td><?= $row['nama_pelanggan'] ?></td>
             <td>
                 <?php
-                    // Pisahkan nama makanan dan jumlah makanan
                     $nama_makanan = explode(", ", $row['nama_makanan']);
                     $jumlah_makanan = explode(", ", $row['jumlah_makanan']);
                     $nama_dan_jumlah = [];
 
-                    // Gabungkan nama makanan dengan jumlah
                     foreach ($nama_makanan as $key => $nama) {
                         $jumlah = isset($jumlah_makanan[$key]) ? $jumlah_makanan[$key] : 0;
                         $nama_dan_jumlah[] = $nama . " (" . $jumlah . ")";
                     }
 
-                    // Tampilkan nama makanan dengan jumlah dalam satu kolom
                     echo implode(", ", $nama_dan_jumlah);
                 ?>
             </td>
-            <td><?= $row['total_jumlah_makanan'] ?></td> <!-- Menampilkan jumlah total makanan -->
+            <td><?= $row['total_jumlah_makanan'] ?></td>
             <td><?= number_format($row['total_harga'], 0, ',', '.') ?></td>
             <td>
-                <!-- Tombol download -->
-                <div class="" style="display:flex;">
-                <a href="download.php?id_pembayaran=<?= $row['id_pembayaran'] ?>" class="btn btn-primary btn-sm m-1">
-                    <i class="bi bi-download"></i> <!-- Ikon download Bootstrap -->
-                </a>
-                <!-- Tombol hapus -->
-                 
-                    
-                <a href="javascript:void(0)" class="btn btn-danger btn-sm m-1" onclick="konfirmasiHapus('<?= $row['id_pembayaran'] ?>')" title="Hapus">
-    <i class="bi bi-trash"></i> <!-- Ikon hapus Bootstrap -->
-</a>
-
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
-function konfirmasiHapus(id) {
-    Swal.fire({
-        title: 'Apakah Anda yakin?',
-        text: "Data yang dihapus tidak bisa dikembalikan!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Ya, hapus!',
-        cancelButtonText: 'Batal'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            // Redirect ke halaman hapus jika dikonfirmasi
-            window.location.href = 'hapus.php?id_pembayaran=' + id;
-        }
-    });
-}
-</script>
-
-                    </div>
+                <?php 
+                    // Tampilkan status pesanan
+                    $status = explode(", ", $row['status']);
+                    echo implode(", ", $status);
+                ?>
+            </td> <!-- Menampilkan Status -->
+            <td>
+                <div style="display:flex;">
+                    <a href="download.php?id_pembayaran=<?= $row['id_pembayaran'] ?>" class="btn btn-primary btn-sm m-1">
+                        <i class="bi bi-download"></i>
+                    </a>
+                    <a href="javascript:void(0)" class="btn btn-danger btn-sm m-1" onclick="konfirmasiHapus('<?= $row['id_pembayaran'] ?>')" title="Hapus">
+                        <i class="bi bi-trash"></i>
+                    </a>
+                </div>
             </td>
         </tr>
     <?php endforeach; ?>
