@@ -22,12 +22,14 @@ $total_harga = 0;
 $total_makanan = 0; // Inisialisasi total makanan
 
 foreach ($keranjang as $id_produk => $jumlah) {
-    $produk = queryy("SELECT * FROM blog WHERE id = $id_produk")[0];
-    $produk['jumlah_makanan'] = $jumlah;
-    $produk['total_harga'] = $jumlah * $produk['kategori']; // Asumsi harga ada di kolom 'kategori'
-    $total_harga += $produk['total_harga'];
-    $total_makanan += $jumlah; // Tambahkan jumlah ke total makanan
-    $produk_dikeranjang[] = $produk;
+    if ($jumlah > 0) { // Hanya ambil produk yang jumlahnya lebih dari 0
+        $produk = queryy("SELECT * FROM blog WHERE id = $id_produk")[0];
+        $produk['jumlah_makanan'] = $jumlah;
+        $produk['total_harga'] = $jumlah * $produk['kategori']; // Asumsi harga ada di kolom 'kategori'
+        $total_harga += $produk['total_harga'];
+        $total_makanan += $jumlah; // Tambahkan jumlah ke total makanan
+        $produk_dikeranjang[] = $produk;
+    }
 }
 
 // Ambil diskon dari sesi
@@ -54,9 +56,11 @@ if (isset($_POST['checkout'])) {
     // Menggabungkan nama makanan dengan jumlahnya dalam format nama(jumlah)
     $nama_makanan = [];
     foreach ($produk_dikeranjang as $produk) {
-        $nama_makanan[] = $produk['nama_makanan'] . '(' . $produk['jumlah_makanan'] . ')';
+        if ($produk['jumlah_makanan'] > 0) { // Hanya masukkan makanan yang jumlahnya lebih dari 0
+            $nama_makanan[] = $produk['nama_makanan'] . '(' . $produk['jumlah_makanan'] . ')';
+        }
     }
-    $nama_makanan_str = implode(", ", $nama_makanan); // Contoh: burger(5), nasi(10)
+    $nama_makanan_str = implode(", ", $nama_makanan); // Contoh: bakso(1), nasi ayam geprek(1), rabokki(2)
 
     // Simpan data pembayaran ke database
     $query = "INSERT INTO pembayaran (id_pelanggan, nama_pelanggan, nama_makanan, alamat, no_hp, total_harga, diskon, pajak, total_akhir, jumlah_makanan) 
@@ -80,6 +84,7 @@ if (isset($_POST['checkout'])) {
     }
 }
 ?>
+
 
 
 

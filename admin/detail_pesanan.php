@@ -76,22 +76,11 @@ error_reporting(0);
             <td><?= $row['no_hp'] ?></td>
             <td><?= $row['nama_pelanggan'] ?></td>
             <td>
-                <?php
-                    // Pisahkan nama makanan dan jumlah makanan
-                    $nama_makanan = explode(", ", $row['nama_makanan']);
-                    $jumlah_makanan = explode(", ", $row['jumlah_makanan']);
-                    $nama_dan_jumlah = [];
-
-                    // Gabungkan nama makanan dengan jumlah
-                    foreach ($nama_makanan as $key => $nama) {
-                        $jumlah = isset($jumlah_makanan[$key]) ? $jumlah_makanan[$key] : 0;
-                        $nama_dan_jumlah[] = $nama . " (" . $jumlah . ")";
-                    }
-
-                    // Tampilkan nama makanan dengan jumlah dalam satu kolom
-                    echo implode(", ", $nama_dan_jumlah);
-                ?>
-            </td>
+    <?php
+        // Langsung tampilkan data nama_makanan tanpa perlu memisahkannya
+        echo $row['nama_makanan'];
+    ?>
+</td>
             <td><?= $row['total_jumlah_makanan'] ?></td> <!-- Menampilkan jumlah total makanan -->
             <td><?= number_format($row['total_harga'], 0, ',', '.') ?></td>
             <td>
